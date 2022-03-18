@@ -6,45 +6,61 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Iniciar sesi�n</title>
+        <title>Iniciar sesión</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+		
+                .center{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content:center;
+                        align-items:center;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                }
             body{
-                height: 80%;
-                font-family: 'Poppins', sans-serif;
+                height: 100vh;
+                font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+				background-image: linear-gradient(to top, #019BDB 0%, #CFFFFA 100%);
             }
             .login-container {
-                height: 50%;
-                width: 50%;
-                margin: 6em auto;
-                border-radius: 10px;
-                display: flex;
-                justify-content: space-between;
-                overflow:hidden;
+                height: 43.75em;
+				width: 60em;
+				margin: 6em auto;
+				border-radius: 10px;
+				display: flex;
+				justify-content: space-between;
+				overflow: hidden;
             }
 
             .login-info-container {
                 width: 50%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding-top: 0.5rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				padding-top: 0.5rem;
                 background-color: #FFFFFF;
             }
             .image-container{
                 width: 50%;
-                padding: 2rem;
+                
                 box-sizing: border-box;
             }
 
-            title{
+            .title{
                 text-transform: capitalize;
                 font-size: 2.25rem;
                 font-weight: 600;
                 letter-spacing: 1px;
             }
+			.login-info-container > p {
+				font-size: 1.25em;
+				margin-top: 1.5em;
+			}
 
             .inputs-container{
                 height: 55%;
@@ -59,8 +75,8 @@ and open the template in the editor.
 
             .input, .btn{
                 width: 90%;
-                height: 10%;
-                font-size: 5%;
+                height: 3.125rem;
+                font-size: 1em;
             }
 
             .input{
@@ -89,7 +105,7 @@ and open the template in the editor.
                 font-weight: 600;
             }
 
-            @media screen and (min-width: 75em) {
+            @media screen and (min-width: 0em) and (max-width:40em) {
                 .login-container {
                     width: 70%;
                     margin-top: 3rem;
@@ -106,42 +122,46 @@ and open the template in the editor.
 
             @media screen and (min-width: 40em) and (max-width:75em) {
                 .login-container {
-                    width: 90%;
+                    width: 100%;
                 }
+				
+				.image-container {
+					width: 50%;
+					height: 100%;
+					
+					box-sizing: border-box;
+                } 
             }
 
-            @media screen and (max-width: 500px) {
+            @media screen and (min-width: 75em) {
                 .login-container {
-                    height: 90%;
-                }
+					height: 90%;
+				}
 
-                .social-login {
-                    flex-direction: column;
-                    align-items: center;
-                    height: 30%;
-                }
-
-                .login-info-container > p {
-                    margin: 0;
-                }
+				.login-info-container > p {
+					margin: 0;
+				}
             }
         </style>
     </head>
 
     <body>
-        <div class="login-container">
-            <img src="imagenes/festival4.jpg" alt="login">
+		<div class="center">
+		
+			<div class="login-container">
+				<img class="image-container" src="imagenes/festival4.jpg" alt="login">
 
-            <div class="login-info-container">
-                <h1 class="title">Login to your account!</h1>
-                <form class="inputs-container">
-                    <input type="text" placeholder="Username">
-                    <input type="password" placeholder="Password">
-                    <button class="btn">login</button>
-                    <p>Don't have an account? <span class="span">Sing up</span></p>
-                </form>
-            </div>
-            
-        </div>
+				<div class="login-info-container">
+					<h1 class="title">Login to your account!</h1>
+					<form class="inputs-container">
+						<input type="text" placeholder="Username">
+						<input type="password" placeholder="Password">
+						<button class="btn">login</button>
+						<p>Don't have an account? <span class="span">Sing up</span></p>
+					</form>
+				</div>
+				
+			</div>
+		</div>
     </body>
 </html>
