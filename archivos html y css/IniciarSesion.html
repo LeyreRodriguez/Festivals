@@ -6,63 +6,157 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Iniciar sesión</title>
+        <title>Iniciar sesiÃ³n</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            body {
-                font-family:  Arial, Helvetica, sans-serif;
+		
+			.center{
+				display: flex;
+				justify-content:center;
+				align-items: center;
+			}
+            body{
+                height: 100vh;
+                font-family: 'Poppins', sans-serif;
+				background-image: linear-gradient(to top, #019BDB 0%, #CFFFFA 100%);
             }
-            
-            .contenedor {
+            .login-container {
+                height: 43.75em;
+				width: 60em;
+				margin: 6em auto;
+				border-radius: 10px;
+				display: flex;
+				justify-content: space-between;
+				overflow: hidden;
+            }
+
+            .login-info-container {
+                width: 50%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				padding-top: 0.5rem;
+                background-color: #FFFFFF;
+            }
+            .image-container{
+                width: 50%;
+                
+                box-sizing: border-box;
+            }
+
+            .title{
+                text-transform: capitalize;
+                font-size: 2.25rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+			.login-info-container > p {
+				font-size: 1.25em;
+				margin-top: 1.5em;
+			}
+
+            .inputs-container{
+                height: 55%;
+                width: 85%;
                 display: flex;
                 flex-direction: column;
+                justify-content: space-around;
                 align-items: center;
             }
+
             
-            .contenedor-derecho {
-                background-image: url("imagenes/iniciar-sesion-fondo.jpg");
-                background-size: cover;
+
+            .input, .btn{
+                width: 90%;
+                height: 3.125rem;
+                font-size: 1em;
             }
-            
-            .datos{
-                display: flex;
-                flex-direction: column;
-                padding: 10px;
+
+            .input{
+                padding-left: 20px;
+                border: none;
+                border-radius: 5px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                box-sizing: border-box;
             }
-            
-            .boton-iniciar-sesion{
-                background-color: #7CFFC5;
+
+            .btn{
+                width: 80%;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                border-radius: 5px;
+                border: none;
+                background-color: #CBEFFF;
+            }
+
+            .inputs-container{
+                margin: 0;
+            }
+
+            .span{
+                font-weight: 600;
+            }
+
+            @media screen and (min-width: 0em) and (max-width:40em) {
+                .login-container {
+                    width: 70%;
+                    margin-top: 3rem;
+                }
+                .login-info-container {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+                
+                .image-container {
+                    display: none;
+                }  
+            }
+
+            @media screen and (min-width: 40em) and (max-width:75em) {
+                .login-container {
+                    width: 100%;
+                }
+				
+				.image-container {
+					width: 50%;
+					height: 100%;
+					
+					box-sizing: border-box;
+                } 
+            }
+
+            @media screen and (min-width: 75em) {
+                .login-container {
+					height: 90%;
+				}
+
+				.login-info-container > p {
+					margin: 0;
+				}
             }
         </style>
     </head>
-    <body>
-        <div class="contenedor">
-            <div class="contenedor-izquierdo">
-                <p>Bienvenido a Festivals</p>
-                <h1>Iniciar sesión</h1>
-                
-                <div class="datos">
-                    <input type="text" placeholder="correo" name="correo">
-                    <br>
-                    <input type="text" placeholder="contraseña" name="contraseña">
-                </div>
-                
-                
-                <div>
-                    <button class="boton-iniciar-sesion">Inciar sesión</button>
-                </div>
 
-                <a href="">¿Has olvidado tu contraseña?</a>
-                
-                <p>¿No tienes cuenta? <a href="Registrate"></a></p>
-            </div>
-            <div class="contenedor-derecho">
-                
-            </div>
-            
-        
-        </div>
-        
+    <body>
+		<div class="center">
+		
+			<div class="login-container">
+				<img class="image-container" src="imagenes/festival4.jpg" alt="login">
+
+				<div class="login-info-container">
+					<h1 class="title">Login to your account!</h1>
+					<form class="inputs-container">
+						<input type="text" placeholder="Username">
+						<input type="password" placeholder="Password">
+						<button class="btn">login</button>
+						<p>Don't have an account? <span class="span">Sing up</span></p>
+					</form>
+				</div>
+				
+			</div>
+		</div>
     </body>
 </html>
