@@ -5,54 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-        .listaEmpresa::-webkit-scrollbar {
-            width: 20px;    
-            margin-right: 4%;
-            scroll-margin: 4%;           /* width of the entire scrollbar */
-        }
+            .listaEmpresa::-webkit-scrollbar {
+                width: 20px;    
+                margin-right: 4%;
+                scroll-margin: 4%;           /* width of the entire scrollbar */
+            }
 
-        .listaEmpresa::-webkit-scrollbar-track {
-            background: rgb(141, 136, 126);     /* color of the tracking area */
-            border-radius: 15px;  
-        }
+            .listaEmpresa::-webkit-scrollbar-track {
+                background: rgb(141, 136, 126);     /* color of the tracking area */
+                border-radius: 15px;  
+            }
 
-        .listaEmpresa::-webkit-scrollbar-thumb {
-            background-color: rgba(89, 174, 214, 0.925);    /* color of the scroll thumb */
-            border-radius: 20px;       /* roundness of the scroll thumb */
-            border: px solid rgb(141, 136, 126);  /* creates padding around scroll thumb */
-        }
-/* lista concurso*/
-        .listaConcurso::-webkit-scrollbar {
-            width: 20px;               /* width of the entire scrollbar */
-            margin-right: 4%;
-            scroll-margin: 4%;
-        }
+            .listaEmpresa::-webkit-scrollbar-thumb {
+                background-color: rgba(89, 174, 214, 0.925);    /* color of the scroll thumb */
+                border-radius: 20px;       /* roundness of the scroll thumb */
+                border: px solid rgb(141, 136, 126);  /* creates padding around scroll thumb */
+            }
+    /* lista concurso*/
+            .listaConcurso::-webkit-scrollbar {
+                width: 20px;               /* width of the entire scrollbar */
+                margin-right: 4%;
+                scroll-margin: 4%;
+            }
 
-        .listaConcurso::-webkit-scrollbar-track {
-            background: rgb(141, 136, 126);     /* color of the tracking area */
-            border-radius: 15px;  
-        }
+            .listaConcurso::-webkit-scrollbar-track {
+                background: rgb(141, 136, 126);     /* color of the tracking area */
+                border-radius: 15px;  
+            }
 
-        .listaConcurso::-webkit-scrollbar-thumb {
-            background-color: rgba(89, 174, 214, 0.925);    /* color of the scroll thumb */
-            border-radius: 20px;       /* roundness of the scroll thumb */
-            border: px solid rgb(141, 136, 126);  /* creates padding around scroll thumb */
-        }
-/*lista Comentarios*/
-        .listaComentarios::-webkit-scrollbar {
-            width: 20px;               /* width of the entire scrollbar */
-        }
+            .listaConcurso::-webkit-scrollbar-thumb {
+                background-color: rgba(89, 174, 214, 0.925);    /* color of the scroll thumb */
+                border-radius: 20px;       /* roundness of the scroll thumb */
+                border: px solid rgb(141, 136, 126);  /* creates padding around scroll thumb */
+            }
+    /*lista Comentarios*/
+            .listaComentarios::-webkit-scrollbar {
+                width: 20px;               /* width of the entire scrollbar */
+            }
 
-        .listaComentarios::-webkit-scrollbar-track {
-            background: rgb(141, 136, 126);     /* color of the tracking area */
-            border-radius: 15px;  
-        }
+            .listaComentarios::-webkit-scrollbar-track {
+                background: rgb(141, 136, 126);     /* color of the tracking area */
+                border-radius: 15px;  
+            }
 
-        .listaComentarios::-webkit-scrollbar-thumb {
-            background-color: rgba(89, 174, 214, 0.925);    /* color of the scroll thumb */
-            border-radius: 20px;       /* roundness of the scroll thumb */
-            border: px solid rgb(141, 136, 126);  /* creates padding around scroll thumb */
-        }
+            .listaComentarios::-webkit-scrollbar-thumb {
+                background-color: rgba(89, 174, 214, 0.925);    /* color of the scroll thumb */
+                border-radius: 20px;       /* roundness of the scroll thumb */
+                border: px solid rgb(141, 136, 126);  /* creates padding around scroll thumb */
+            }
 
 
             .centrar{
@@ -86,17 +86,15 @@
 
                 display:flex;
                 flex-direction: row;
-
             }
 
             .image{
-                
                 text-align: center;
                 grid-area: area13;
                 display: flex;
                 flex-direction: row;
+                justify-content: flex-end;
                 width: 100%;
-
             }
 
             .horario{
@@ -132,6 +130,7 @@
                 "area6"
                 "area7";
             }
+            
             .precio{
                 text-align: center;
                 grid-area: area5;
@@ -157,7 +156,6 @@
                 justify-content: right;
                 align-items: flex-end;
 
-
                 font-weight: 400;
                 font-size: 42px;
                 line-height: 77px;
@@ -165,8 +163,8 @@
                 color: #000000;
                 padding: 50px 30px 0px 0px;
             }
+            
             .empresas{
-                
                 justify-content: center;
                 text-align: left;
                 grid-area: area6;
@@ -176,14 +174,13 @@
                 margin-bottom: 3%;
             }
             .empresasFont{
-            font-weight: 700;
-            font-size: 25px;
-            line-height: 33px;
-            margin-top: 0%;
-            margin-bottom: 2%;
-            color: #000000;
-            padding: 20px 0px 0px 20px;
-
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 33px;
+                margin-top: 0%;
+                margin-bottom: 2%;
+                color: #000000;
+                padding: 20px 0px 0px 20px;
             }
 
             .listaEmpresa{
@@ -194,7 +191,6 @@
             }
 
             .empresa{
-      
                 background: #EBE8E2;
                 border-radius: 25px;
                 height: 5%;
@@ -205,6 +201,7 @@
                 margin-left: 15px;
                 margin-right: 15px;
             }
+            
             .botonVendedor{
                 line-height: 250%;
                 font-size: 20px;
@@ -213,6 +210,7 @@
                 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 23px;
             }
+            
             .botonVendedor:hover {background-color: #aacdf5}
 
             .botonVendedor:active {
@@ -248,7 +246,6 @@
             }
 
             .concursosFont{
-                
                 font-weight: 700;
                 font-size: 25px;
                 line-height: 37px;
@@ -260,12 +257,9 @@
             .listaConcurso{
                 height: 85%;
                 overflow-y: scroll;
-
-
             }
 
             .concurso{
-
                 background: #FFFFFF;
                 border-radius: 25px;
                 height: 30%;
@@ -300,12 +294,9 @@
             .listaComentarios{
                 height: 95%;
                 overflow-y: scroll;
-                    
-    
             }
     
             .comentario{
-          
                 background: #FFFFFF;
                 border-radius: 25px;
                 height: 25%;
@@ -388,13 +379,10 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 20px;
-                font-size: 25px;
-
-                
+                font-size: 25px; 
             }
 
-                .send{
-              
+            .send{
                 font-weight: bold;
                 font-size: 15px;
                 line-height: 28px;
@@ -403,29 +391,23 @@
                 align-self: flex-end;
                 padding: 7% 2% 0% 7%;
             }
-            
-
-
         </style>
     </head>
 
-
     <body>
-        
         <div class="centrar">
             <div class="estructura">
                 <div class="titulo"> Nombre del festival </div>
                 <div class="image">
-                    <img src="imagenes/icono_compra_FestivalPage.png">
-                    <img src="imagenes/icono_concurso_FestivalPage.png">
-                    <img src="imagenes/icono_duda_FestivalPage.png">
+                    <nav>
+                        <a href="#duda"><img src="imagenes/icono_duda_FestivalPage.png"></a>
+                        <a href="Formulario inscripcion en un concurso.html"><img src="imagenes/icono_concurso_FestivalPage.png"></a>
+                        <a href="Formulario compra de entradas.html"><img src="imagenes/icono_compra_FestivalPage.png"></a>
+                    </nav>
                 </div>
-                
-
                 <div class="horario">
                     <div class="horarioFont">Horario</div>
                 </div>
-    
                 <div class="dchoSup">
                     <div class="dchoSup2">
                         <div class="precio">
@@ -448,14 +430,13 @@
                                 <div class="empresa"></div>
                                 <div class="empresa"></div>
                                 <div class="empresa"></div>
-
                             </div>
                         </div>
-                        <div class="botonVendedor">Apuntarse como vendedor</div>
-    
+                        <form action = "Formulario de inscripccion puesto de venta.html" method = "GET"> 
+                            <input class="botonVendedor" type="submit" value="Apuntarse como vendedor" />
+                        </form>
                     </div>
                 </div>
-    
                 <div class="infIzqdo">
                     <div class="infIzqdo2">
                         <div class="concursos">
@@ -474,7 +455,6 @@
                                 <div class="concurso"></div>
                                 <div class="concurso"></div>
                                 <div class="concurso"></div>
-
                             </div>
                         </div>
                         <div class="comentarios">
@@ -493,13 +473,10 @@
                                 <div class="comentario"></div>
                                 <div class="comentario"></div>
                                 <div class="comentario"></div>
-
                             </div>
                         </div>
                     </div>
-    
                 </div>
-    
                 <div class="infDcho">
                     <div class="infDcho2">
                         <div class="informacion">
@@ -509,25 +486,19 @@
                                 <br>
                                 Este festival se celebra en verano ...
                             </div>
-
                         </div>
                     </div>
                 </div>
-                
                 <div class="infDcho3">
                     <div class="infDcho4">
-
                         <div class="comen">
                             Añadir comentario
+                            <a name="duda"></a>
                             <div class="send">SEND</div>
                         </div>
                     </div>
-                </div>    
-
-    
+                </div>        
             </div>
         </div>
-        
-
     </body>
 </html>
