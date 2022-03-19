@@ -1,234 +1,514 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Footer </title>
+        <title>Main Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>     
-            @media (min-width: 75em)  {
-                body {
-                    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-                    background-color: #ACE8E6;
-                }
-                
-                .contenedor {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-                
-                .tamaño-contenedor{
-                    width: 75%;
-                }
-                
-                .conocenos {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                .contacto {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                li {
-                    position:relative;
-                    right:50%;
-                }
-                
-                .redes-sociales {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                img {
-                    width: 10px;
-                    height: 10px;
-                }
-                
-                img:hover {
-                    transform: scale(1.2);
-                }
-                
-                .aviso-legal {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                .titulos {
-                    font-weight: bold;
-                }
-            }
-            @media (min-width: 0em ) and (max-width: 40em)   {
-                body {
-                    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-                    background-color: #ACE8E6;
-                    font-size: 1% 
-                }
-                
-                .contenedor {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-                
-                .tamaño-contenedor{
-                    width: 75%;
-                }
-                
-                .conocenos {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                .contacto {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                li {
-                    position:relative;
-                    right:50%;
-                }
-                
-                .redes-sociales {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                img {
-                    width: 5px;
-                    height: 5px;
-                }
-                
-                img:hover {
-                    transform: scale(1.2);
-                }
-                
-                .aviso-legal {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                .titulos {
-                    font-weight: bold;
-                }
-            }
-            @media (min-width: 41em) and (max-width:75em)   {
-                body {
-                    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-                    background-color: #ACE8E6;
-                }
-                
-                .contenedor {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-                
-                .tamaño-contenedor{
-                    width: 75%;
-                }
-                
-                .conocenos {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                .contacto {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                li {
-                    position:relative;
-                    right:50%;
-                }
-                
-                .redes-sociales {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                img {
-                    width: 10px;
-                    height: 10px;
-                }
-                
-                img:hover {
-                    transform: scale(1.2);
-                }
-                
-                .aviso-legal {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 10px;
-                }
-                
-                .titulos {
-                    font-weight: bold;
-                }
-            }
-        </style>
-    </head>
+  
 
-    <body> 
-        <div class="contenedor">
-            <div class="tamaño-contendor">
-                <div class="conocenos">
-                    <div class="titulos">
-                        <p>Conócenos</p>
-                    </div>
-                    <div>
-                        <p>Somos una empresa destinada a <br> buscar el festival que mejor se adapte a ti. <br> Te mereces un festivals.</p>
-                    </div>
-                </div>
-                <div class="contacto">
-                    <div class="titulos">
-                        <p>Contacto</p>
-                    </div>
-                    <div>
+        <style>
+            @media (min-width: 0em ) and (max-width: 40em)  {
+                body {
+                    font-family:  Arial, Helvetica, sans-serif;
+                }
+                
+                .centrar{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #contenido { width: 800px; margin: 0 auto; }
+
+                .grid-container {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    grid-gap: 20px;
+                    grid-template-areas:
+                    "area1 area1 area1 area1 area1"
+                    "area1 area1 area1 area1 area1"
+                    "area1 area1 area1 area1 area1"
+                    "area2 area2 area2 area2 area2"
+                    "area2 area2 area2 area2 area2";
+                  }
+
+                .grid-container-festivales-cercanos{
+                    grid-area: area2;
+                    display: grid;
+                    grid-template-rows: 1.5fr;
+                    grid-template-columns:  1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+                    grid-gap: 20px;
+                    grid-template-areas:
+                    "area2 area3 area4 area5 area6 area7";
+                    height: 180px; 
+                    overflow-x: auto;
+                }
+                .grid-item1 {
+                  background: #ACE8E6;
+                  text-align: center;
+                  grid-area: area1;
+                }
+
+                .grid-item2 {
+                  background: #7CFFC5;
+                  text-align: center;
+                  width: 150px;
+                  height: 150px;
+                  grid-area: area2;
+                }
+
+                .grid-item3 {
+                    background: #7CFFC5;
+                    text-align: center;
+                    width: 150px;
+                    height: 150px;
+                    grid-area: area3;
+                }
+                .grid-item4 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area4;
+                }
+                .grid-item5 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area5;
+                }
+                .grid-item6 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area6;
+                }
+
+                .grid-item7 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area7;
+                }
+                
+                .slider {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    grid-area: area1;
+                }
+                
+                .slider ul{
+                    display: flex;
+                    width: 300%;
+                    padding: 0px;
+                    animation: cambio 15s infinite linear;
+                }
+                
+                .slider li{
+                    width: 100%;
+                    list-style: none;
+                }
+                
+                .slider img{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                @keyframes cambio {
+                    0% {margin-left: 0px;} 
+                    30% {margin-left: 0px;}  
+                    35%  {margin-left: -100%}
+                    65%  {margin-left: -100%}
+                    70%  {margin-left: -200%}
+                    100%  {margin-left: -200%;}
+                }
+            }
+            @media (min-width: 40em) and (max-width:75em)  {
+                body {
+                    font-family:  Arial, Helvetica, sans-serif;
+                }
+                
+                #contenido { width: 700px; margin: 0 auto; }
+
+                .centrar{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .grid-container {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    grid-gap: 20px;
+                    grid-template-areas:
+                    "area1 area1 area1 area1 area1"
+                    "area1 area1 area1 area1 area1"
+                    "area1 area1 area1 area1 area1"
+                    "area2 area2 area2 area2 area2"
+                    "area2 area2 area2 area2 area2";
+                  }
+
+                .grid-container-festivales-cercanos{
+                    grid-area: area2;
+                    display: grid;
+                    grid-template-rows: 1.5fr;
+                    grid-template-columns:  1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+                    grid-gap: 20px;
+                    grid-template-areas:
+                    "area2 area3 area4 area5 area6 area7";
+                    height: 180px; 
+                    overflow-x: auto;
+                }
+                .grid-item1 {
+                  background: #ACE8E6;
+                  text-align: center;
+                  grid-area: area1;
+                }
+
+                .grid-item2 {
+                  background: #7CFFC5;
+                  text-align: center;
+                  width: 150px;
+                  height: 150px;
+                  grid-area: area2;
+                }
+
+                .grid-item3 {
+                    background: #7CFFC5;
+                    text-align: center;
+                    width: 150px;
+                    height: 150px;
+                    grid-area: area3;
+                }
+                .grid-item4 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area4;
+                }
+                .grid-item5 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area5;
+                }
+                .grid-item6 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area6;
+                }
+
+                .grid-item7 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area7;
+                }
+                
+                .slider {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    grid-area: area1;
+                }
+                
+                .slider ul{
+                    display: flex;
+                    width: 300%;
+                    padding: 0px;
+                    animation: cambio 15s infinite linear;
+                }
+                
+                .slider li{
+                    width: 100%;
+                    list-style: none;
+                }
+                
+                .slider img{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                @keyframes cambio {
+                    0% {margin-left: 0px;} 
+                    30% {margin-left: 0px;}  
+                    35%  {margin-left: -100%}
+                    65%  {margin-left: -100%}
+                    70%  {margin-left: -200%}
+                    100%  {margin-left: -200%;}
+                }
+            }
+
+            @media (min-width: 75em)  {
+                body, ul, figure{
+                    font-family:  Arial, Helvetica, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                ul{
+                    list-style: none;
+                    display: flex;
+                }
+                
+                ul li{
+                    width: 24%;
+                }
+                
+                img{
+                    width: 100%;
+                }
+                
+                ul li figure{
+                    padding: 5px;
+                    position: relative;
+                    
+                }
+                
+                ul li figure:hover figcaption{
+                    display: block;
+                }
+                
+                ul li figcaption{
+                    display: none;
+                    position: absolute;
+                    top: 5px;
+                    bottom: 5px;
+                    left: 5px;
+                    right: 5px;
+                    text-align: center;
+                    padding: 15px;
+                    color: white;
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                
+                .centrar{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #contenido { width: 800px; margin: 0 auto; }
+
+                .grid-container {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    grid-gap: 20px;
+                    grid-template-areas:
+                    "area1 area1 area1 area1 area1"
+                    "area1 area1 area1 area1 area1"
+                    "area1 area1 area1 area1 area1"
+                    "area2 area2 area2 area2 area2"
+                    "area2 area2 area2 area2 area2";
+                  }
+
+                .grid-container-festivales-cercanos{
+                    grid-area: area2;
+                    display: grid;
+                    grid-template-rows: 1.5fr;
+                    grid-template-columns:   1.5fr  1.5fr  1.5fr  1.5fr  1.5fr  1.5fr;
+                    grid-gap: 20px;
+                    grid-template-areas:
+                    "area2 area3 area4 area5 area6 area7";
+                    height: 180px; 
+                    overflow-x: auto;
+                }
+                .grid-item1 {
+                  background: #ACE8E6;
+                  text-align: center;
+                  grid-area: area1;
+                }
+
+                .grid-item2 {
+                  background: #7CFFC5;
+                  text-align: center;
+                  width: 150px;
+                  height: 150px;
+                  grid-area: area2;
+                }
+
+                .grid-item3 {
+                    background: #7CFFC5;
+                    text-align: center;
+                    width: 150px;
+                    height: 150px;
+                    grid-area: area3;
+                }
+                .grid-item4 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area4;
+                }
+                .grid-item5 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area5;
+                }
+                .grid-item6 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area6;
+                }
+
+                .grid-item7 {
+                    background: #7CFFC5;
+                    width: 150px;
+                    height: 150px;
+                    text-align: center;
+                    grid-area: area7;
+                }
+                
+                .slider {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    grid-area: area1;
+                }
+                
+                .slider ul{
+                    display: flex;
+                    width: 300%;
+                    padding: 0px;
+                    animation: cambio 15s infinite linear;
+                }
+                
+                .slider li{
+                    width: 100%;
+                    list-style: none;
+                }
+                
+                .slider img{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                @keyframes cambio {
+                    0% {margin-left: 0px;} 
+                    30% {margin-left: 0px;}  
+                    35%  {margin-left: -100%}
+                    65%  {margin-left: -100%}
+                    70%  {margin-left: -200%}
+                    100%  {margin-left: -200%;}
+                }
+            }
+            
+        </style>
+    </head> 
+
+    <body>
+        <div class="centrar">
+            <div id="contenido">
+                <div class="grid-container"> 
+                    <div class="slider">
                         <ul>
-                            <li>695284756</li>
-                            <li>698521474</li>
+                            <li><img src="imagenes/festival1.jpg"/></li>
+                            <li><img src="imagenes/festival2.jpg"/></li>
+                            <li><img src="imagenes/festival3.jpg"/></li>
                         </ul>
                     </div>
-                </div>
-                <div class="redes-sociales">
-                    <div class="titulos">
-                        <p>Síguenos</p>
+                    <!-- <div class="grid-item1"></div> -->
+                    <div class="grid-container-festivales-cercanos">
+                        <ul>
+                            <li>
+                                <a href="Festival.html">
+                                    <figure >
+                                        <img class="grid-item2" src="imagenes/despegable_horizontal1.jpg"/>
+                                        <figcaption>
+                                            <p>
+                                                El festival .....
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                            
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Festival.html">
+                                    <figure >
+                                        <img class="grid-item3" src="imagenes/despegable_horizontal2.jpg"/>
+                                        <figcaption>
+                                            <p>
+                                                El festival .....
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                            
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Festival.html">
+                                    <figure >
+                                        <img class="grid-item4" src="imagenes/despegable_horizontal3.jpg"/>
+                                        <figcaption>
+                                            <p>
+                                                El festival .....
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                            
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Festival.html">
+                                    <figure >
+                                        <img class="grid-item5" src="imagenes/despegable_horizontal4.jpg"/>
+                                        <figcaption>
+                                            <p>
+                                                El festival .....
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                            
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Festival.html">
+                                    <figure >
+                                        <img class="grid-item6" src="imagenes/despegable_horizontal5.jpg"/>
+                                        <figcaption>
+                                            <p>
+                                                El festival .....
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                            
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Festival.html">
+                                    <figure >
+                                        <img class="grid-item7" src="imagenes/despegable_horizontal6.jpg"/>
+                                        <figcaption>
+                                            <p>
+                                                El festival .....
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                            
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div>
-                        <p>
-                            <img src= "https://cdn-icons-png.flaticon.com/512/44/44646.png">
-                            Facebook <br>
-                            <img src="https://cdn-icons-png.flaticon.com/512/87/87390.png">
-                            Instagram <br>
-                            <img src = "https://cdn-icons-png.flaticon.com/512/60/60580.png">
-                            Twitter 
-                        </p>
-                    </div>
-                </div>
-                <div class="aviso-legal">
-                    <div class="titulos">
-                        <p>Aviso legal</p>
-                    </div>
-                    <div>
-                        <p>xxxxxxxxxxxx <br> xxxxxxxxxxxx</p>
-                    </div>
-                </div>
-            </div>
+                </div>  
+            </div> 
         </div>
     </body>
 </html>
