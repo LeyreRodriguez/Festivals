@@ -60,6 +60,420 @@
                 justify-content: center;
             }
             
+ /*MOVIL*/
+
+        body{
+                margin: 0;
+            }
+
+        @media screen and (max-width: 550px) {      
+            .estructura{
+                width: 100%;
+                height: 100%;
+                display:grid;
+                grid-template-rows: 0.25fr 0.25fr 0.9fr 3fr 3fr 5fr 0.2fr 1fr 0.2fr;
+                grid-template-columns: 1fr;
+                grid-row-gap: 10px;
+                grid-template-areas:
+                "informacion"                
+                "empresas"
+                "comentariosAndConcursos"
+                "comentarioAdd";
+            }
+            .horario{
+                width: 100%;
+                height: 50%;
+                grid-row: 1;
+                margin: 0 auto;
+                z-index: 99;
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            
+
+             .horarioFont{
+                margin: 2% 0% 0% 3%;
+                color: #59deff;
+                font-size:25px;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #DBEDF0;
+                
+             }
+             mark{
+                background-color:#000000;
+             }
+            
+            .titulo{
+                margin: 4% 0% 0% 3%;
+                grid-row: 3;
+                color: #59deff;
+                font-size:12vw;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #DBEDF0;
+                z-index: 98;
+            }
+
+            .image{
+                line-height: 50px;
+                grid-row: 2;
+                border-radius: 15px;
+                width: 75px;
+                height: 50px;
+                justify-items: flex-end;
+                padding-left: 87%;
+                z-index: 97;
+            }
+
+            /*div empresas + precio*/
+            .dchoSup{
+                width: 90%;
+                margin: 0 auto;
+                display: grid;
+                grid-row: 5;
+                text-align: center;
+                grid-template-rows: 1fr;
+                grid-template-columns:1fr;
+            }
+
+            .dchoSup2{
+                width: 100%;
+                height: 100%;
+                display:grid;
+                grid-column: 1;
+                grid-row: 1;
+                grid-row-gap: 5px;
+                grid-column-gap: 5px;
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: 0.75fr 0.25fr 0.25fr;
+                margin-bottom: 10px;
+               
+            }
+            
+            .precio{
+                text-align: center;
+                grid-column: 1/2;
+                grid-row: 3/4;
+                height: 100%;
+                background: #D1E3EB;
+                border-radius: 25px;
+                margin-bottom: 15px;
+            }
+
+            .precioFont{
+                display:flex;
+                justify-content: left;
+                font-weight: 400;
+                font-size: 1.25em;
+                line-height: 1.25em;
+                color: #000000;
+                margin-top: 3%;                
+                padding: 0% 0% 0% 5%;
+            }
+
+            .valorFont{
+                display:flex;
+                justify-content: right;
+                align-items: flex-end;
+
+                font-weight: 400;
+                font-size: 1em;
+                line-height: 4%;
+                
+                padding: 12% 15% 0% 0%;
+                color: #000000;
+            }
+
+            
+            .empresas{
+                justify-content: center;
+                text-align: left;
+                grid-column: 1/3;
+                grid-row: 1/3;
+                height: 98%;
+                background: #C4C4C4;
+                border-radius: 25px;
+                margin-bottom: 3%;
+            }
+            .empresasFont{
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 33px;
+                margin-top: 0%;
+                margin-bottom: 2%;
+                color: #000000;
+                padding: 2% 0% 0% 7%;
+            }
+
+            .listaEmpresa{
+                padding: 0% 7% 4% 7%;
+                height: 70%;
+                overflow-y: scroll;
+            
+            }
+
+            .empresa{
+                background: #EBE8E2;
+                border-radius: 25px;
+                height: 5%;
+                align-self: center;
+                justify-self: center;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .botonVendedor{
+                justify-content: center;
+                align-content:center;
+                line-height: 41px;
+                font-size: 11px;
+                grid-column: 2/3;
+                grid-row: 4/5;
+                background: #C4C4C4;
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 23px;
+                transform: translate(-0%,+40%);
+            }
+            
+            .botonVendedor:hover {background-color: #aacdf5}
+
+            .botonVendedor:active {
+                background-color: #C4C4C4;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            
+            
+            
+            /*fin div empresas*/
+            
+
+            /*concursos y comentario*/
+            .infIzqdo{
+                width: 90%;
+                margin: 0 auto;
+                display: grid;
+                grid-row: 6;
+                text-align: center;
+                grid-template-rows: 1fr;
+                grid-template-columns:1fr;
+            }
+
+            .infIzqdo2{
+                display:grid;
+                height: 100%;
+                width: 100%;
+                grid-template-rows: 2fr 0.2fr 4fr;
+                grid-template-columns:9.3fr;
+                grid-gap: 5px;
+                grid-template-areas:
+                "area8"
+                "."
+                "area9";
+            }
+
+            .concursos{
+                margin: 0 auto;
+                text-align: left;               
+                grid-area: area8;
+                width: 95%;
+                background: #DBEDF0;
+                border-radius: 25px;
+            }
+
+            .concursosFont{
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 37px;
+    
+                color: #000000;
+                padding: 15px 0px 0px 20px;
+            }
+    
+            .listaConcurso{
+                height: 85%;
+                overflow-y: scroll;
+            }
+
+            .concurso{
+                background: #FFFFFF;
+                border-radius: 25px;
+                height: 30%;
+                align-self: center;
+                justify-self: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 25px;
+                margin-right: 25px;
+                
+            }
+
+            .comentarios{
+                text-align: left;                
+                grid-area: area9;
+                margin: 0 auto;
+                width: 95%;
+                height: 100%;
+                background: #BAD8E4;
+                border-radius: 25px;
+                padding-bottom: 1.5%;
+            }
+
+            .comentariosFont{
+               
+                font-weight: 700;
+                font-size: 1.5em;
+                line-height: 37px;
+                margin: 0px auto;
+                color: #000000;
+                padding: 15px 0px 0px 20px;
+            }
+    
+            .listaComentarios{
+                height: 95%;
+                overflow-y: scroll;
+            }
+    
+            .comentario{
+                background: #FFFFFF;
+                border-radius: 25px;
+                height: 25%;
+                align-self: center;
+                justify-self: center;
+                margin-top: 1px;
+                margin-bottom: 10px;
+                margin-left: 25px;
+                margin-right: 25px;
+            }
+
+            /*fin concursos y comentarios*/
+
+            /*cuadro información*/
+            .infDcho{
+                width: 90%;
+                margin: 0 auto;
+                text-align: left;                
+                /*grid-area: informacion;*/
+                grid-row: 4;
+            }
+
+            .infDcho2{
+                display:grid;
+                grid-template-rows: 6.5fr;
+                grid-template-columns:5fr;
+                grid-gap: 5px;
+                width: 100%;
+                height: 100%;
+                grid-template-areas:
+                "area11"
+            }
+            
+            .informacion{
+                text-align: left;                
+                grid-area: area11;
+                width: 95%;
+                height: 90%;
+                background: rgba(32, 140, 137, 0.45);
+                border-radius: 25px;
+                padding: 0% 2.5% 5% 2.5% ;
+            }
+            
+            .texto-informacion{
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 30px;
+                color: #000000;
+                padding: 2% 0% 2% 5%;
+            }
+            
+            .fondo-texto-informacion{
+                height: 75%;
+                width: 90%;
+                background: #FFFFFF;
+                border-radius: 25px;
+                margin:0px auto;
+                padding: 5% 3% 3% 3%;
+                /*padding: 1% 5% 0% 5%;*/
+                font-size: 15px;
+            }
+            /*fin cuadro información*/
+
+
+            /*añadir comentario*/
+            .infDcho3{
+                text-align: left;                
+                width: 90%;
+                margin: 0 auto;
+                display: grid;
+                grid-row: 8;
+                grid-template-rows: 1fr;
+                grid-template-columns:1fr;
+            }
+
+            .infDcho4{
+                display:grid;
+                width: 95%;
+                margin: 0 auto;
+                grid-template-rows: 1.5fr;
+                grid-template-columns:5fr;
+                grid-gap: 5px;
+                grid-template-areas:
+                "area12";
+            }
+            
+            .comen{
+                text-align: left;               
+                grid-area: area12;
+                border: 1px solid #000000;
+                border-radius: 25px;
+                height: fit-content;
+                padding: 20px;
+                font-size: 25px; 
+            }
+
+            .send{
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 28px;
+                color: #019BDB;
+                height: 30%;
+                text-align: right;
+                padding: 11% 2% 0% 7%;
+            }
+            /*fin añadir comentario*/
+
+            
+
+        
+
+            img{
+                margin-left: 0%;
+                margin-right: 0%;
+                width: 15px;
+                height: 15px;
+            }
+            .objetfit > img{
+                width: 105%; /**/
+                height: 22%;
+                object-fit:cover;
+                background-color: black;
+                border: 3px solid #423a86;
+                border-radius: 0px 0px 25px 25px;
+                margin: 0 auto;
+                position: absolute;
+                top:0;
+                z-index: 0;
+
+            }
+        }
+
+        /*FIN MOVIL*/
+            /*DESKTOP*/
+        @media screen and (min-width: 450px) {
+
             .estructura{
                 width: 2000px;
                 display:grid;
@@ -67,7 +481,7 @@
                 grid-template-columns: 9.3fr 1fr 1fr 4fr;
                 grid-gap: 5px;
                 grid-template-areas:
-                "area12 . . area13"
+                "area12 area24 . area13"
                 "area1 area1 . area2"
                 ". . . ."
                 "area3 . area4 area4"
@@ -391,23 +805,51 @@
                 align-self: flex-end;
                 padding: 7% 2% 0% 7%;
             }
+
+            .objetfit > img{
+                
+                width: 0%;
+            height: 0%;
+            
+            grid-area: area24;
+                visibility: hidden;
+                display: none !important;
+
+            }
+        
+        
+        }
+        mark{
+            background-color:white;
+        }
         </style>
     </head>
 
     <body>
         <div class="centrar">
             <div class="estructura">
-                <div class="titulo"> Nombre del festival </div>
-                <div class="image">
+                <div class=" objetfit">
+                    <img src="https://www.neo2.com/wp-content/uploads/2020/06/cartel-tomorrowland-2020-tomorrowland-arround-the-world-01.jpg">
+                </div>
+
+                <div class="image ">
                     <nav>
                         <a href="#duda"><img src="imagenes/icono_duda_FestivalPage.png"></a>
                         <a href="Formulario inscripcion en un concurso.html"><img src="imagenes/icono_concurso_FestivalPage.png"></a>
                         <a href="Formulario compra de entradas.html"><img src="imagenes/icono_compra_FestivalPage.png"></a>
                     </nav>
                 </div>
+                <div class="titulo"> Nombre del festival </div>
                 <div class="horario">
                     <div class="horarioFont">Horario</div>
                 </div>
+                
+                
+
+
+
+
+                
                 <div class="dchoSup">
                     <div class="dchoSup2">
                         <div class="precio">
