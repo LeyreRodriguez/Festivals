@@ -18,12 +18,19 @@
                 display:grid;
                 grid-template-rows: 3fr 5fr 12fr 0.5fr 2fr 4fr;
                 grid-template-columns: 1fr;
-                /*grid-gap: 5px;*/
+                
                 grid-template-areas:
                 "informacion"                
                 "empresas"
                 "comentariosAndConcursos"
                 "comentarioAdd";
+            }
+            .horario{
+                overflow: hidden;
+                width: 95%;
+                height: 50%;
+                grid-row: 6;
+                margin: 0 auto;
             }
 
             /*div empresas + precio*/
@@ -341,6 +348,18 @@
             
 
         }   
+
+        .img{
+            margin-left: 0%;
+        }
+        .objetfit > img{
+            width: 99%;
+            height: 500px;
+            object-fit:cover;
+            background-color: black;
+            border: 3px solid #423a86;
+            border-radius: 25px;
+        }
         </style>
     </head>
 
@@ -348,6 +367,20 @@
         <div class="centrar">
             <div class="estructura">
                 
+                <div class="titulo"> Nombre del festival </div>
+                <div class="image">
+                    <nav>
+                        <a href="#duda"><img src="imagenes/icono_duda_FestivalPage.png"></a>
+                        <a href="Formulario inscripcion en un concurso.html"><img src="imagenes/icono_concurso_FestivalPage.png"></a>
+                        <a href="Formulario compra de entradas.html"><img src="imagenes/icono_compra_FestivalPage.png"></a>
+                    </nav>
+                </div>
+                <div class="horario objetfit">
+                    <div class="horarioFont">Horario</div>
+                    <img src="https://www.neo2.com/wp-content/uploads/2020/06/cartel-tomorrowland-2020-tomorrowland-arround-the-world-01.jpg">
+                </div>
+
+
                 <div class="dchoSup">
                     <div class="dchoSup2">
                         <div class="empresas">
@@ -377,10 +410,6 @@
                             <div class="precioFont"> Precio de las entradas</div>
                             <div class="valorFont">0.00€</div>
                         </div>
-
-                        
-                        
-                        
                         
                     </div>
                 </div>
