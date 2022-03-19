@@ -23,7 +23,7 @@ and open the template in the editor.
             }
             body{
                 height: 100vh;
-                font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+                font-family:  Arial, Helvetica, sans-serif;
                 background-image: url("imagenes/COACHELLA-2022.jpeg");
                 background-size: 100%;
             }   
@@ -106,6 +106,10 @@ and open the template in the editor.
                 font-weight: 600;
             }
             @media screen and (min-width: 0em) and (max-width:40em) {
+                body{
+                    background-size: cover;
+                    background-position: center;
+                }
                 .login-container {
                     width: 70%;
                     margin-top: 3rem;
@@ -138,11 +142,11 @@ and open the template in the editor.
         <div class="centrar">
             <div class="login-container">
                 <div class="login-info-container">
-                    <h1 class="title">Sing up</h1>
+                    <h1 class="title">Registrarse</h1>
                     <form class="inputs-container">
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
-                        <button class="btn">Sing up</button>
+                        <input id="usuario" type="text" placeholder="Usuario">
+                        <input id="contraseña" type="password" placeholder="Contraseña">
+                        <button class="btn">Registrarse</button>
                     </form>
                 </div>
             </div>
