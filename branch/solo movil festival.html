@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Festival</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+             .centrar{
+                display:flex;
+                justify-content: center;
+            }
+/*MOVIL*/
+        @media screen and (max-width: 1000px) {
+            .estructura{
+                width: 100%;
+                height: 100%;
+                display:grid;
+                grid-template-rows: 3fr 5fr 12fr 0.5fr 2fr 4fr;
+                grid-template-columns: 1fr;
+                /*grid-gap: 5px;*/
+                grid-template-areas:
+                "informacion"                
+                "empresas"
+                "comentariosAndConcursos"
+                "comentarioAdd";
+            }
+
+            /*div empresas + precio*/
+            .dchoSup{
+                width: 100%;
+                display: grid;
+                grid-row: 2;
+                text-align: center;
+                grid-template-rows: 1fr;
+                grid-template-columns:1fr;
+            }
+
+            .dchoSup2{
+                width: 100%;
+                height: 100%;
+                display:grid;
+                grid-column: 1;
+                grid-row: 1;
+                grid-row-gap: 5px;
+                grid-column-gap: 5px;
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+               
+            }
+            
+            .precio{
+                text-align: center;
+                grid-column: 2/3;
+                grid-row: 1/3;
+
+                background: #D1E3EB;
+                border-radius: 25px;
+                margin-bottom: 15px;
+            }
+
+            .precioFont{
+                display:flex;
+                justify-content: left;
+                font-weight: 400;
+                font-size: 1em;
+                line-height: 1.25em;
+                color: #000000;
+                margin-top: 3%;
+                padding: 0px 0px 0px 20px;
+            }
+
+            .valorFont{
+                display:flex;
+                justify-content: right;
+                align-items: flex-end;
+
+                font-weight: 400;
+                font-size: 1em;
+                line-height: 4%;
+
+                color: #000000;
+                padding: 22% 15% 0% 0%;
+            }
+
+            /*empresas*/
+            .empresas{
+                justify-content: center;
+                text-align: left;
+                grid-column: 1/2;
+                grid-row: 1/6;
+                height: 98%;
+                background: #C4C4C4;
+                border-radius: 25px;
+                margin-bottom: 3%;
+            }
+            .empresasFont{
+                font-weight: 700;
+                font-size: 1em;
+                line-height: 15px;
+                margin-top: 0%;
+                margin-bottom: 2%;
+                color: #000000;
+                padding: 2% 0% 0% 7%;
+            }
+
+            .listaEmpresa{
+                padding: 0% 0% 0% 5%;
+                height: 80%;
+                overflow-y: scroll;
+            
+            }
+
+            .empresa{
+                background: #EBE8E2;
+                border-radius: 25px;
+                height: 5%;
+                align-self: center;
+                justify-self: center;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .botonVendedor{
+                justify-content: center;
+                line-height: 31px;
+                font-size: 11px;
+                grid-column: 2/1;
+                grid-row: 6/7;
+                background: #C4C4C4;
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 23px;
+            }
+            
+            .botonVendedor:hover {background-color: #aacdf5}
+
+            .botonVendedor:active {
+                background-color: #C4C4C4;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            
+            
+            
+            /*fin div empresas*/
+            
+
+            /*concursos y comentario*/
+            .infIzqdo{
+                width: 100%;
+                display: grid;
+                grid-row: 3;
+                text-align: center;
+                grid-template-rows: 1fr;
+                grid-template-columns:1fr;
+            }
+
+            .infIzqdo2{
+                display:grid;
+                height: 100%;
+                width: 100%;
+                grid-template-rows: 2fr 0.5fr 4fr;
+                grid-template-columns:9.3fr;
+                grid-gap: 5px;
+                grid-template-areas:
+                "area8"
+                "."
+                "area9";
+            }
+
+            .concursos{
+                margin: 0 auto;
+                text-align: left;               
+                grid-area: area8;
+                width: 90%;
+                background: #DBEDF0;
+                border-radius: 25px;
+            }
+
+            .concursosFont{
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 37px;
+    
+                color: #000000;
+                padding: 15px 0px 0px 20px;
+            }
+    
+            .listaConcurso{
+                height: 85%;
+                overflow-y: scroll;
+            }
+
+            .concurso{
+                background: #FFFFFF;
+                border-radius: 25px;
+                height: 30%;
+                align-self: center;
+                justify-self: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 25px;
+                margin-right: 25px;
+                
+            }
+
+            .comentarios{
+                text-align: left;                
+                grid-area: area9;
+                margin: 0 auto;
+                width: 90%;
+                height: 100%;
+                background: #BAD8E4;
+                border-radius: 25px;
+                padding-bottom: 1.5%;
+            }
+
+            .comentariosFont{
+               
+                font-weight: 700;
+                font-size: 1.5em;
+                line-height: 37px;
+                margin: 0px auto;
+                color: #000000;
+                padding: 15px 0px 0px 20px;
+            }
+    
+            .listaComentarios{
+                height: 95%;
+                overflow-y: scroll;
+            }
+    
+            .comentario{
+                background: #FFFFFF;
+                border-radius: 25px;
+                height: 25%;
+                align-self: center;
+                justify-self: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                margin-left: 25px;
+                margin-right: 25px;
+            }
+
+            /*fin concursos y comentarios*/
+            /*cuadro información*/
+            .infDcho{
+                width: 100%;
+                text-align: left;                
+                grid-area: informacion;
+            }
+
+            .infDcho2{
+                display:grid;
+                grid-template-rows: 6.5fr;
+                grid-template-columns:5fr;
+                grid-gap: 5px;
+                width: 100%;
+                height: 100%;
+                grid-template-areas:
+                "area11"
+            }
+            
+            .informacion{
+                text-align: left;                
+                grid-area: area11;
+                width: 95%;
+                height: 80%;
+                background: rgba(32, 140, 137, 0.45);
+                border-radius: 25px;
+                padding: 0% 2.5% 5% 2.5% ;
+            }
+            
+            .texto-informacion{
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 30px;
+                color: #000000;
+                /*padding: 0% 0% 2% 5%;*/
+            }
+            
+            .fondo-texto-informacion{
+                height: 85%;
+                width: 90%;
+                background: #FFFFFF;
+                border-radius: 25px;
+                margin:0px auto;
+                padding: 1% 5% 0% 5%;
+                font-size: 15px;
+            }
+            /*fin cuadro información*/
+
+
+            /*añadir comentario*/
+            .infDcho3{
+                text-align: left;                
+                width: 100%;
+                display: grid;
+                grid-row: 5;
+                grid-template-rows: 1fr;
+                grid-template-columns:1fr;
+            }
+
+            .infDcho4{
+                display:grid;
+                width: 95%;
+                margin: 0 auto;
+                grid-template-rows: 1.5fr;
+                grid-template-columns:5fr;
+                grid-gap: 5px;
+                grid-template-areas:
+                "area12";
+            }
+            
+            .comen{
+                text-align: center;               
+                grid-area: area12;
+                border: 1px solid #000000;
+                border-radius: 25px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                font-size: 25px; 
+            }
+
+            .send{
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 28px;
+                color: #019BDB;
+                height: 30%;
+                align-self: flex-end;
+                padding: 7% 2% 0% 7%;
+            }
+            /*fin añadir comentario*/
+
+            
+
+        }   
+        </style>
+    </head>
+
+    <body>
+        <div class="centrar">
+            <div class="estructura">
+                
+                <div class="dchoSup">
+                    <div class="dchoSup2">
+                        <div class="empresas">
+                            <div class="empresasFont"> Empresas</div>
+                            <div class="listaEmpresa">
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                                <div class="empresa"></div>
+                            </div>
+                        </div>
+
+                        <form action = "Formulario de inscripccion puesto de venta.html" method = "GET"> 
+                            <input class="botonVendedor" type="submit" value="Apuntarse como vendedor" />
+                        </form>
+
+                        <div class="precio">
+                            <div class="precioFont"> Precio de las entradas</div>
+                            <div class="valorFont">0.00€</div>
+                        </div>
+
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+               
+                <div class="infIzqdo">
+                    <div class="infIzqdo2">
+                        <div class="concursos">
+                            <div class="concursosFont"> Concursos</div>
+                            <div class="listaConcurso">
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                                <div class="concurso"></div>
+                            </div>
+                        </div>
+
+                        <div class="comentarios">
+                            <div class="comentariosFont"> Comentarios</div>
+                            <div class="listaComentarios">
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                                <div class="comentario"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="infDcho">
+                    <div class="infDcho2">
+                        <div class="informacion">
+                            <div class="texto-informacion">Información</div>
+                            <div class="fondo-texto-informacion">
+                                Informacion de concurso
+                                <br>
+                                Este festival se celebra en verano ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infDcho3">
+                    <div class="infDcho4">
+                        <div class="comen">
+                            Añadir comentario
+                            <a name="duda"></a>
+                            <div class="send">SEND</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
