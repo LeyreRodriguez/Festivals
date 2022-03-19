@@ -10,13 +10,16 @@
                 display:flex;
                 justify-content: center;
             }
+            body{
+                margin: 0;
+            }
 /*MOVIL*/
         @media screen and (max-width: 1000px) {
             .estructura{
                 width: 100%;
                 height: 100%;
                 display:grid;
-                grid-template-rows: 3fr 5fr 12fr 0.5fr 2fr 4fr;
+                grid-template-rows: 2fr 3fr 3fr 5fr 0.2fr 1fr;
                 grid-template-columns: 1fr;
                 
                 grid-template-areas:
@@ -26,18 +29,50 @@
                 "comentarioAdd";
             }
             .horario{
-                overflow: hidden;
-                width: 95%;
+                width: 100%;
                 height: 50%;
-                grid-row: 6;
+                grid-row: 1;
                 margin: 0 auto;
+                z-index: 99;
+                display: flex;
+                flex-direction: column;
+
+            }
+             .horarioFont{
+                margin: 2% 0% 0% 3%;
+                color: #59deff;
+                font-size:25px;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #DBEDF0;
+                
+             }
+             mark{
+                background-color:#000000;
+             }
+            
+            .festivalName{
+                margin: 12% 0% 0% 3%;
+                color: #59deff;
+                font-size:45px;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #DBEDF0;
+            }
+
+            .iconos{
+                line-height: 50px;
+                border-radius: 15px;
+                width: 75px;
+                height: 50px;
+                justify-items: flex-end;
+                padding-left: 80%;
             }
 
             /*div empresas + precio*/
             .dchoSup{
-                width: 100%;
+                width: 90%;
+                margin: 0 auto;
                 display: grid;
-                grid-row: 2;
+                grid-row: 3;
                 text-align: center;
                 grid-template-rows: 1fr;
                 grid-template-columns:1fr;
@@ -52,14 +87,14 @@
                 grid-row-gap: 5px;
                 grid-column-gap: 5px;
                 grid-template-columns: 2fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 0.25fr 0.15fr;
                
             }
             
             .precio{
                 text-align: center;
-                grid-column: 2/3;
-                grid-row: 1/3;
+                grid-column: 1/2;
+                grid-row: 3/4;
 
                 background: #D1E3EB;
                 border-radius: 25px;
@@ -90,12 +125,12 @@
                 padding: 22% 15% 0% 0%;
             }
 
-            /*empresas*/
+            
             .empresas{
                 justify-content: center;
                 text-align: left;
-                grid-column: 1/2;
-                grid-row: 1/6;
+                grid-column: 1/3;
+                grid-row: 1/3;
                 height: 98%;
                 background: #C4C4C4;
                 border-radius: 25px;
@@ -134,8 +169,8 @@
                 justify-content: center;
                 line-height: 31px;
                 font-size: 11px;
-                grid-column: 2/1;
-                grid-row: 6/7;
+                grid-column: 2/3;
+                grid-row: 4/5;
                 background: #C4C4C4;
                 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 23px;
@@ -156,9 +191,10 @@
 
             /*concursos y comentario*/
             .infIzqdo{
-                width: 100%;
+                width: 90%;
+                margin: 0 auto;
                 display: grid;
-                grid-row: 3;
+                grid-row: 4;
                 text-align: center;
                 grid-template-rows: 1fr;
                 grid-template-columns:1fr;
@@ -168,7 +204,7 @@
                 display:grid;
                 height: 100%;
                 width: 100%;
-                grid-template-rows: 2fr 0.5fr 4fr;
+                grid-template-rows: 2fr 0.2fr 4fr;
                 grid-template-columns:9.3fr;
                 grid-gap: 5px;
                 grid-template-areas:
@@ -252,11 +288,14 @@
             }
 
             /*fin concursos y comentarios*/
+
             /*cuadro información*/
             .infDcho{
-                width: 100%;
+                width: 90%;
+                margin: 0 auto;
                 text-align: left;                
-                grid-area: informacion;
+                /*grid-area: informacion;*/
+                grid-row: 2;
             }
 
             .infDcho2{
@@ -303,9 +342,10 @@
             /*añadir comentario*/
             .infDcho3{
                 text-align: left;                
-                width: 100%;
+                width: 90%;
+                margin: 0 auto;
                 display: grid;
-                grid-row: 5;
+                grid-row: 6;
                 grid-template-rows: 1fr;
                 grid-template-columns:1fr;
             }
@@ -322,14 +362,11 @@
             }
             
             .comen{
-                text-align: center;               
+                text-align: left;               
                 grid-area: area12;
                 border: 1px solid #000000;
                 border-radius: 25px;
-
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
+                height: fit-content;
                 padding: 20px;
                 font-size: 25px; 
             }
@@ -340,8 +377,8 @@
                 line-height: 28px;
                 color: #019BDB;
                 height: 30%;
-                align-self: flex-end;
-                padding: 7% 2% 0% 7%;
+                text-align: right;
+                padding: 11% 2% 0% 7%;
             }
             /*fin añadir comentario*/
 
@@ -353,32 +390,46 @@
             margin-left: 0%;
         }
         .objetfit > img{
-            width: 99%;
-            height: 500px;
+            width: 100%;
+            height: 250px;
             object-fit:cover;
             background-color: black;
             border: 3px solid #423a86;
-            border-radius: 25px;
+            border-radius: 0px 0px 25px 25px;
+            margin: 0 auto;
+            position: absolute;
+            top:0;
+            z-index: 0;
+
         }
         </style>
     </head>
 
     <body>
+        
         <div class="centrar">
             <div class="estructura">
-                
-                <div class="titulo"> Nombre del festival </div>
-                <div class="image">
-                    <nav>
-                        <a href="#duda"><img src="imagenes/icono_duda_FestivalPage.png"></a>
-                        <a href="Formulario inscripcion en un concurso.html"><img src="imagenes/icono_concurso_FestivalPage.png"></a>
-                        <a href="Formulario compra de entradas.html"><img src="imagenes/icono_compra_FestivalPage.png"></a>
-                    </nav>
-                </div>
-                <div class="horario objetfit">
-                    <div class="horarioFont">Horario</div>
+                <div class=" objetfit">
                     <img src="https://www.neo2.com/wp-content/uploads/2020/06/cartel-tomorrowland-2020-tomorrowland-arround-the-world-01.jpg">
                 </div>
+                <div class="horario">
+                    <div class="horarioFont"><mark>FECHAS</mark></div>
+                    <div class="image iconos">
+                        <nav>
+                            <a href="#duda"><img src="imagenes/icono_duda_FestivalPage.png"></a>
+                            <a href="Formulario inscripcion en un concurso.html"><img src="imagenes/icono_concurso_FestivalPage.png"></a>
+                            <a href="Formulario compra de entradas.html"><img src="imagenes/icono_compra_FestivalPage.png"></a>
+                        </nav>
+                    </div>
+                    
+                    
+                    <div class="festivalName "><mark>Nombre del festival </mark></div>
+                    
+                </div>
+                
+
+                
+                
 
 
                 <div class="dchoSup">
