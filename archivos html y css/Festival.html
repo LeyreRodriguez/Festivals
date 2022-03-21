@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             .listaEmpresa::-webkit-scrollbar {
-                width: 20px;    
+                width: 2vw;    
                 margin-right: 4%;
                 scroll-margin: 4%;           /* width of the entire scrollbar */
             }
@@ -23,7 +23,7 @@
             }
     /* lista concurso*/
             .listaConcurso::-webkit-scrollbar {
-                width: 20px;               /* width of the entire scrollbar */
+                width: 2vw; /* width of the entire scrollbar */
                 margin-right: 4%;
                 scroll-margin: 4%;
             }
@@ -40,7 +40,7 @@
             }
     /*lista Comentarios*/
             .listaComentarios::-webkit-scrollbar {
-                width: 20px;               /* width of the entire scrollbar */
+                width: 2vw; /* width of the entire scrollbar */
             }
 
             .listaComentarios::-webkit-scrollbar-track {
@@ -64,6 +64,9 @@
 
         
         @media screen and (max-width: 550px) {  
+
+
+
             
             body{
                 margin: 0;
@@ -296,7 +299,7 @@
             }
     
             .listaConcurso{
-                height: 85%;
+                height: 65%;
                 overflow-y: scroll;
             }
 
@@ -335,7 +338,7 @@
             }
     
             .listaComentarios{
-                height: 95%;
+                height: 80%;
                 overflow-y: scroll;
             }
     
@@ -930,17 +933,17 @@
             body{
                 margin: 5%;
             }
-            .estructura{
-                display:grid;
-                grid-template-rows: 1fr 6fr 0.1fr 6fr;
+            .estructura {
+                display: grid;
+                grid-template-rows: 1fr minmax(10%, 900px) 0.1fr 6fr;
                 grid-template-columns: 6.5fr 0.5fr 0.5fr 3fr;
                 grid-gap: 5px;
                 grid-template-areas:
-                "area12 area24 . area13"
-                "area1 area1 . area2"
-                ". . . ."
-                "area3 . area4 area4"
-                "area3 . area14 area14";
+                    "area12 area24 . area13"
+                    "area1 area1 . area2"
+                    ". . . ."
+                    "area3 . area4 area4"
+                    "area3 . area14 area14";
             }
 
             .titulo{
@@ -1261,21 +1264,38 @@
                 padding: 7% 2% 0% 7%;
             }
 
-            .objetfit > img{
+            .objetfit2 {
+                grid-area: area1;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-items: center;
                 
-                width: 0%;
-            height: 0%;
-            
-            grid-area: area24;
-                visibility: hidden;
-                display: none !important;
-
             }
+
+                .objetfit2 > img {
+                    height: 100%;
+                    object-fit: contain;
+                    background-color: black;
+                    border: 3px solid #423a86;
+                    border-radius: 25px 25px 25px 25px;
+                    margin: 0 auto;
+                    top: 0;
+                    z-index: 0;
+                }
+
+            
         
             mark{
             background-color:white;
             }
             /* divs que no se mostrarán en modo desktop */
+
+            .objetfit > img {
+                visibility: hidden;
+                display: none !important;
+            }
+
             .iconos{
                 visibility: hidden;
                 display: none;
@@ -1307,7 +1327,7 @@
                 <div class=" objetfit">
                     <img src="https://www.neo2.com/wp-content/uploads/2020/06/cartel-tomorrowland-2020-tomorrowland-arround-the-world-01.jpg">
                 </div>
-    
+
                 <div class="image ">
                     <nav>
                         <a href="#duda"><img src="imagenes/icono_duda_FestivalPage.png"></a>
@@ -1316,11 +1336,16 @@
                     </nav>
                 </div>
                 <div class="titulo"> Nombre del festival </div>
-                <div class="horario">
-                    <div class="horarioFont">Horario</div>
-                </div>
-    
-               <!-- modo tablet, solo se muestra cuando cumple las especificaciones de @media tablet -->
+                                
+                    <div class=" objetfit2">
+                        <img src="https://i1.wp.com/actualidadtenerife.es/wp-content/uploads/2021/09/Timpleando-La-Palma.jpg?fit=1500%2C2121&ssl=1" />
+                    </div>                
+               
+
+                <!-- modo desktop -->
+                
+
+                <!-- modo tablet, solo se muestra cuando cumple las especificaciones de @media tablet -->
                 <div class="contenedor1">
                     <div class="iconos">
                         <nav>
@@ -1331,13 +1356,13 @@
                     </div>
                     <div class="namefestival"> Nombre del festival </div>
                 </div>
-                
-                
-    
-    
-    
-    
-                
+
+
+
+
+
+
+
                 <div class="dchoSup">
                     <div class="dchoSup2">
                         <div class="precio">
@@ -1362,7 +1387,7 @@
                                 <div class="empresa"></div>
                             </div>
                         </div>
-                        <form action = "Formulario de inscripccion puesto de venta.html" method = "GET"> 
+                        <form action="Formulario de inscripccion puesto de venta.html" method="GET">
                             <input class="botonVendedor" type="submit" value="Apuntarse como vendedor" />
                         </form>
                     </div>
@@ -1405,16 +1430,16 @@
                                 <div class="comentario"></div>
                             </div>
                         </div>
-    <!-- modo tablet se muestran "añadir comentario" en el mismo div que los concursos y los comentarios -->
-                            <div class="infDcho6">
-                                <div class="comen">
-                                    Añadir comentario
-                                    <a name="duda"></a>
-                                    <div class="send">SEND</div>
-                                </div>
+                        <!-- modo tablet se muestran "añadir comentario" en el mismo div que los concursos y los comentarios -->
+                        <div class="infDcho6">
+                            <div class="comen">
+                                Añadir comentario
+                                <a name="duda"></a>
+                                <div class="send">SEND</div>
                             </div>
-                             
-    
+                        </div>
+
+
                     </div>
                 </div>
                 <div class="infDcho">
@@ -1437,7 +1462,7 @@
                             <div class="send">SEND</div>
                         </div>
                     </div>
-                </div>        
+                </div>
             </div>
         </div>
     </body>
