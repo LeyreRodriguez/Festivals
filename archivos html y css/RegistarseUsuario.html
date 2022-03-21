@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registrarse usuario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        <link rel="stylesheet" href="estilos.css">
+        <script>   
+            var nombre, apellidos, correo, contraseña;
+            function initiate(){
+                nombre = document.getElementById("nombre");
+                apellidos = document.getElementById("apellidos");
+                correo = document.getElementById("correo");
+                contraseña = document.getElementById("contraseña");
+                nombre.addEventListener("input", validation_nombre);
+                apellidos.addEventListener("input", validation_apellidos);
+                correo.addEventListener("input", validation_correo);
+                contraseña.addEventListener("input", validation_contraseña);
+                return false;
+            }
+            function validation_correo(e){
+                if (correo.validity.valueMissing) {
+                    correo.style.background = '#FF0000';
+                    correo.setCustomValidity("El correo es obligatorio"); 
+                }else if(correo.validity.patternMismatch) {
+                    correo.style.background = '#FF0000';
+                    correo.setCustomValidity("Se esperaba una dirección de correo electrónico");
+                }else {
+                    correo.setCustomValidity('');
+                    correo.style.background = '#FFFFFF';
+                }
+            }
+            function validation_contraseña(e){
+                if (contraseña.validity.valueMissing) {
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("La contraseña es obligatorio"); 
+                }else if(contraseña.validity.tooShort){
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("La contraseña debe tener más de 8 dígitos"); 
+                }else if(contraseña.validity.tooLong){
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("La contraseña debe tener menos de 15 dígitos"); 
+                }else if(contraseña.validity.patternMismatch) {
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("Se esperaba una contraseña con mínimo una minúscula, una masyúscula, un dígito numérico y sin espacios");
+                }else {
+                    contraseña.setCustomValidity('');
+                    contraseña.style.background = '#FFFFFF';
+                }
+            }
+            addEventListener("load", initiate);
+        </script>
+        <style>    
+            body{
+                height: 100vh;
+                font-family:  Arial, Helvetica, sans-serif;
+                background-image: url("imagenes/COACHELLA-2022.jpeg");
+                background-size: cover;
+                background-position: center;
+            } 
+            
+            i{
+                padding: 5px;
+            }
+  
+            .centrar{
+                display: flex;
+                flex-direction: row;
+                justify-content:center;
+                align-items:center;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            } 
+            
+            .login-container {
+                height: 17.75em;
+                width: 50em;
+                margin: 6em auto;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            
+            .login-info-container {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-top: 0.5rem;
+                border-radius: 20px;
+                background-color: #FFFFFF;
+            }
+
+            .title{
+                text-transform: capitalize;
+                font-size: 2.25rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+            .login-info-container > p {
+                font-size: 1.25em;
+                margin-top: 1.5em;
+            }
+
+            .inputs-container{
+                height: 55%;
+                width: 85%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+ 
+            .input, .btn{
+                width: 90%;
+                height: 3.125rem;
+                font-size: 1em;
+            }
+
+            .input{
+                padding-left: 20px;
+                border: none;
+                border-radius: 5px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                box-sizing: border-box;
+            }
+
+            .inputs-container{
+                margin: 0;
+            }
+
+            .span{
+                font-weight: 600;
+            }
+            
+            .input_contenedor{
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+            }
+            
+            .btn{
+                width: 80%;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                border-radius: 5px;
+                border: none;
+                background-color: #CBEFFF;
+            }
+            
+            @media screen and (min-width: 0em) and (max-width:40em) {
+                .login-container {
+                    width: 70%;
+                    margin-top: 3rem;
+                }
+                .login-info-container {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+
+            @media screen and (min-width: 40em) and (max-width:75em) {
+                .login-container {
+                    width: 100%;
+                }
+                
+            }
+
+            @media screen and (min-width: 75em) {
+                .login-info-container > p {
+                    margin: 0;
+                }
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="centrar">
+            <div class="login-container">
+                <form class="inputs-container">
+                    <div class="login-info-container">
+                        <h1 class="title">Registrarse</h1>
+                        <div class="input_contenedor">
+                            <i class="fas fa-user icon"></i>
+                            <input id="nombre" type="text" placeholder="Nombre" pattern="/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$" required>
+                        </div>
+                        <div class="input_contenedor">
+                            <i class="fas fa-user icon"></i>
+                            <input id="apellidos" type="text" placeholder="Apellidos" required>
+                        </div>
+                        <div class="input_contenedor">
+                            <i class="fas fa-envelope icon"></i>
+                            <input id="correo" type="email" placeholder="Correo*" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                        </div>
+                        <div class="input_contenedor">
+                            <i class="fas fa-key icon"></i>
+                            <input id="contraseña" type="password" placeholder="Contraseña*" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,15}$" minlength="8" maxlength="15" required>
+                        </div>
+                        <button id="RegistroUsuario" class="btn" onclick='return initiate();'>Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
