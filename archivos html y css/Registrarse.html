@@ -22,19 +22,28 @@ and open the template in the editor.
             
             .center{
                 display: flex;
-                justify-content:center;
-                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                align-content: center;
+                flex-direction: column;
+
             }
             
             .login-info-container {
-                width: 50%;
+                width: 30%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
                 border-radius: 20px;
                 background-color: #FFFFFF;
+                
             }
             
             .login-info-container > p {
@@ -49,16 +58,18 @@ and open the template in the editor.
             }
             
             .inputs-container{
-                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             
             .btn{
-                width: 90%;
-                height: 3.125rem;
-                font-size: 1em;
+                width: 30%;
+                height: 1.125rem;
+                font-size: 0.6em;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-                border-radius: 5px;
+                border-radius: 15px;
                 border: none;
                 background-color: #CBEFFF;
             }
@@ -87,17 +98,33 @@ and open the template in the editor.
     </head>
 
     <body>
-        <div class="centrar">
-            <form class="inputs-container">
+        <div class="center">
+            <div class="inputs-container">
                 <div class="login-info-container">
                     <legend>¿Cuál es el perfil de usuario que quiere obtener?*</legend>
                     <div class="contenedor_input">
-                        <input type="radio" required name="rol" id="r1" value="usuario"><label for="r1">Usuario</label>
-                        <input type="radio" required name="rol" id="r2" value="empresa"><label for="r2">Empresa</label>
+                        <input type="radio" required name="rol" id="r1" value="usuario" ><label for="r1">Usuario</label>
+                        <input type="radio" required name="rol" id="r2" value="empresa" ><label for="r2">Empresa</label>
                     </div>
-                    <button class="btn">Registrarse</button>
+                    <button type="button" class="btn"  onclick="seleccion()" >Registrarse</button>
                 </div>
-            </form>
+            </div>
         </div>
     </body>
 </html>
+
+<script>
+    
+    function seleccion(){
+        if (document.getElementById('r1').checked){
+           
+            window.location="RegistarseUsuario.html";
+        }
+
+        if (document.getElementById('r2').checked){
+            window.location="RegistrarseEmpresa.html";
+        }
+
+
+    }
+</script>
