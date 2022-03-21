@@ -7,37 +7,24 @@ and open the template in the editor.
 <html>
     <head>
         <title>Registrarse</title>
-        <meta charset="windows-1252">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        <link rel="stylesheet" href="estilos.css">
         <style>    
-        
-            .centrar{
-                display: flex;
-                flex-direction: row;
-                justify-content:center;
-                align-items:center;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
             body{
                 height: 100vh;
                 font-family:  Arial, Helvetica, sans-serif;
                 background-image: url("imagenes/COACHELLA-2022.jpeg");
-                background-size: 100%;
-            }   
+                background-size: cover;
+                background-position: center;
+            } 
             
-            .login-container {
-                height: 17.75em;
-                width: 50em;
-                margin: 6em auto;
-                border-radius: 20px;
+            .center{
                 display: flex;
-                justify-content: center;
-                overflow: hidden;
+                justify-content:center;
+                align-items: center;
             }
-
             
             .login-info-container {
                 width: 50%;
@@ -49,71 +36,34 @@ and open the template in the editor.
                 border-radius: 20px;
                 background-color: #FFFFFF;
             }
-
-            .title{
-                text-transform: capitalize;
-                font-size: 2.25rem;
-                font-weight: 600;
-                letter-spacing: 1px;
-            }
+            
             .login-info-container > p {
                 font-size: 1.25em;
                 margin-top: 1.5em;
             }
 
-            .inputs-container{
-                height: 55%;
-                width: 85%;
+            .contenedor_input{
                 display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
+                flex-direction: row;
+                padding: 10px;
             }
-
             
-
-            .input, .btn{
-                width: 90%;
-                height: 3.125rem;
-                font-size: 1em;
-            }
-
-            .input{
-                padding-left: 20px;
-                border: none;
-                border-radius: 5px;
-                font-weight: 600;
-                letter-spacing: 1px;
-                box-sizing: border-box;
-            }
-
-            .btn{
-                width: 20%;
-				height: 20%;
-                letter-spacing: 1px;
-				font-size:xx-small;
-                text-transform: uppercase;
-                border-radius: 25px;
-                border: none;
-                background-color: #CBEFFF;
-            }
-
             .inputs-container{
                 margin: 0;
             }
-
-            .span{
-                font-weight: 600;
+            
+            .btn{
+                width: 90%;
+                height: 3.125rem;
+                font-size: 1em;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                border-radius: 5px;
+                border: none;
+                background-color: #CBEFFF;
             }
+            
             @media screen and (min-width: 0em) and (max-width:40em) {
-                body{
-                    background-size: cover;
-                    background-position: center;
-                }
-                .login-container {
-                    width: 70%;
-                    margin-top: 3rem;
-                }
                 .login-info-container {
                     width: 100%;
                     border-radius: 5px;
@@ -128,7 +78,6 @@ and open the template in the editor.
             }
 
             @media screen and (min-width: 75em) {
-  
                 .login-info-container > p {
                     margin: 0;
                 }
@@ -138,19 +87,17 @@ and open the template in the editor.
     </head>
 
     <body>
-    
         <div class="centrar">
-            <div class="login-container">
+            <form class="inputs-container">
                 <div class="login-info-container">
-                    <h1 class="title">Registrarse</h1>
-                    <form class="inputs-container">
-                        <input id="usuario" type="text" placeholder="Usuario">
-                        <input id="contraseña" type="password" placeholder="Contraseña">
-                        <button class="btn">Registrarse</button>
-                    </form>
+                    <legend>¿Cuál es el perfil de usuario que quiere obtener?*</legend>
+                    <div class="contenedor_input">
+                        <input type="radio" required name="rol" id="r1" value="usuario"><label for="r1">Usuario</label>
+                        <input type="radio" required name="rol" id="r2" value="empresa"><label for="r2">Empresa</label>
+                    </div>
+                    <button class="btn">Registrarse</button>
                 </div>
-            </div>
+            </form>
         </div>
-
     </body>
 </html>
