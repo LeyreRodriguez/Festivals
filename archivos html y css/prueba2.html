@@ -1,514 +1,225 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <title>Main Page</title>
+        <title>Registrarse empresa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <link rel="stylesheet" href="estilos.css">
+        <script>
 
-        <style>
-            @media (min-width: 0em ) and (max-width: 40em)  {
-                body {
-                    font-family:  Arial, Helvetica, sans-serif;
-                }
+                var arrayNombres  = new Array();
+                var arrayApellido = new Array();
+                var arrayCiudad   = new Array();
+
+            function initiate(){
+                empresa = document.getElementById("empresa");
+                correo = document.getElementById("correo");
+                contraseña = document.getElementById("contraseña");
+
+                boton = document.getElementById("RegistroEmpresa");
                 
-                .centrar{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+                boton.addEventListener("click", guardarDatos);
 
-                #contenido { width: 800px; margin: 0 auto; }
 
-                .grid-container {
-                    display: grid;
-                    grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area2 area2 area2 area2 area2"
-                    "area2 area2 area2 area2 area2";
-                  }
 
-                .grid-container-festivales-cercanos{
-                    grid-area: area2;
-                    display: grid;
-                    grid-template-rows: 1.5fr;
-                    grid-template-columns:  1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area2 area3 area4 area5 area6 area7";
-                    height: 180px; 
-                    overflow-x: auto;
-                }
-                .grid-item1 {
-                  background: #ACE8E6;
-                  text-align: center;
-                  grid-area: area1;
-                }
-
-                .grid-item2 {
-                  background: #7CFFC5;
-                  text-align: center;
-                  width: 150px;
-                  height: 150px;
-                  grid-area: area2;
-                }
-
-                .grid-item3 {
-                    background: #7CFFC5;
-                    text-align: center;
-                    width: 150px;
-                    height: 150px;
-                    grid-area: area3;
-                }
-                .grid-item4 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area4;
-                }
-                .grid-item5 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area5;
-                }
-                .grid-item6 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area6;
-                }
-
-                .grid-item7 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area7;
-                }
-                
-                .slider {
-                    width: 100%;
-                    height: 100%;
-                    overflow: hidden;
-                    grid-area: area1;
-                }
-                
-                .slider ul{
-                    display: flex;
-                    width: 300%;
-                    padding: 0px;
-                    animation: cambio 15s infinite linear;
-                }
-                
-                .slider li{
-                    width: 100%;
-                    list-style: none;
-                }
-                
-                .slider img{
-                    width: 100%;
-                    height: 100%;
-                }
-                
-                @keyframes cambio {
-                    0% {margin-left: 0px;} 
-                    30% {margin-left: 0px;}  
-                    35%  {margin-left: -100%}
-                    65%  {margin-left: -100%}
-                    70%  {margin-left: -200%}
-                    100%  {margin-left: -200%;}
-                }
-            }
-            @media (min-width: 40em) and (max-width:75em)  {
-                body {
-                    font-family:  Arial, Helvetica, sans-serif;
-                }
-                
-                #contenido { width: 700px; margin: 0 auto; }
-
-                .centrar{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .grid-container {
-                    display: grid;
-                    grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area2 area2 area2 area2 area2"
-                    "area2 area2 area2 area2 area2";
-                  }
-
-                .grid-container-festivales-cercanos{
-                    grid-area: area2;
-                    display: grid;
-                    grid-template-rows: 1.5fr;
-                    grid-template-columns:  1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area2 area3 area4 area5 area6 area7";
-                    height: 180px; 
-                    overflow-x: auto;
-                }
-                .grid-item1 {
-                  background: #ACE8E6;
-                  text-align: center;
-                  grid-area: area1;
-                }
-
-                .grid-item2 {
-                  background: #7CFFC5;
-                  text-align: center;
-                  width: 150px;
-                  height: 150px;
-                  grid-area: area2;
-                }
-
-                .grid-item3 {
-                    background: #7CFFC5;
-                    text-align: center;
-                    width: 150px;
-                    height: 150px;
-                    grid-area: area3;
-                }
-                .grid-item4 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area4;
-                }
-                .grid-item5 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area5;
-                }
-                .grid-item6 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area6;
-                }
-
-                .grid-item7 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area7;
-                }
-                
-                .slider {
-                    width: 100%;
-                    height: 100%;
-                    overflow: hidden;
-                    grid-area: area1;
-                }
-                
-                .slider ul{
-                    display: flex;
-                    width: 300%;
-                    padding: 0px;
-                    animation: cambio 15s infinite linear;
-                }
-                
-                .slider li{
-                    width: 100%;
-                    list-style: none;
-                }
-                
-                .slider img{
-                    width: 100%;
-                    height: 100%;
-                }
-                
-                @keyframes cambio {
-                    0% {margin-left: 0px;} 
-                    30% {margin-left: 0px;}  
-                    35%  {margin-left: -100%}
-                    65%  {margin-left: -100%}
-                    70%  {margin-left: -200%}
-                    100%  {margin-left: -200%;}
-                }
+                return false;
             }
 
-            @media (min-width: 75em)  {
-                body, ul, figure{
-                    font-family:  Arial, Helvetica, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                }
+
+            function guardarDatos(){
+
                 
-                ul{
-                    list-style: none;
-                    display: flex;
-                }
-                
-                ul li{
-                    width: 24%;
-                }
-                
-                img{
-                    width: 100%;
-                }
-                
-                ul li figure{
-                    padding: 5px;
-                    position: relative;
+
+                arrayNombres[arrayNombres.length+1] = document.getElementById("empresa").value;
+                arrayApellido[arrayApellido.length+1] = document.getElementById("correo").value;
+                arrayCiudad[arrayCiudad.length+1] =document.getElementById("contraseña").value;
                     
+                console.log(arrayCiudad.length+1);
+            
+                var datos  = [];
+                var objeto = {};
+            
+                for(var i= 0; i < arrayNombres.length; i++) {
+            
+                    var nombre = arrayNombres[i];
+            
+                datos.push({ 
+                        "nombre"    : arrayNombres[i],
+                        "apellido"  : arrayApellido[i],
+                        "ciudad"    : arrayCiudad[i] 
+                    });
                 }
-                
-                ul li figure:hover figcaption{
-                    display: block;
-                }
-                
-                ul li figcaption{
-                    display: none;
-                    position: absolute;
-                    top: 5px;
-                    bottom: 5px;
-                    left: 5px;
-                    right: 5px;
-                    text-align: center;
-                    padding: 15px;
-                    color: white;
-                    background: rgba(0, 0, 0, 0.7);
-                }
-                
-                .centrar{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+            
+                objeto.datos = datos;
+                console.log(JSON.stringify(objeto));
+            }
+            addEventListener("load", initiate);
+            
+        
+        
+        </script>
+        <style>    
+            body{
+                height: 100vh;
+                font-family:  Arial, Helvetica, sans-serif;
+                background-image: url("imagenes/COACHELLA-2022.jpeg");
+                background-size: cover;
+                background-position: center;
+            } 
+            
+            i{
+                padding: 5px;
+            }
+  
+            .centrar{
+                display: flex;
+                flex-direction: row;
+                justify-content:center;
+                align-items:center;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            } 
+            
+            .login-container {
+                height: 66.75em;
+                width: 50em;
+                margin: 6em auto;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+            }
 
-                #contenido { width: 800px; margin: 0 auto; }
+            
+            .login-info-container {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0.5rem;
+                border-radius: 20px;
+                background-color: #FFFFFF;
+            }
 
-                .grid-container {
-                    display: grid;
-                    grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area2 area2 area2 area2 area2"
-                    "area2 area2 area2 area2 area2";
-                  }
+            .title{
+                text-transform: capitalize;
+                font-size: 2.25rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+            .login-info-container > p {
+                font-size: 1.25em;
+                margin-top: 1.5em;
+            }
 
-                .grid-container-festivales-cercanos{
-                    grid-area: area2;
-                    display: grid;
-                    grid-template-rows: 1.5fr;
-                    grid-template-columns:   1.5fr  1.5fr  1.5fr  1.5fr  1.5fr  1.5fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area2 area3 area4 area5 area6 area7";
-                    height: 180px; 
-                    overflow-x: auto;
-                }
-                .grid-item1 {
-                  background: #ACE8E6;
-                  text-align: center;
-                  grid-area: area1;
-                }
+            .inputs-container{
+                height: 55%;
+                width: 85%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+ 
+            .input, .btn{
+                width: 90%;
+                height: 3.125rem;
+                font-size: 1em;
+            }
 
-                .grid-item2 {
-                  background: #7CFFC5;
-                  text-align: center;
-                  width: 150px;
-                  height: 150px;
-                  grid-area: area2;
-                }
+            .input{
+                padding-left: 20px;
+                border: none;
+                border-radius: 5px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                box-sizing: border-box;
+            }
 
-                .grid-item3 {
-                    background: #7CFFC5;
-                    text-align: center;
-                    width: 150px;
-                    height: 150px;
-                    grid-area: area3;
-                }
-                .grid-item4 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area4;
-                }
-                .grid-item5 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area5;
-                }
-                .grid-item6 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area6;
-                }
+            .inputs-container{
+                margin: 0;
+            }
 
-                .grid-item7 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area7;
-                }
-                
-                .slider {
+            .span{
+                font-weight: 600;
+            }
+            
+            .input_contenedor{
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+                padding: 1px;
+            }
+            
+            .btn{
+                width: 30%;
+                height: 1.125rem;
+                font-size: 0.6em;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                border-radius: 15px;
+                border: none;
+                background-color: #CBEFFF;
+            }
+            
+            @media screen and (min-width: 0em) and (max-width:40em) {
+                .login-container {
                     width: 100%;
-                    height: 100%;
-                    overflow: hidden;
-                    grid-area: area1;
+                    margin-top: 3rem;
                 }
-                
-                .slider ul{
-                    display: flex;
-                    width: 300%;
-                    padding: 0px;
-                    animation: cambio 15s infinite linear;
-                }
-                
-                .slider li{
+                .login-info-container {
                     width: 100%;
-                    list-style: none;
+                    border-radius: 25px;
                 }
-                
-                .slider img{
+            }
+
+            @media screen and (min-width: 40em) and (max-width:75em) {
+                .login-container {
                     width: 100%;
-                    height: 100%;
                 }
                 
-                @keyframes cambio {
-                    0% {margin-left: 0px;} 
-                    30% {margin-left: 0px;}  
-                    35%  {margin-left: -100%}
-                    65%  {margin-left: -100%}
-                    70%  {margin-left: -200%}
-                    100%  {margin-left: -200%;}
+            }
+
+            @media screen and (min-width: 75em) {
+                .login-info-container > p {
+                    margin: 0;
                 }
             }
             
         </style>
-    </head> 
+    </head>
 
     <body>
         <div class="centrar">
-            <div id="contenido">
-                <div class="grid-container"> 
-                    <div class="slider">
-                        <ul>
-                            <li><img src="imagenes/festival1.jpg"/></li>
-                            <li><img src="imagenes/festival2.jpg"/></li>
-                            <li><img src="imagenes/festival3.jpg"/></li>
-                        </ul>
+            <div class="login-container">
+                <form class="inputs-container">
+                    <div class="login-info-container">
+                        <h1 class="title">Registrarse</h1>
+                        <div class="input_contenedor">
+                            <i class="fas fa-briefcase icon"></i>
+                            <input id="empresa" type="text" placeholder="Nombre empresa*" required>
+                        </div>
+                        <div class="input_contenedor">
+                            <i class="fas fa-envelope icon"></i>
+                            <input id="correo" type="email" placeholder="Correo*" required>
+                        </div>
+                        <div class="input_contenedor">
+                            <i class="fas fa-key icon"></i>
+                            <input id="contraseña" type="password" placeholder="Contraseña*" minlength="8" maxlength="15" required>
+                        </div>
+                        <button id="RegistroEmpresa" class="btn" onclick='return initiate();'>Registrarse</button>
                     </div>
-                    <!-- <div class="grid-item1"></div> -->
-                    <div class="grid-container-festivales-cercanos">
-                        <ul>
-                            <li>
-                                <a href="Festival.html">
-                                    <figure >
-                                        <img class="grid-item2" src="imagenes/despegable_horizontal1.jpg"/>
-                                        <figcaption>
-                                            <p>
-                                                El festival .....
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                            
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Festival.html">
-                                    <figure >
-                                        <img class="grid-item3" src="imagenes/despegable_horizontal2.jpg"/>
-                                        <figcaption>
-                                            <p>
-                                                El festival .....
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                            
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Festival.html">
-                                    <figure >
-                                        <img class="grid-item4" src="imagenes/despegable_horizontal3.jpg"/>
-                                        <figcaption>
-                                            <p>
-                                                El festival .....
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                            
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Festival.html">
-                                    <figure >
-                                        <img class="grid-item5" src="imagenes/despegable_horizontal4.jpg"/>
-                                        <figcaption>
-                                            <p>
-                                                El festival .....
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                            
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Festival.html">
-                                    <figure >
-                                        <img class="grid-item6" src="imagenes/despegable_horizontal5.jpg"/>
-                                        <figcaption>
-                                            <p>
-                                                El festival .....
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                            
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Festival.html">
-                                    <figure >
-                                        <img class="grid-item7" src="imagenes/despegable_horizontal6.jpg"/>
-                                        <figcaption>
-                                            <p>
-                                                El festival .....
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                            
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>  
-            </div> 
-        </div>
+                </form>
+            </div>
+        </div> 
     </body>
 </html>
