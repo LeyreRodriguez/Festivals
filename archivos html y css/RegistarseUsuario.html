@@ -1,88 +1,93 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>Registrarse usuario</title>
+        <title>Registrarse empresa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         <link rel="stylesheet" href="estilos.css">
-        
-
-<script>   
-    var nombre, apellidos, correo, contraseña;
-    function initiate(){
-        nombre = document.getElementById("nombre");
-        apellidos = document.getElementById("apellidos");
-        correo = document.getElementById("correo");
-        contraseña = document.getElementById("contraseña");
-        nombre.addEventListener("input", validation_nombre);
-        apellidos.addEventListener("input", validation_apellidos);
-        correo.addEventListener("input", validation_correo);
-        contraseña.addEventListener("input", validation_contraseña);
-        validation();
-        return false;
-    }
-    function validation_nombre(e){
-        if (nombre.validity.valueMissing) {
-            nombre.style.background = '#FF0000';
-            nombre.setCustomValidity("El nombre es obligatorio"); 
-        }else if(empresa.validity.patternMismatch) {
-            nombre.style.background = '#FF0000';
-            nombre.setCustomValidity("Se esperaba un nombre");
-        }else {
-            nombre.setCustomValidity('');
-            nombre.style.background = '#FFFFFF';
-        }
-    }
-    function validation_apellidos(e){
-        if (apellidos.validity.valueMissing) {
-            apellidos.style.background = '#FF0000';
-            apellidos.setCustomValidity("Los apellidos son obligatorios"); 
-        }else if(empresa.validity.patternMismatch) {
-            apellidos.style.background = '#FF0000';
-            apellidos.setCustomValidity("Se esperaban apellidos");
-        }else {
-            apellidos.setCustomValidity('');
-            apellidos.style.background = '#FFFFFF';
-        }
-    }
-    function validation_correo(e){
-        if (correo.validity.valueMissing) {
-            correo.style.background = '#FF0000';
-            correo.setCustomValidity("El correo es obligatorio"); 
-        }else if(correo.validity.patternMismatch) {
-            correo.style.background = '#FF0000';
-            correo.setCustomValidity("Se esperaba una dirección de correo electrónico");
-        }else {
-            correo.setCustomValidity('');
-            correo.style.background = '#FFFFFF';
-        }
-    }
-    function validation_contraseña(e){
-        if (contraseña.validity.valueMissing) {
-            contraseña.style.background = '#FF0000';
-            contraseña.setCustomValidity("La contraseña es obligatorio"); 
-        }else if(contraseña.validity.tooShort){
-            contraseña.style.background = '#FF0000';
-            contraseña.setCustomValidity("La contraseña debe tener más de 8 dígitos"); 
-        }else if(contraseña.validity.tooLong){
-            contraseña.style.background = '#FF0000';
-            contraseña.setCustomValidity("La contraseña debe tener menos de 15 dígitos"); 
-        }else if(contraseña.validity.patternMismatch) {
-            contraseña.style.background = '#FF0000';
-            contraseña.setCustomValidity("Se esperaba una contraseña con mínimo una minúscula, una masyúscula, un dígito numérico y sin espacios");
-        }else {
-            contraseña.setCustomValidity('');
-            contraseña.style.background = '#FFFFFF';
-        }
-    }
-    addEventListener("load", initiate);
-</script>
+        <script>   
+            var nombre, apellidos, correo, contraseña;
+            function initiate(){
+                nombre = document.getElementById("nombre");
+                apellidos = document.getElementById("apellidos");
+                correo = document.getElementById("correo");
+                contraseña = document.getElementById("contraseña");
+                nombre.addEventListener("input", validation_nombre);
+                apellidos.addEventListener("input", validation_apellidos);
+                correo.addEventListener("input", validation_correo);
+                contraseña.addEventListener("input", validation_contraseña);
+                validation();
+                return false;
+            }
+            function validation_nombre(e){
+                if (nombre.validity.valueMissing) {
+                    nombre.style.background = '#FF0000';
+                    nombre.setCustomValidity("El nombre es obligatorio"); 
+                }else if(nombre.validity.tooShort){
+                    nombre.style.background = '#FF0000';
+                    nombre.setCustomValidity("El nombre debe tener más de 2 dígitos"); 
+                }else if(nombre.validity.tooLong){
+                    nombre.style.background = '#FF0000';
+                    nombre.setCustomValidity("El nombre debe tener menos de 20 dígitos"); 
+                }else if(nombre.validity.patternMismatch) {
+                    nombre.style.background = '#FF0000';
+                    nombre.setCustomValidity("Se esperaba un nombre");
+                }else {
+                    nombre.setCustomValidity('');
+                    nombre.style.background = '#FFFFFF';
+                }
+            }
+            function validation_apellidos(e){
+                if (apellidos.validity.valueMissing) {
+                    apellidos.style.background = '#FF0000';
+                    apellidos.setCustomValidity("Los apellidos son obligatorio"); 
+                }else if(apellidos.validity.tooShort){
+                    apellidos.style.background = '#FF0000';
+                    apellidos.setCustomValidity("Los apellidos deben tener más de 2 dígitos"); 
+                }else if(apellidos.validity.tooLong){
+                    apellidos.style.background = '#FF0000';
+                    apellidos.setCustomValidity("Los apellidos deben tener menos de 50 dígitos"); 
+                }else if(apellidos.validity.patternMismatch) {
+                    apellidos.style.background = '#FF0000';
+                    apellidos.setCustomValidity("Se esperaban apellidos");
+                }else {
+                    apellidos.setCustomValidity('');
+                    apellidos.style.background = '#FFFFFF';
+                }
+            }
+            function validation_correo(e){
+                if (correo.validity.valueMissing) {
+                    correo.style.background = '#FF0000';
+                    correo.setCustomValidity("El correo es obligatorio"); 
+                }else if(correo.validity.patternMismatch) {
+                    correo.style.background = '#FF0000';
+                    correo.setCustomValidity("Se esperaba una dirección de correo electrónico");
+                }else {
+                    correo.setCustomValidity('');
+                    correo.style.background = '#FFFFFF';
+                }
+            }
+            function validation_contraseña(e){
+                if (contraseña.validity.valueMissing) {
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("La contraseña es obligatorio"); 
+                }else if(contraseña.validity.tooShort){
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("La contraseña debe tener más de 8 dígitos"); 
+                }else if(contraseña.validity.tooLong){
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("La contraseña debe tener menos de 15 dígitos"); 
+                }else if(contraseña.validity.patternMismatch) {
+                    contraseña.style.background = '#FF0000';
+                    contraseña.setCustomValidity("Se esperaba una contraseña con mínimo una minúscula, una masyúscula, un dígito numérico y sin espacios");
+                }else {
+                    contraseña.setCustomValidity('');
+                    contraseña.style.background = '#FFFFFF';
+                }
+            }
+            addEventListener("load", initiate);
+        </script>
         <style>    
             body{
                 height: 100vh;
@@ -108,7 +113,7 @@ and open the template in the editor.
             } 
             
             .login-container {
-                height: 66.75em;
+                height: 17.75em;
                 width: 50em;
                 margin: 6em auto;
                 border-radius: 20px;
@@ -124,7 +129,7 @@ and open the template in the editor.
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                padding: 0.5rem;
+                padding-top: 0.5rem;
                 border-radius: 20px;
                 background-color: #FFFFFF;
             }
@@ -176,28 +181,25 @@ and open the template in the editor.
                 display: flex;
                 flex-direction: row;
                 align-items: baseline;
-                padding: 1px;
             }
             
             .btn{
-                width: 30%;
-                height: 1.125rem;
-                font-size: 0.6em;
+                width: 80%;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-                border-radius: 15px;
+                border-radius: 5px;
                 border: none;
                 background-color: #CBEFFF;
             }
             
             @media screen and (min-width: 0em) and (max-width:40em) {
                 .login-container {
-                    width: 100%;
+                    width: 70%;
                     margin-top: 3rem;
                 }
                 .login-info-container {
                     width: 100%;
-                    border-radius: 25px;
+                    border-radius: 5px;
                 }
             }
 
@@ -225,15 +227,15 @@ and open the template in the editor.
                         <h1 class="title">Registrarse</h1>
                         <div class="input_contenedor">
                             <i class="fas fa-user icon"></i>
-                            <input id="nombre" type="text" placeholder="Nombre" pattern="[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+" required>
+                            <input id="nombre" type="text" placeholder="Nombre*" pattern="[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+" type="String" minlength="2" maxlength="20" required>
                         </div>
                         <div class="input_contenedor">
                             <i class="fas fa-user icon"></i>
-                            <input id="apellidos" type="text" placeholder="Apellidos" pattern="([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)|([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+\s+[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)" required>
+                            <input id="apellidos" type="text" placeholder="Apellidos*" pattern="([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)|([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+\s+[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)" minlength="2" maxlength="50" required>
                         </div>
                         <div class="input_contenedor">
                             <i class="fas fa-envelope icon"></i>
-                            <input id="correo" type="email" placeholder="Correo*" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                            <input id="correo" type="email" placeholder="Correo*" pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}" required>
                         </div>
                         <div class="input_contenedor">
                             <i class="fas fa-key icon"></i>
