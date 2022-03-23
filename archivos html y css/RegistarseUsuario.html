@@ -225,11 +225,11 @@ and open the template in the editor.
                         <h1 class="title">Registrarse</h1>
                         <div class="input_contenedor">
                             <i class="fas fa-user icon"></i>
-                            <input id="nombre" type="text" placeholder="Nombre" pattern="/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$" required>
+                            <input id="nombre" type="text" placeholder="Nombre" pattern="[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+" required>
                         </div>
                         <div class="input_contenedor">
                             <i class="fas fa-user icon"></i>
-                            <input id="apellidos" type="text" placeholder="Apellidos" required>
+                            <input id="apellidos" type="text" placeholder="Apellidos" pattern="([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)|([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+\s+[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)" required>
                         </div>
                         <div class="input_contenedor">
                             <i class="fas fa-envelope icon"></i>
