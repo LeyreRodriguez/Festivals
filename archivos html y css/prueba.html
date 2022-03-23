@@ -1,325 +1,542 @@
 <!DOCTYPE html>
-<html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>  
     <head>
-        <title>Main Page</title>
+        <title>Formulario de inscrpción en un concurso</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-
         <style>
             @media (min-width: 75em)  {
-                .contenido { 
+                body {
+                    font-family:  Arial, Helvetica, sans-serif;
+                    background-image: url('imagenes/concurso.jpg');
+                    background-size: cover;
+                    color: white;
+                }
+
+                h1{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                p {
+                    padding: 10px 10px 10px 0px;
+                }
+
+                select {
+                    width: 600px;
+                    height: 20%;
+                    padding: 10px;
+                }
+
+                form{
+                    padding: 10px;
+                }
+
+                .contenedor{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                 }
 
-                .grid-container {
-                    display: grid;
-                    grid-template-rows: 100px 100px 100px  100px 100px 100px;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area2 area2 area2 area2 area2"
-                    "area2 area2 area2 area2 area2";
-                  }
-
-                .grid-container-festivales-cercanos{
-                    grid-area: area2;
-                    display: grid;
-                    grid-template-rows: 150px;
-                    grid-template-columns:  150px 150px 150px 150px 150px 150px;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area2 area3 area4 area5 area6 area7";
-                    height: 180px; 
-                    overflow-x: auto;
-                }
-                .grid-item1 {
-                  background: #ACE8E6;
-                  text-align: center;
-                  grid-area: area1;
+                .tamaño-contenedor{
+                    width: 75%;
                 }
 
-                .grid-item2 {
-                  background: #7CFFC5;
-                  text-align: center;
-                  width: 150px;
-                  height: 150px;
-                  grid-area: area2;
-                }
-
-                .grid-item3 {
-                    background: #7CFFC5;
-                    text-align: center;
-                    width: 150px;
-                    height: 150px;
-                    grid-area: area3;
-                }
-                .grid-item4 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area4;
-                }
-                .grid-item5 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area5;
-                }
-                .grid-item6 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area6;
-                }
-
-                .grid-item7 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area7;
-                }
-                
-                .slider {
-                    width: 100%;
-                    height: 100%;
-                    overflow: hidden;
-                    grid-area: area1;
-                }
-                
-                .slider ul{
+                .contenedor1{
                     display: flex;
-                    width: 300%;
-                    padding: 0px;
-                    animation: cambio 15s infinite linear;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .nombre-concurso{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                }
+
+                .contenedor2{
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .nombre {
+                    display: flex;
+                    flex-direction: column;
+                    width: 33%;
+                    padding: 10px;
+                }
+
+                .apellidos{
+                    display: flex;
+                    flex-direction: column;
+                    width: 67%;
+                    padding: 10px;
+                }
+
+                .contenedor3{
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .dni{
+                    display: flex;
+                    flex-direction: column;
+                    width: 20%;
+                    padding: 10px;
+                }
+
+                .ncontacto{
+                    display: flex;
+                    flex-direction: column;
+                    width: 20%;
+                    padding: 10px;
+                }
+
+                .correo{
+                    display: flex;
+                    flex-direction: column;
+                    width: 60%;
+                    padding: 10px;
+                }
+
+                .contenedor-botones{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .boton{
+                    background-color: #ACE8E6;
                 }
                 
-                .slider li{
-                    width: 100%;
-                    list-style: none;
+                .contenedor_aux {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center; 
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;  
+                    background: rgba(0, 0, 0, 0.7);
                 }
                 
-                .slider img{
-                    width: 100%;
-                    height: 100%;
+                .contenedor_aux p {
+                    display: flex;
+                    flex-direction: column; 
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+                    height: 20%;
+                    padding: 20px;
+                    background-color: #C4C4C4;
+                    border-radius: 25px; 
+                }
+                            
+                .contenedor_aux form {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
                 }
                 
-                @keyframes cambio {
-                    0% {margin-left: 0px;} 
-                    30% {margin-left: 0px;}  
-                    35%  {margin-left: -100%}
-                    65%  {margin-left: -100%}
-                    70%  {margin-left: -200%}
-                    100%  {margin-left: -200%;}
+                .contenedor_aux input {
+                    width: 250px;
+                    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);      
+                    background-color: #C4C4C4;
+                    border-radius: 25px; 
+                }
+    
+                .contenedor_aux input:hover {
+                    background-color: #C4C4C4
+                }
+
+                .contenedor_aux input:active {
+                    background-color: #C4C4C4;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
+                }
+                
+                .overlay{
+                    visibility: hidden;
                 }
             }
-            @media (min-width: 0em ) and (max-width: 50em)  {
-                .contenido { 
+            @media (min-width: 0em ) and (max-width: 40em)   {
+                body {
+                    font-family:  Arial, Helvetica, sans-serif;
+                    background-image: url('imagenes/concurso.jpg');
+                    background-size: cover;
+                    color: white;
+                }
+
+                h1{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                p {
+                    padding: 10px 10px 10px 0px;
+                }
+
+                select {
+                    width: 600px;
+                    height: 20%;
+                    padding: 10px;
+                }
+
+                form{
+                    padding: 10px;
+                }
+
+                .contenedor{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content:  center;
+                }
+
+                .tamaño-contenedor{
+                    width: 75%;
+                }
+
+                .contenedor1{
                     display: flex;
                     flex-direction: column;
+                }
+
+                .nombre-concurso{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    padding: 10px;
+                }
+
+                .contenedor2{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .nombre {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    width: 33%;
+                    padding: 10px;
+                }
+
+                .apellidos{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    width: 67%;
+                    padding: 10px;
+                }
+
+                .contenedor3{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .dni{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    width: 20%;
+                    padding: 10px;
+                }
+
+                .ncontacto{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    width: 20%;
+                    padding: 10px;
+                }
+
+                .correo{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    width: 60%;
+                    padding: 10px;
+                }
+
+                .contenedor-botones{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .boton{
+                    background-color: #ACE8E6;
+                }
+                
+                .contenedor_aux {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center; 
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                
+                .contenedor_aux p {
+                    display: flex;
+                    flex-direction: column; 
+                    justify-content: center;
                     align-items: center;
+                    text-align: center;
+
+                    height: 20%;
+                    padding: 20px;
+                    background-color: #C4C4C4;
+                    border-radius: 25px; 
+                }
+                            
+                .contenedor_aux form {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                }
+                
+                .contenedor_aux input {
+                    width: 300px;
+                    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);      
+                    background-color: #C4C4C4;
+                    border-radius: 25px; 
+                }
+    
+                .contenedor_aux input:hover {
+                    background-color: #C4C4C4
                 }
 
-                .grid-container {
-                    display: grid;
-                    grid-template-rows: 100px 100px 100px  100px 100px 100px;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area2 area2 area2 area2 area2"
-                    "area2 area2 area2 area2 area2";
-                  }
-
-                .grid-container-festivales-cercanos{
-                    grid-area: area2;
-                    display: grid;
-                    grid-template-rows: 150px;
-                    grid-template-columns:  150px 150px 150px 150px 150px;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area2 area3 area4 area5 area6 area7";
-                    height: 180px; 
-                    overflow-x: auto;
-                }
-                .grid-item1 {
-                  background: #ACE8E6;
-                  text-align: center;
-                  grid-area: area1;
-                }
-
-                .grid-item2 {
-                  background: #7CFFC5;
-                  text-align: center;
-                  width: 150px;
-                  height: 150px;
-                  grid-area: area2;
-                }
-
-                .grid-item3 {
-                    background: #7CFFC5;
-                    text-align: center;
-                    width: 150px;
-                    height: 150px;
-                    grid-area: area3;
-                }
-                .grid-item4 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area4;
-                }
-                .grid-item5 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area5;
-                }
-                .grid-item6 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area6;
-                }
-
-                .grid-item7 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area7;
+                .contenedor_aux input:active {
+                    background-color: #C4C4C4;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
                 }
             }
-            @media (min-width: 50em) and (max-width:75em)  {
-                .contenido { 
+            @media (min-width: 40em) and (max-width:75em)  {
+                body {
+                    font-family:  Arial, Helvetica, sans-serif;
+                    background-image: url('imagenes/concurso.jpg');
+                    background-size: cover;
+                    color: white;
+                }
+
+                h1{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                p {
+                    padding: 10px 10px 10px 0px;
+                }
+
+                select {
+                    width: 600px;
+                    height: 20%;
+                    padding: 10px;
+                }
+
+                form{
+                    padding: 10px;
+                }
+
+                .contenedor{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                 }
 
-                .grid-container {
-                    display: grid;
-                    grid-template-rows: 100px 100px 100px  100px 100px 100px;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area1 area1 area1 area1 area1"
-                    "area2 area2 area2 area2 area2"
-                    "area2 area2 area2 area2 area2";
-                  }
-
-                .grid-container-festivales-cercanos{
-                    grid-area: area2;
-                    display: grid;
-                    grid-template-rows: 150px;
-                    grid-template-columns:  150px 150px 150px 150px 150px;
-                    grid-gap: 20px;
-                    grid-template-areas:
-                    "area2 area3 area4 area5 area6 area7";
-                    height: 180px; 
-                    overflow-x: auto;
-                }
-                .grid-item1 {
-                  background: #ACE8E6;
-                  text-align: center;
-                  grid-area: area1;
+                .tamaño-contenedor{
+                    width: 75%;
                 }
 
-                .grid-item2 {
-                  background: #7CFFC5;
-                  text-align: center;
-                  width: 150px;
-                  height: 150px;
-                  grid-area: area2;
+                .contenedor1{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
                 }
 
-                .grid-item3 {
-                    background: #7CFFC5;
-                    text-align: center;
-                    width: 150px;
-                    height: 150px;
-                    grid-area: area3;
-                }
-                .grid-item4 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area4;
-                }
-                .grid-item5 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area5;
-                }
-                .grid-item6 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
-                    text-align: center;
-                    grid-area: area6;
+                .nombre-concurso{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
                 }
 
-                .grid-item7 {
-                    background: #7CFFC5;
-                    width: 150px;
-                    height: 150px;
+                .contenedor2{
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .nombre {
+                    display: flex;
+                    flex-direction: column;
+                    width: 33%;
+                    padding: 10px;
+                }
+
+                .apellidos{
+                    display: flex;
+                    flex-direction: column;
+                    width: 67%;
+                    padding: 10px;
+                }
+
+                .contenedor3{
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .dni{
+                    display: flex;
+                    flex-direction: column;
+                    width: 20%;
+                    padding: 10px;
+                }
+
+                .ncontacto{
+                    display: flex;
+                    flex-direction: column;
+                    width: 20%;
+                    padding: 10px;
+                }
+
+                .correo{
+                    display: flex;
+                    flex-direction: column;
+                    width: 60%;
+                    padding: 10px;
+                }
+
+                .contenedor-botones{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .boton{
+                    background-color: #ACE8E6;
+                }
+                
+                .contenedor_aux {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center; 
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;  
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                
+                .contenedor_aux p {
+                    display: flex;
+                    flex-direction: column; 
+                    justify-content: center;
+                    align-items: center;
                     text-align: center;
-                    grid-area: area7;
+
+                    height: 20%;
+                    padding: 20px;
+                    background-color: #C4C4C4;
+                    border-radius: 25px; 
+                }
+                            
+                .contenedor_aux form {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                }
+                
+                .contenedor_aux input {
+                    width: 300px;
+                    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);      
+                    background-color: #C4C4C4;
+                    border-radius: 25px; 
+                }
+    
+                .contenedor_aux input:hover {
+                    background-color: #C4C4C4
+                }
+
+                .contenedor_aux input:active {
+                    background-color: #C4C4C4;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
                 }
             }
         </style>
-    </head> 
-
+    </head>
+  
     <body>
-        <div class="contenido">
-            <div class="grid-container"> 
-                <div class="slider">
-                    <ul>
-                        <li><img src="imagenes/festival1.jpg"/></li>
-                        <li><img src="imagenes/festival2.jpg"/></li>
-                        <li><img src="imagenes/festival3.jpg"/></li>
-                    </ul>
+        <div class="contenedor">
+            <div class="tamaño-contenedor">
+                <h1>FORMULARIO DE INSCRIPCIÓN EN UN CONCURSO</h1>
+                <div class="contenedor1">
+                    <div class="nombre-concurso">
+                        <p>Nombre del concurso: </p>
+                        <select required>
+                            <option value="1" selected disabled></option>
+                            <option value="2">xxxxxx</option>
+                            <option value="3">xxxxxx</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="grid-container-festivales-cercanos">
-                    <a href="Festival.html">
-                        <div class="grid-item2" > </div>
-                    </a>
-                    <a href="Festival.html">
-                        <div class="grid-item3" > </div>
-                    </a>
-                    <a href="Festival.html">
-                        <div class="grid-item4" > </div>
-                    </a>
-                    <a href="Festival.html">
-                        <div class="grid-item5" > </div>
-                    </a>
-                    <a href="Festival.html">
-                        <div class="grid-item6" > </div>
-                    </a>
-                    <a href="Festival.html">
-                        <div class="grid-item7" > </div>
-                    </a>
+                <div class="contenedor2">
+                    <div class="nombre">
+                        <p>Nombre: </p>
+                        <input type="text" name="nombre">
+                    </div>
+                    <div class="apellidos">
+                        <p>Apellidos: </p>
+                        <input type="text" name="apellidos">
+                    </div>
                 </div>
-            </div>  
-        </div> 
+                <div class="contenedor3">
+                    <div class="dni">
+                        <p>DNI: </p>
+                        <input type="text" name="dni">
+                    </div>
+                    <div class="ncontacto">
+                        <p>Nº contacto: </p>
+                        <input type="text" name="contacto">
+                    </div>
+                    <div class="correo">
+                        <p>Correo: </p>
+                        <input type="text" name="correo">
+                    </div>
+                </div>
+                <div class="contenedor-botones">
+                    <input id="envio" class="enviar" type="submit" value="Enviar" onClick="document.getElementById('overlay').style.visibility='visible';"/>
+                    <form action = "Festival.html" method = "GET"> 
+                        <input class="boton" type="submit" value="Cancelar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" class="overlay">
+            <div class="contenedor_aux" >
+                <p>El formulario se ha enviado de forma correcta</p>
+                <form action = "Festival.html" method = "GET"> 
+                    <input type="submit" value="Festival"/>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
