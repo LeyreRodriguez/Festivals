@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Registrarse empresa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         <link rel="stylesheet" href="estilos.css">
         <script>   
             var empresa, correo, contraseña;
@@ -26,10 +21,13 @@ and open the template in the editor.
             function validation_empresa(e){
                 if (empresa.validity.valueMissing) {
                     empresa.style.background = '#FF0000';
-                    empresa.setCustomValidity("El correo es obligatorio"); 
-                }else if(empresa.validity.patternMismatch) {
+                    empresa.setCustomValidity("El nombre de empresa es obligatorio"); 
+                }else if(empresa.validity.tooShort){
                     empresa.style.background = '#FF0000';
-                    empresa.setCustomValidity("Se esperaba un nombre de empresa");
+                    empresa.setCustomValidity("El nombre de empresa debe tener más de 2 dígitos"); 
+                }else if(empresa.validity.tooLong){
+                    empresa.style.background = '#FF0000';
+                    empresa.setCustomValidity("El nombre de empresa debe tener menos de 40 dígitos"); 
                 }else {
                     empresa.setCustomValidity('');
                     empresa.style.background = '#FFFFFF';
@@ -92,7 +90,7 @@ and open the template in the editor.
             } 
             
             .login-container {
-                height: 66.75em;
+                height: 17.75em;
                 width: 50em;
                 margin: 6em auto;
                 border-radius: 20px;
@@ -108,7 +106,7 @@ and open the template in the editor.
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                padding: 0.5rem;
+                padding-top: 0.5rem;
                 border-radius: 20px;
                 background-color: #FFFFFF;
             }
@@ -160,28 +158,25 @@ and open the template in the editor.
                 display: flex;
                 flex-direction: row;
                 align-items: baseline;
-                padding: 1px;
             }
             
             .btn{
-                width: 30%;
-                height: 1.125rem;
-                font-size: 0.6em;
+                width: 80%;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-                border-radius: 15px;
+                border-radius: 5px;
                 border: none;
                 background-color: #CBEFFF;
             }
             
             @media screen and (min-width: 0em) and (max-width:40em) {
                 .login-container {
-                    width: 100%;
+                    width: 70%;
                     margin-top: 3rem;
                 }
                 .login-info-container {
                     width: 100%;
-                    border-radius: 25px;
+                    border-radius: 5px;
                 }
             }
 
@@ -209,11 +204,11 @@ and open the template in the editor.
                         <h1 class="title">Registrarse</h1>
                         <div class="input_contenedor">
                             <i class="fas fa-briefcase icon"></i>
-                            <input id="empresa" type="text" placeholder="Nombre empresa*" pattern="/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$" required>
+                            <input id="empresa" type="text" placeholder="Nombre empresa*" minlength="2" maxlength="40" required>
                         </div>
                         <div class="input_contenedor">
                             <i class="fas fa-envelope icon"></i>
-                            <input id="correo" type="email" placeholder="Correo*" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                            <input id="correo" type="email" placeholder="Correo*" pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}" required>
                         </div>
                         <div class="input_contenedor">
                             <i class="fas fa-key icon"></i>
