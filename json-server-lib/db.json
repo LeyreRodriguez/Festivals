@@ -1,0 +1,67 @@
+{
+  "people": [
+    {
+      "id": 0,
+      "nombre": "Coachella",
+      "informacion": "Tras dos años sin poder celebrarse por la pandemia del coronavirus, este 2022 vuelve el festival de Coachella. Los amantes de la música volverán a tener esta cita en Indio (California) los fines de semana del 15 al 17 y del 22 al 24 de abril. Esta misma semana se ha conocido el cartel de los artistas que actuarán esos días, entre ellos, Harry Styles, Kanye West, Billie Eilish y Swedish House Mafia.",
+      "fecha": "15,16,17,22,23,24 de Abril",
+      "foto": "https://nrfmagazine.com/wp-content/uploads/2022/01/Cochachella-2022_nrfmagazine.jpg",
+      "precio": "559.00$",
+      "lugar": "California"
+    },
+    {
+      "id": 1,
+      "nombre": "Bio Ritmos 2022",
+      "informacion": "La tercera edición de este festival retoma su pulso con lo mejor del folk canario y español. En el marco de Costa Teguise.",
+      "fecha": "30 de Julio",
+      "foto": "https://nrfmagazine.com/wp-content/uploads/2022/01/Cochachella-2022_nrfmagazine.jpg",
+      "precio": "10€",
+      "lugar": "Lanzarote"
+    },
+    {
+      "id": 2,
+      "nombre": "Vida Records & Friends",
+      "informacion": "El ciclo de conciertos Vida Records & Friends se pone en marcha y durante los meses de marzo, abril y mayo llevará a diferentes espacios de la ciudad de Barcelona una programación llena de parejas musicales de calidad.",
+      "fecha": "24 al 31 de Mayo",
+      "foto": "https://nrfmagazine.com/wp-content/uploads/2022/01/Cochachella-2022_nrfmagazine.jpg",
+      "precio": "10€",
+      "lugar": "Barcelona"
+    },
+    {
+      "id": 3,
+      "nombre": "Lollapolooza",
+      "informacion": "3 días, 5 escenarios y más de 100 bandas de todo el mundo. Cada edición nos trae los mejores shows en vivo, el arte, los más variados sabores y un sinfín de nuevas experiencias.",
+      "fecha": "18,19,20 de Marzo",
+      "foto": "https://nrfmagazine.com/wp-content/uploads/2022/01/Cochachella-2022_nrfmagazine.jpg",
+      "precio": "350$",
+      "lugar": "Argentina "
+    },
+    {
+      "id": 4,
+      "nombre": "Primavera Sound Festivals",
+      "informacion": "Primavera Sound es un festival español de música multigénero, que se celebra cada verano en el Parc del Fòrum, en la soleada costa de Barcelona",
+      "fecha": "9-11 de Junio",
+      "foto": "https://nrfmagazine.com/wp-content/uploads/2022/01/Cochachella-2022_nrfmagazine.jpg",
+      "precio": "60€ / dia",
+      "lugar": "Porto"
+    },
+    {
+      "id": 5,
+      "nombre": "Gran Canaria Sum Festivals",
+      "informacion": "GRAN CANARIA SUM Festival 2021, presenta su 3ª edición en Las Palmas de Gran Canaria, donde se podrá disfrutar de la música más actual. El festival estará situado en la Institución Ferial de Gran Canaria (INFECAR) - Las Palmas de Gran Canaria. Contaremos con 2 escenarios cubiertos sin esperas entre un concierto y otro, una amplia zona de gastronomía dedicada atender a todos los asistentes, con áreas dedicadas a veganos, celiacos y una nueva zona gourmet, una atractiva zona de relax y distintas áreas temáticas..",
+      "fecha": "30 de Septiembre y 1 de Octubre",
+      "foto": "https://nrfmagazine.com/wp-content/uploads/2022/01/Cochachella-2022_nrfmagazine.jpg",
+      "precio": "55.00€",
+      "lugar": "Gran Canaria"
+    },
+    {
+      "nombre": "Fred",
+      "informacion": "Primavera Sound es un festival espa",
+      "foto": "https://nrfmagazine.com/wp-content/uploads/2022/01/Cochachella-2022_nrfmagazine.jpg",
+      "fecha": "24/3/2021",
+      "precio": " 4€/dia",
+      "lugar": "Madrid",
+      "id": 6
+    }
+  ]
+}
