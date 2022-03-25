@@ -54,8 +54,6 @@
 }*/
 
 /*MOVIL*/
-
-
 @media screen and (max-width: 550px) {  
 
    
@@ -504,7 +502,7 @@ img{
     position: absolute;
     top:0%;
     border-radius: 0px 0px 25px 25px;
-    width: 100%; /**/
+    width: 105%; /**/
     height: 22%;
     z-index: 0;
 }
@@ -583,13 +581,6 @@ height: 80%;
 display: grid;
 grid-template-columns: 3fr 1fr;
 grid-template-rows: 1fr;
-}
-
-
-
-.titulo{
-visibility: hidden;
-display: none;
 }
 
 .image{
@@ -956,9 +947,7 @@ margin: 0;
 /*FIN TABLET*/
 
 /*DESKTOP*/
-
 @media screen and (min-width: 1120px) {
-/*con esto (y quitando centrar) se arregla el que la pagina se estreche sin nigún sentido*/
 body{
     margin: 5%;
 }
@@ -1331,7 +1320,6 @@ background-color:white;
     display: none;
     
 }
-
 .iconos{
     visibility: hidden;
     display: none;
@@ -1340,12 +1328,10 @@ background-color:white;
     visibility: hidden;
     display: none;
 }
-
 .contenedor1{
     visibility: hidden;
     display: none;
 }
-
 .infDcho6{
     visibility: hidden;
     display: none;

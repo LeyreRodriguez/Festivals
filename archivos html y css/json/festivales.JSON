@@ -53,6 +53,15 @@
       "foto": "imagenes/CARTEL-SUM-2022-3-717x1024.jpg",
       "precio": "55.00€",
       "lugar": "Gran Canaria"
+    },
+    {
+      "nombre": "Festival del Timple",
+      "informacion": "Festival que admira la creación, modificación y utilización de este maravilloso instrumento",
+      "foto": "https://i1.wp.com/actualidadtenerife.es/wp-content/uploads/2021/09/Timpleando-La-Palma.jpg?fit=1500%2C2121&ssl=1",
+      "fecha": "24/3/2023",
+      "precio": " 5€",
+      "lugar": "La Palma",
+      "id": 6
     }
   ]
 }

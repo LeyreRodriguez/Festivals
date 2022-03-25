@@ -1,3 +1,4 @@
+//elimina un elemento en festivales.json por su id
 const axios = require('axios');
 
 axios.delete('http://localhost:3000/Festivales/6/')
@@ -6,3 +7,5 @@ axios.delete('http://localhost:3000/Festivales/6/')
     }).catch(error => {
         console.log("el usuario con ese id no existe");
     });
+
+    

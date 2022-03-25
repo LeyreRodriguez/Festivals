@@ -1,3 +1,4 @@
+//devuelve todos los elementos en el festivales.json
 const axios = require('axios');
 
 axios.get('http://localhost:3000/Festivales')
@@ -10,3 +11,6 @@ axios.get('http://localhost:3000/Festivales')
     .catch(error => {
         console.log(error);
     });
+
+
+

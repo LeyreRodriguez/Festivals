@@ -31,5 +31,8 @@ const loadProduct = async function() {
         })
     })
 }
-
 loadProduct();
+
+
+
+
