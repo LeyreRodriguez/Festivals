@@ -498,7 +498,7 @@ img{
 /*TABLET*/
 @media screen and (min-width: 551px) and (max-width: 1119px) {
 .estructura{
-width: 100%;
+width: 95%;
 height: 100%;
 display:grid;
 grid-template-rows: 0.7fr 0.3fr 300px 2fr 1.2fr 3fr 0.2fr;

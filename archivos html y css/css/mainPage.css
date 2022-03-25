@@ -1,4 +1,7 @@
 @media (min-width: 0em ) and (max-width: 40em)  {
+    body{
+        font-size: xx-small;
+    }
     .centrar{
         display: flex;
         justify-content: center;
@@ -116,8 +119,8 @@
     }
     .header {
         display: grid;
-        grid-template-rows: 0.2fr;
-        grid-template-columns: 1fr;
+        grid-template-rows:20px;
+        grid-template-columns: 50px 50px 50px 85px 50px;
         grid-template-areas:
         "area8 area9 area10 . area11";
     }
