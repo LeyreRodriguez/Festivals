@@ -4,103 +4,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Header</title>
-        <style>
-            @media (min-width: 0em ) and (max-width: 40em)  {
-                .header {
-                    display: grid;
-                    grid-template-rows: 1fr;
-                    grid-template-columns: 0.1fr 0.1fr 0.5fr;
-                    grid-template-areas:
-                    "area1 . area2";
-                }
-
-                .logo{
-                    text-align: center;
-                        grid-area: area1;
-                        width: 200%;
-                }
-
-                .titulo{
-                    font-family: Sriracha;
-                    text-align: center;
-                    font-size: 250%;
-                    grid-area: area2;
-                }
-
-                .center{
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-            @media (min-width: 40em) and (max-width:75em)  {
-                .header {
-                    display: grid;
-                    grid-template-rows: 1fr;
-                    grid-template-columns: 0.1fr 0.1fr 0.5fr;
-                    grid-template-areas:
-                    "area1 . area2";
-                }
-
-                .logo{
-                    text-align: center;
-                        grid-area: area1;
-                        width: 200%;
-                }
-
-                .titulo{
-                    font-family: Sriracha;
-                    text-align: center;
-                    font-size: 250%;
-                    grid-area: area2;
-                }
-
-                .center{
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-            @media (min-width: 75em)  {
-                .header {
-                    display: grid;
-                    grid-template-rows: 1fr;
-                    grid-template-columns: 0.1fr 0.1fr 0.5fr;
-                    grid-template-areas:
-                    "area1 . area2";
-                }
-
-                .logo{
-                    text-align: center;
-                        grid-area: area1;
-                        width: 200%;
-                }
-
-                .titulo{
-                    font-family: Sriracha;
-                    text-align: center;
-                    font-size: 250%;
-                    grid-area: area2;
-                }
-
-                .center{
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-
-        </style>
+        <link rel="stylesheet" href="css/header.css" type="text/css">
     </head>
 
 
     <body>
-        <div class="center">
-            <div class="header">
+        <div class="centerHeader">
+            <div class="headerHeader">
                 <nav>
-                    <a class="logo" href="MainPage.html"><img class="logo" src="imagenes/logo.png"/> </a>
+                    <a class="logoHeader" href="MainPage.html"><img class="logoHeader" src="imagenes/logo.png"/> </a>
                 </nav>
-                <div class="titulo">FESTIVALS</div>
+                <div class="tituloHeader">FESTIVALS</div>
             </div>
         </div>
         

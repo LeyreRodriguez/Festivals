@@ -1,0 +1,514 @@
+@media (min-width: 0em ) and (max-width: 40em)  {
+    .centrar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contenido { width: 800px; margin: 0 auto; }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+        grid-template-areas:
+        "area1 area1 area1 area1 area1"
+        "area1 area1 area1 area1 area1"
+        "area1 area1 area1 area1 area1"
+        "area2 area2 area2 area2 area2"
+        "area2 area2 area2 area2 area2";
+      }
+
+    .grid-container-festivales-cercanos{
+        grid-area: area2;
+        display: grid;
+        grid-template-rows: 1.5fr;
+        grid-template-columns:  1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+        grid-gap: 20px;
+        grid-template-areas:
+        "area2 area3 area4 area5 area6 area7";
+        height: 180px; 
+        overflow-x: auto;
+    }
+    .grid-item1 {
+      background: #ACE8E6;
+      text-align: center;
+      grid-area: area1;
+    }
+
+    .grid-item2 {
+      background: #7CFFC5;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+      grid-area: area2;
+    }
+
+    .grid-item3 {
+        background: #7CFFC5;
+        text-align: center;
+        width: 150px;
+        height: 150px;
+        grid-area: area3;
+    }
+    .grid-item4 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area4;
+    }
+    .grid-item5 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area5;
+    }
+    .grid-item6 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area6;
+    }
+
+    .grid-item7 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area7;
+    }
+    
+    .slider {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        grid-area: area1;
+    }
+    
+    .slider ul{
+        display: flex;
+        width: 300%;
+        padding: 0px;
+        animation: cambio 15s infinite linear;
+    }
+    
+    .slider li{
+        width: 100%;
+        list-style: none;
+    }
+    
+    .slider img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    @keyframes cambio {
+        0% {margin-left: 0px;} 
+        30% {margin-left: 0px;}  
+        35%  {margin-left: -100%}
+        65%  {margin-left: -100%}
+        70%  {margin-left: -200%}
+        100%  {margin-left: -200%;}
+    }
+    .header {
+        display: grid;
+        grid-template-rows: 0.2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "area8 area9 area10 . area11";
+    }
+
+    .barra1{
+        text-align: center;
+        grid-area: area8;
+    }
+    
+    .barra2{
+        text-align: center;
+        grid-area: area9;
+    }
+    
+    .barra3{
+        text-align: center;
+        grid-area: area10;
+        width: 130.21px;
+    }
+
+    .barra4{
+        text-align: center;
+        grid-area: area11;
+        
+        width: 20.21px;
+        height: 20px;
+
+        border: 1px solid #4b4a4aa8;
+        border-radius: 2px; 
+        box-sizing: border-box;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .image{
+        text-align: center;
+        grid-area: area6;
+        
+        width: 15.21px;
+        height: 15px;
+        display:flex;
+        justify-content: center;
+        align-items: center;      
+    }
+    .centrar{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (min-width: 40em) and (max-width:75em)  {
+    #contenido { width: 700px; margin: 0 auto; }
+
+    .centrar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+        grid-template-areas:
+        "area1 area1 area1 area1 area1"
+        "area1 area1 area1 area1 area1"
+        "area1 area1 area1 area1 area1"
+        "area2 area2 area2 area2 area2"
+        "area2 area2 area2 area2 area2";
+      }
+
+    .grid-container-festivales-cercanos{
+        grid-area: area2;
+        display: grid;
+        grid-template-rows: 1.5fr;
+        grid-template-columns:  1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+        grid-gap: 20px;
+        grid-template-areas:
+        "area2 area3 area4 area5 area6 area7";
+        height: 180px; 
+        overflow-x: auto;
+    }
+    .grid-item1 {
+      background: #ACE8E6;
+      text-align: center;
+      grid-area: area1;
+    }
+
+    .grid-item2 {
+      background: #7CFFC5;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+      grid-area: area2;
+    }
+
+    .grid-item3 {
+        background: #7CFFC5;
+        text-align: center;
+        width: 150px;
+        height: 150px;
+        grid-area: area3;
+    }
+    .grid-item4 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area4;
+    }
+    .grid-item5 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area5;
+    }
+    .grid-item6 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area6;
+    }
+
+    .grid-item7 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area7;
+    }
+    
+    .slider {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        grid-area: area1;
+    }
+    
+    .slider ul{
+        display: flex;
+        width: 300%;
+        padding: 0px;
+        animation: cambio 15s infinite linear;
+    }
+    
+    .slider li{
+        width: 100%;
+        list-style: none;
+    }
+    
+    .slider img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    @keyframes cambio {
+        0% {margin-left: 0px;} 
+        30% {margin-left: 0px;}  
+        35%  {margin-left: -100%}
+        65%  {margin-left: -100%}
+        70%  {margin-left: -200%}
+        100%  {margin-left: -200%;}
+    }
+    .header {
+        display: grid;
+        grid-template-rows: 0.2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "area8 area9 area10 . area11";
+    }
+
+    .barra1{
+        text-align: center;
+        grid-area: area8;
+    }
+    
+    .barra2{
+        text-align: center;
+        grid-area: area9;
+    }
+    
+    .barra3{
+        text-align: center;
+        grid-area: area10;
+        width: 130.21px;
+    }
+
+    .barra4{
+        text-align: center;
+        grid-area: area11;
+        
+        width: 20.21px;
+        height: 20px;
+
+        border: 1px solid #4b4a4aa8;
+        border-radius: 2px; 
+        box-sizing: border-box;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .image{
+        text-align: center;
+        grid-area: area6;
+        
+        width: 15.21px;
+        height: 15px;
+        display:flex;
+        justify-content: center;
+        align-items: center;      
+    }
+    .centrar{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 75em)  {
+    .centrar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contenido { width: 800px; margin: 0 auto; }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr  1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+        grid-template-areas:
+        "area1 area1 area1 area1 area1"
+        "area1 area1 area1 area1 area1"
+        "area1 area1 area1 area1 area1"
+        "area2 area2 area2 area2 area2"
+        "area2 area2 area2 area2 area2";
+      }
+
+    .grid-container-festivales-cercanos{
+        grid-area: area2;
+        display: grid;
+        grid-template-rows: 1.5fr;
+        grid-template-columns:   1.5fr  1.5fr  1.5fr  1.5fr  1.5fr  1.5fr;
+        grid-gap: 20px;
+        grid-template-areas:
+        "area2 area3 area4 area5 area6 area7";
+        height: 180px; 
+        overflow-x: auto;
+    }
+    .grid-item1 {
+      background: #ACE8E6;
+      text-align: center;
+      grid-area: area1;
+    }
+
+    .grid-item2 {
+      background: #7CFFC5;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+      grid-area: area2;
+    }
+
+    .grid-item3 {
+        background: #7CFFC5;
+        text-align: center;
+        width: 150px;
+        height: 150px;
+        grid-area: area3;
+    }
+    .grid-item4 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area4;
+    }
+    .grid-item5 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area5;
+    }
+    .grid-item6 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area6;
+    }
+
+    .grid-item7 {
+        background: #7CFFC5;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        grid-area: area7;
+    }
+    
+    .slider {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        grid-area: area1;
+    }
+    
+    .slider ul{
+        display: flex;
+        width: 300%;
+        padding: 0px;
+        animation: cambio 15s infinite linear;
+    }
+    
+    .slider li{
+        width: 100%;
+        list-style: none;
+    }
+    
+    .slider img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    @keyframes cambio {
+        0% {margin-left: 0px;} 
+        30% {margin-left: 0px;}  
+        35%  {margin-left: -100%}
+        65%  {margin-left: -100%}
+        70%  {margin-left: -200%}
+        100%  {margin-left: -200%;}
+    }
+    .header {
+        display: grid;
+        grid-template-rows: 0.2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "area8 area9 area10 . area11";
+    }
+
+    .barra1{
+        text-align: center;
+        grid-area: area8;
+    }
+    
+    .barra2{
+        text-align: center;
+        grid-area: area9;
+    }
+    
+    .barra3{
+        text-align: center;
+        grid-area: area10;
+        width: 130.21px;
+    }
+
+    .barra4{
+        text-align: center;
+        grid-area: area11;
+        
+        width: 20.21px;
+        height: 20px;
+
+        border: 1px solid #4b4a4aa8;
+        border-radius: 2px; 
+        box-sizing: border-box;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .image{
+        text-align: center;
+        grid-area: area6;
+        
+        width: 15.21px;
+        height: 15px;
+        display:flex;
+        justify-content: center;
+        align-items: center;      
+    }
+    .centrar{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

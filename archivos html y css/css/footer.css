@@ -1,0 +1,154 @@
+@media (min-width: 75em)  {
+    .bodyFooter {
+        font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: black;
+    }
+    
+    .contenedorFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .conocenosFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .contactoFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .liFooter {
+        position:relative;
+        right:50%;
+    }
+    
+    .redes-socialesFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .imgFooter {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .imgFooter:hover {
+        transform: scale(1.2);
+    }
+    
+    .aviso-legalFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .titulosFooter {
+        font-weight: bold;
+    }
+}
+@media (min-width: 0em ) and (max-width: 40em)   {
+    .bodyFooter {
+        font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: black;
+    }
+    
+    .contenedorFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .conocenosFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .contactoFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .liFooter {
+        position:relative;
+        right:50%;
+    }
+    
+    .redes-socialesFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .imgFooter {
+        width: 5px;
+        height: 5px;
+    }
+    
+    .aviso-legalFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .titulosFooter {
+        font-weight: bold;
+    }
+}
+@media (min-width: 40em) and (max-width:75em)   {
+    .bodyFooter {
+        font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: black;
+    }
+    
+    .contenedorFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .conocenosFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .contactoFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .liFooter {
+        position:relative;
+        right:50%;
+    }
+    
+    .redes-socialesFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .imgFooter {
+        width: 10px;
+        height: 10px;
+    }
+
+    .aviso-legalFooter {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .titulosFooter {
+        font-weight: bold;
+    }
+}

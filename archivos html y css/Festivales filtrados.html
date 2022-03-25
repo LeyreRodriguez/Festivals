@@ -5,335 +5,18 @@
         <title>Festivales filtrados</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            
-            @media (min-width: 0em ) and (max-width: 40em)   {
-                body {
-                    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-                    font-size: xx-small
-                }
-
-                .contenedor {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-                
-                .tamaño-contenedor {
-                    width: 75%;
-                }
-                
-                .etiquetas {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    padding: 10px;
-                }
-                
-                form {
-                    padding: 10px;
-                }
-                
-                .festival123 {
-                    display: flex;
-                    flex-direction: row;
-                    padding: 5px;
-                }
-                
-                img {
-                    width: 75%;
-                    height: 75%;
-                }
-                
-                .datos {
-                    display: flex;
-                    flex-direction: column;
-                    width: 75%;
-                }
-                
-                .cartel{
-                    width: 90%;
-                    height: 158px;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: #C2F6F3;
-                }
-                .header {
-                    display: grid;
-                    grid-template-rows: 0.2fr;
-                    grid-template-columns: 1fr;
-                    grid-template-areas:
-                    "area8 area9 area10 . area11";
-                }
-
-                .barra1{
-                    text-align: center;
-                    grid-area: area8;
-                }
-                
-                .barra2{
-                    text-align: center;
-                    grid-area: area9;
-                }
-                
-                .barra3{
-                    text-align: center;
-                    grid-area: area10;
-                    width: 130.21px;
-                }
-
-                .barra4{
-                    text-align: center;
-                    grid-area: area11;
-                    
-                    width: 20.21px;
-                    height: 20px;
-
-                    border: 1px solid #4b4a4aa8;
-                    border-radius: 2px; 
-                    box-sizing: border-box;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    
-                }
-                .image{
-                    text-align: center;
-                    grid-area: area6;
-                    
-                    width: 15.21px;
-                    height: 15px;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;      
-                }
-
-                .centrar{
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-            @media (min-width: 40em) and (max-width:75em)  {
-                body {
-                    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-                }
-
-                .contenedor {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-                
-                .tamaño-contenedor {
-                    width: 75%;
-                }
-                
-                .etiquetas {
-                    display: flex;
-                    flex-direction: row;
-                    padding: 10px;
-                }
-                
-                form {
-                    padding: 10px;
-                }
-                
-                .festival123 {
-                    display: flex;
-                    flex-direction: row;
-                    padding: 5px;
-                }
-                
-                img {
-                    width: 75%;
-                    height: 75%;
-                    
-                }
-                
-                .datos {
-                    display: flex;
-                    flex-direction: column;
-                    width: 75%;
-                }
-                
-                .cartel{
-                    width: 90%;
-                    height: 362px;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: #C2F6F3;
-                }
-                .header {
-                    display: grid;
-                    grid-template-rows: 0.2fr;
-                    grid-template-columns: 1fr;
-                    grid-template-areas:
-                    "area8 area9 area10 . area11";
-                }
-
-                .barra1{
-                    text-align: center;
-                    grid-area: area8;
-                }
-                
-                .barra2{
-                    text-align: center;
-                    grid-area: area9;
-                }
-                
-                .barra3{
-                    text-align: center;
-                    grid-area: area10;
-                    width: 130.21px;
-                }
-
-                .barra4{
-                    text-align: center;
-                    grid-area: area11;
-                    
-                    width: 20.21px;
-                    height: 20px;
-
-                    border: 1px solid #4b4a4aa8;
-                    border-radius: 2px; 
-                    box-sizing: border-box;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    
-                }
-                .image{
-                    text-align: center;
-                    grid-area: area6;
-                    
-                    width: 15.21px;
-                    height: 15px;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;      
-                }
-                .centrar{
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-            @media (min-width: 75em)  {
-                body {
-                    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-                }
-
-                .contenedor {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-                
-                .tamaño-contenedor {
-                    width: 75%;
-                }
-                
-                .etiquetas {
-                    display: flex;
-                    flex-direction: row;
-                    padding: 10px;
-                }
-                
-                form {
-                    padding: 10px;
-                }
-                
-                .festival123 {
-                    display: flex;
-                    flex-direction: row;
-                    padding: 5px;
-                }
-                
-                img {
-                    width: 75%;
-                    height: 75%;
-                }
-                
-                .datos {
-                    display: flex;
-                    flex-direction: column;
-                    width: 75%;
-                }
-                
-                .cartel{
-                    width: 90%;
-                    height: 421px;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: #C2F6F3;
-                }
-                .header {
-                    display: grid;
-                    grid-template-rows: 0.2fr;
-                    grid-template-columns: 1fr;
-                    grid-template-areas:
-                    "area8 area9 area10 . area11";
-                }
-
-                .barra1{
-                    text-align: center;
-                    grid-area: area8;
-                }
-                
-                .barra2{
-                    text-align: center;
-                    grid-area: area9;
-                }
-                
-                .barra3{
-                    text-align: center;
-                    grid-area: area10;
-                    width: 130.21px;
-                }
-
-                .barra4{
-                    text-align: center;
-                    grid-area: area11;
-                    
-                    width: 20.21px;
-                    height: 20px;
-
-                    border: 1px solid #4b4a4aa8;
-                    border-radius: 2px; 
-                    box-sizing: border-box;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    
-                }
-                .image{
-                    text-align: center;
-                    grid-area: area6;
-                    
-                    width: 15.21px;
-                    height: 15px;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;      
-                }
-                .centrar{
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-            
-        </style>
+        <link rel="stylesheet" href="css/festivalesFiltrados.css" type="text/css">
     </head>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script><script>
+        $(function(){
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <header id="header"></header>
     <body>
         <div class="centrar">
-            <div class="header">
+            <div class="busqueda">
                        
                 <select class="barra1" required>
                     <option value="1" selected disabled>Tipo</option>
@@ -367,6 +50,7 @@
         </div>
 
 
+
         <div class="contenedor">
             <div class="tamaño-contendor">
                 <div class="etiquetas">
@@ -380,47 +64,34 @@
                         <input type="submit" value="Etiqueta 3" />
                     </form>
                 </div>
-                <div class="festival123">
-                    <div class="datos">
-                        <div class="cartel"> 
-                            <img src="imagenes/logo_imagen.png" />
-                        </div> 
-                        <p>Festival 1 <br> Ubicación: xxxx <br> Horario: xx:xx <br> xxxxxxxxxxxxxx <br> xxxxxxxxxxxxxx </p>
-                    </div>
-                    <div class="datos">
-                        <div class="cartel"> 
-                            <img src="imagenes/logo_imagen.png" />
+
+                <div class="root" id="filtro">
+                    <!--- 
+                    <div class="festival123">
+                        <div class="datos">
+                            <img src="" />
+                            <p></p> 
+                            <p></p> 
+                            <p></p> 
+                            <p></p>
                         </div>
-                        <p>Festival 2 <br> Ubicación: xxxx <br> Horario: xx:xx <br> xxxxxxxxxxxxxx <br> xxxxxxxxxxxxxx </p>
+     
                     </div>
-                    <div class="datos">
-                        <div class="cartel"> 
-                            <img src="imagenes/logo_imagen.png" />
-                        </div>
-                        <p>Festival 3 <br> Ubicación: xxxx <br> Horario: xx:xx <br> xxxxxxxxxxxxxx <br> xxxxxxxxxxxxxx </p>
-                    </div>
+                    -->
                 </div>
-                <div class="festival123">
-                    <div class="datos">
-                        <div class="cartel"> 
-                            <img src="imagenes/logo_imagen.png" />
-                        </div>
-                        <p>Festival 4 <br> Ubicación: xxxx <br> Horario: xx:xx <br> xxxxxxxxxxxxxx <br> xxxxxxxxxxxxxx </p>
-                    </div>
-                    <div class="datos">
-                        <div class="cartel"> 
-                            <img src="imagenes/logo_imagen.png" />
-                        </div>
-                        <p>Festival 5 <br> Ubicación: xxxx <br> Horario: xx:xx <br> xxxxxxxxxxxxxx <br> xxxxxxxxxxxxxx </p>
-                    </div>
-                    <div class="datos">
-                        <div class="cartel"> 
-                            <img src="imagenes/logo_imagen.png" />
-                        </div>
-                        <p>Festival 6 <br> Ubicación: xxxx <br> Horario: xx:xx <br> xxxxxxxxxxxxxx <br> xxxxxxxxxxxxxx </p>
-                    </div>
-                </div>
+                
+                
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="js/festivalesFiltrados.js">
+            window.onload = function() {
+                console.log("Esta parte ocurre");
+                loadProduct();
+                console.log("Se ejecuta");
+    
+            }
+        </script>
     </body>
+    <footer id="footer"></footer>
 </html>

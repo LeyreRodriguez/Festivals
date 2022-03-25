@@ -9,341 +9,23 @@ and open the template in the editor.
         <title>Formulario de inscrpción en un concurso</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/compraDeEntradas.css" type="text/css">
         <style>
-            @media (min-width: 75em)  {
-                body {
-                    font-family:  Arial, Helvetica, sans-serif;
-                    background-image: url('imagenes/concurso.jpg');
-                    background-size: cover;
-                    color: white;
-                }
-
-                h1{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    text-align: center;
-                }
-
-                p {
-                    padding: 10px 10px 10px 0px;
-                }
-
-                select {
-                    width: 600px;
-                    height: 20%;
-                    padding: 10px;
-                }
-
-                form{
-                    padding: 10px;
-                }
-
-                .contenedor{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .tamaño-contenedor{
-                    width: 75%;
-                }
-
-                .contenedor1{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-
-                .nombre-concurso{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                }
-
-                .contenedor2{
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .nombre {
-                    display: flex;
-                    flex-direction: column;
-                    width: 33%;
-                    padding: 10px;
-                }
-
-                .apellidos{
-                    display: flex;
-                    flex-direction: column;
-                    width: 67%;
-                    padding: 10px;
-                }
-
-                .contenedor3{
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .dni{
-                    display: flex;
-                    flex-direction: column;
-                    width: 20%;
-                    padding: 10px;
-                }
-
-                .ncontacto{
-                    display: flex;
-                    flex-direction: column;
-                    width: 20%;
-                    padding: 10px;
-                }
-
-                .correo{
-                    display: flex;
-                    flex-direction: column;
-                    width: 60%;
-                    padding: 10px;
-                }
-
-                .contenedor-botones{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-
-                .boton{
-                    background-color: #ACE8E6;
-                }
-            }
-            @media (min-width: 0em ) and (max-width: 40em)   {
-                body {
-                    font-family:  Arial, Helvetica, sans-serif;
-                    background-image: url('imagenes/concurso.jpg');
-                    background-size: cover;
-                    color: white;
-                }
-
-                h1{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    text-align: center;
-                }
-
-                p {
-                    padding: 10px 10px 10px 0px;
-                }
-
-                select {
-                    width: 600px;
-                    height: 20%;
-                    padding: 10px;
-                }
-
-                form{
-                    padding: 10px;
-                }
-
-                .contenedor{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content:  center;
-                }
-
-                .tamaño-contenedor{
-                    width: 75%;
-                }
-
-                .contenedor1{
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .nombre-concurso{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                    padding: 10px;
-                }
-
-                .contenedor2{
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .nombre {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                    width: 33%;
-                    padding: 10px;
-                }
-
-                .apellidos{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                    width: 67%;
-                    padding: 10px;
-                }
-
-                .contenedor3{
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .dni{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                    width: 20%;
-                    padding: 10px;
-                }
-
-                .ncontacto{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                    width: 20%;
-                    padding: 10px;
-                }
-
-                .correo{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                    width: 60%;
-                    padding: 10px;
-                }
-
-                .contenedor-botones{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-
-                .boton{
-                    background-color: #ACE8E6;
-                }
-            }
-            @media (min-width: 40em) and (max-width:75em)  {
-                body {
-                    font-family:  Arial, Helvetica, sans-serif;
-                    background-image: url('imagenes/concurso.jpg');
-                    background-size: cover;
-                    color: white;
-                }
-
-                h1{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    text-align: center;
-                }
-
-                p {
-                    padding: 10px 10px 10px 0px;
-                }
-
-                select {
-                    width: 600px;
-                    height: 20%;
-                    padding: 10px;
-                }
-
-                form{
-                    padding: 10px;
-                }
-
-                .contenedor{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .tamaño-contenedor{
-                    width: 75%;
-                }
-
-                .contenedor1{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-
-                .nombre-concurso{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: baseline;
-                }
-
-                .contenedor2{
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .nombre {
-                    display: flex;
-                    flex-direction: column;
-                    width: 33%;
-                    padding: 10px;
-                }
-
-                .apellidos{
-                    display: flex;
-                    flex-direction: column;
-                    width: 67%;
-                    padding: 10px;
-                }
-
-                .contenedor3{
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .dni{
-                    display: flex;
-                    flex-direction: column;
-                    width: 20%;
-                    padding: 10px;
-                }
-
-                .ncontacto{
-                    display: flex;
-                    flex-direction: column;
-                    width: 20%;
-                    padding: 10px;
-                }
-
-                .correo{
-                    display: flex;
-                    flex-direction: column;
-                    width: 60%;
-                    padding: 10px;
-                }
-
-                .contenedor-botones{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-
-                .boton{
-                    background-color: #ACE8E6;
-                }
+            body{
+                background-image: url('imagenes/concurso.jpg');
             }
         </style>
+            
     </head>
   
     <body>
         <div class="contenedor">
             <div class="tamaño-contenedor">
-                <h1>FORMULARIO DE INSCRIPCIÓN EN UN CONCURSO</h1>
+                <h1 class="h1">FORMULARIO DE INSCRIPCIÓN EN UN CONCURSO</h1>
                 <div class="contenedor1">
                     <div class="nombre-concurso">
-                        <p>Nombre del concurso: </p>
-                        <select required>
+                        <p class="p">Nombre del concurso: </p>
+                        <select class="select" required>
                             <option value="1" selected disabled></option>
                             <option value="2">xxxxxx</option>
                             <option value="3">xxxxxx</option>
@@ -352,33 +34,33 @@ and open the template in the editor.
                 </div>
                 <div class="contenedor2">
                     <div class="nombre">
-                        <p>Nombre: </p>
+                        <p class="p">Nombre: </p>
                         <input type="text" name="nombre">
                     </div>
                     <div class="apellidos">
-                        <p>Apellidos: </p>
+                        <p class="p">Apellidos: </p>
                         <input type="text" name="apellidos">
                     </div>
                 </div>
                 <div class="contenedor3">
                     <div class="dni">
-                        <p>DNI: </p>
+                        <p class="p">DNI: </p>
                         <input type="text" name="dni">
                     </div>
                     <div class="ncontacto">
-                        <p>Nº contacto: </p>
+                        <p class="p">Nº contacto: </p>
                         <input type="text" name="contacto">
                     </div>
                     <div class="correo">
-                        <p>Correo: </p>
+                        <p class="p">Correo: </p>
                         <input type="text" name="correo">
                     </div>
                 </div>
                 <div class="contenedor-botones">
-                    <form action = "Formulario enviado.html" method = "GET"> 
-                        <input class="boton" type="submit" value="Enviar"/>
-                    </form>
-                    <form action = "Festival.html" method = "GET"> 
+                    <form class="form" action = "Formulario enviado.html" method = "GET"> 
+                        <input class="boton" type="submit" value="Enviar" />
+                    </form> 
+                    <form class="form" action = "Festival.html" method = "GET"> 
                         <input class="boton" type="submit" value="Cancelar" />
                     </form>
                 </div>
