@@ -19,6 +19,20 @@ and open the template in the editor.
             }
             
         </style>
+        <script>
+            function seleccion(){
+                if (document.getElementById('r1').checked){
+
+                    window.location="RegistarseUsuario.html";
+                }
+
+                if (document.getElementById('r2').checked){
+                    window.location="RegistrarseEmpresa.html";
+                }
+
+
+            }
+        </script>
     </head>
 
     <body>
@@ -36,19 +50,3 @@ and open the template in the editor.
         </div>
     </body>
 </html>
-
-<script>
-    
-    function seleccion(){
-        if (document.getElementById('r1').checked){
-           
-            window.location="RegistarseUsuario.html";
-        }
-
-        if (document.getElementById('r2').checked){
-            window.location="RegistrarseEmpresa.html";
-        }
-
-
-    }
-</script>
