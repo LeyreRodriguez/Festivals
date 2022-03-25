@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Registrarse empresa</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/registrarseUsuario.css" type="text/css">
-        <style>
-            body{
-                background-image: url("imagenes/COACHELLA-2022.jpeg");
-                background-size: cover;
-                background-position: center;
-            }
-        </style>
-        <script>   
-            var nombre, apellidos, correo, contraseña;
+var nombre, apellidos, correo, contraseña;
             function initiate(){
                 nombre = document.getElementById("nombre");
                 apellidos = document.getElementById("apellidos");
@@ -23,6 +8,7 @@
                 apellidos.addEventListener("input", validation_apellidos);
                 correo.addEventListener("input", validation_correo);
                 contraseña.addEventListener("input", validation_contraseña);
+                validation();
                 return false;
             }
             function validation_nombre(e){
@@ -92,35 +78,3 @@
                 }
             }
             addEventListener("load", initiate);
-        </script>
-    </head>
-
-    <body>
-        <div class="centrar">
-            <div class="login-container">
-                <form class="inputs-container">
-                    <div class="login-info-container">
-                        <h1 class="title">Registrarse</h1>
-                        <div class="input_contenedor">
-                            <i class="fas fa-user icon"></i>
-                            <input id="nombre" type="text" placeholder="Nombre*" pattern="[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+" type="String" minlength="2" maxlength="20" required>
-                        </div>
-                        <div class="input_contenedor">
-                            <i class="fas fa-user icon"></i>
-                            <input id="apellidos" type="text" placeholder="Apellidos*" pattern="([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)|([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+\s+[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)" minlength="2" maxlength="50" required>
-                        </div>
-                        <div class="input_contenedor">
-                            <i class="fas fa-envelope icon"></i>
-                            <input id="correo" type="email" placeholder="Correo*" pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}" required>
-                        </div>
-                        <div class="input_contenedor">
-                            <i class="fas fa-key icon"></i>
-                            <input id="contraseña" type="password" placeholder="Contraseña*" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,15}$" minlength="8" maxlength="15" required>
-                        </div>
-                        <button id="RegistroUsuario" class="btn" onclick='initiate();'>Registrarse</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </body>
-</html>

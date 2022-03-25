@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>Iniciar sesión</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/iniciarSesion.css" type="text/css">
-        <script>
-            var correo, contraseña;
+var empresa, correo, contraseña;
             function initiate(){
+                empresa = document.getElementById("empresa");
                 correo = document.getElementById("correo");
                 contraseña = document.getElementById("contraseña");
+                empresa.addEventListener("input", validation_empresa);
                 correo.addEventListener("input", validation_correo);
                 contraseña.addEventListener("input", validation_contraseña);
+                validation();
                 return false;
+            }
+            function validation_empresa(e){
+                if (empresa.validity.valueMissing) {
+                    empresa.style.background = '#FF0000';
+                    empresa.setCustomValidity("El nombre de empresa es obligatorio"); 
+                }else if(empresa.validity.tooShort){
+                    empresa.style.background = '#FF0000';
+                    empresa.setCustomValidity("El nombre de empresa debe tener más de 2 dígitos"); 
+                }else if(empresa.validity.tooLong){
+                    empresa.style.background = '#FF0000';
+                    empresa.setCustomValidity("El nombre de empresa debe tener menos de 40 dígitos"); 
+                }else {
+                    empresa.setCustomValidity('');
+                    empresa.style.background = '#FFFFFF';
+                }
             }
             function validation_correo(e){
                 if (correo.validity.valueMissing) {
@@ -50,30 +55,3 @@ and open the template in the editor.
                 }
             }
             addEventListener("load", initiate);
-        </script>
-
-    </head>
-
-    <body>
-        <div class="center">
-            <div class="login-container">
-                <img class="image-container" src="imagenes/festival4.jpg" alt="login">
-                <div class="login-info-container">
-                    <h1 class="title">¡Ingrese a su cuenta!</h1>
-                    <form id="information" name="information" action="MainPage.html" method="get" class="inputs-container">
-                        <div class="input_contenedor">
-                            <i class="fas fa-envelope icon"></i>
-                            <input id="correo" type="email" placeholder="Correo*" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
-                        </div>
-                        <div class="input_contenedor">
-                            <i class="fas fa-key icon"></i>
-                            <input id="contraseña" type="password" placeholder="Contraseña*" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,15}$" minlength="8" maxlength="15" required>
-                        </div>
-                        <button id="InciarSesion" class="btn" onclick='initiate();'>Iniciar sesión</button>
-                        <p>¿No tienes una cuenta?<a href="Registrarse.html" class="span">Registrarse</a></p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
