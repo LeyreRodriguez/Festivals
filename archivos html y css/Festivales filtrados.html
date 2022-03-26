@@ -14,14 +14,12 @@
                 $("#footer").load("footer.html");
             });
         </script>
-        <script src="js/festivalesFiltrados.js">
-            window.onload = function() {
-                console.log("Esta parte ocurre");
-                loadProduct();
-                console.log("Se ejecuta");
-    
-            }
-        </script>
+
+        <!-- 
+        -->
+       
+        
+
     </head>
     
     <body>
@@ -79,19 +77,23 @@
                 </div>
 
                 <div class="root" id="filtro">
-                    <!--- 
+
+                    <!-- 
                     <div class="festival123">
                         <div class="datos">
-                            <img src="" />
+                            <a href="Festival.html"><img src="" /></a>
                             <p></p> 
-                            <p></p> 
-                            <p></p> 
-                            <p></p>
                         </div>
      
-                    </div>
+                    </div> 
                     -->
-                </div>
+                    <script class="desktop" src="js/festivalesFiltrados.js">
+                        window.onload = function() {
+                            loadFestival();
+                        }
+                    </script>
+ 
+                </div>                
             </div>
         </div>
         
