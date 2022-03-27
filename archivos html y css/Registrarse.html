@@ -22,15 +22,13 @@ and open the template in the editor.
         <script>
             function seleccion(){
                 if (document.getElementById('r1').checked){
-
                     window.location="RegistarseUsuario.html";
                 }
-
-                if (document.getElementById('r2').checked){
+                else if (document.getElementById('r2').checked){
                     window.location="RegistrarseEmpresa.html";
+                } else {
+                    alert("Por favor, marque una casilla"); 
                 }
-
-
             }
         </script>
     </head>
@@ -41,8 +39,8 @@ and open the template in the editor.
                 <div class="login-info-container">
                     <legend>¿Cuál es el perfil de usuario que quiere obtener?*</legend>
                     <div class="contenedor_input">
-                        <input type="radio" required name="rol" id="r1" value="usuario" ><label for="r1">Usuario</label>
-                        <input type="radio" required name="rol" id="r2" value="empresa" ><label for="r2">Empresa</label>
+                        <input type="radio" name="rol" id="r1" value="usuario" required><label for="r1">Usuario</label>
+                        <input type="radio" name="rol" id="r2" value="empresa" required><label for="r2">Empresa</label>
                     </div>
                     <button type="button" class="btn"  onclick="seleccion()" >Registrarse</button>
                 </div>
