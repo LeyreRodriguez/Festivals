@@ -97,9 +97,9 @@
     <body>
         <div class="centrar">
             <div class="login-container">
-                <form class="inputs-container">
-                    <div class="login-info-container">
-                        <h1 class="title">Registrarse</h1>
+                <div class="login-info-container">
+                    <h1 class="title">Registrarse</h1>
+                    <form class="inputs-container" action="MainPage.html">
                         <div class="input_contenedor">
                             <i class="fas fa-user icon"></i>
                             <input id="nombre" type="text" placeholder="Nombre*" pattern="[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+" type="String" minlength="2" maxlength="20" required>
@@ -117,8 +117,8 @@
                             <input id="contraseña" type="password" placeholder="Contraseña*" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,15}$" minlength="8" maxlength="15" required>
                         </div>
                         <button id="RegistroUsuario" class="btn" onclick='initiate();'>Registrarse</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
