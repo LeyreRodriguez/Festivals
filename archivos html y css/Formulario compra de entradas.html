@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>  
+    <head>
+        <title>Compra de entradas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/compraDeEntradas.css" type="text/css">
+        <style>
+            body{
+                background-image: url('imagenes/ticket2.jpg');  
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="contenedor">
+            <div class="tamaño-contenedor">
+                <h1 class="h1" style="text-align:center">COMPRA DE ENTRADAS</h1>
+                <div class="contenedor1">
+                    <div class="nombre">
+                        <p>Nombre: </p>
+                        <input type="text" name="nombre">
+                    </div>
+                    <div class="apellidos">
+                        <p>Apellidos: </p>
+                        <input type="text" name="apellidos">
+                    </div>
+                </div>
+                <div class="contenedor2">
+                    <div class="dni">
+                        <p>DNI: </p>
+                        <input type="text" name="dni">
+                    </div>
+                    <div class="ncontacto">
+                        <p>Nº contacto: </p>
+                        <input type="text" name="contacto">
+                    </div>
+                    <div class="correo">
+                        <p>Correo: </p>
+                        <input type="text" name="correo">
+                    </div>
+                </div>
+                 <div class="contenedor3">
+                    <div class="domicilio">
+                        <p>Domicilio: </p>
+                        <input type="text" name="domicilio">
+                    </div>
+                    <div class="ntarjeta">
+                        <p>Nº de tarjeta: </p>
+                        <input type="text" name="tarjeta">
+                    </div>
+                </div>
+                <div class="contenedor-botones">
+                    <form class="form" action = "Pago realizado.html" method = "GET"> 
+                        <input class="boton" type="submit" value="Pagar" />
+                    </form> 
+                    <form class="form" action = "Festival.html" method = "GET"> 
+                        <input class="boton" type="submit" value="Cancelar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

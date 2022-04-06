@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>  
+    <head>
+        <title>Formulario de inscripción puesto de venta</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/inscripcionPuestoDeVenta.css" type="text/css">
+        <style>
+            body{
+                background-image: url('imagenes/puesto_venta.jpg');
+            }
+        </style>
+    </head>
+  
+    <body>
+        <div class="contenedor">
+            <div class="tamaño-contenedor">
+                <h1>FORMULARIO DE INSCRIPCIÓN PUESTO DE VENTA</h1>
+                <div class="contenedor1">
+                    <div class="nombre-festival">
+                        <p>Nombre del festival: </p>
+                        <select required style="width: 100%">
+                            <option value="1" selected disabled></option>
+                            <option value="2">xxxxxx</option>
+                            <option value="3">xxxxxx</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="contenedor1">
+
+                    <div class="nombre">
+                        <p>Nombre: </p>
+                        <input type="text" name="nombre">
+                    </div>
+                    <div class="apellidos">
+                        <p>Apellidos: </p>
+                        <input type="text" name="apellidos">
+                    </div>
+                </div>
+
+                <div class="contenedor1">
+
+                    <div class="dni">
+                        <p>DNI: </p>
+                        <input type="text" name="dni">
+                    </div>
+                    <div class="ncontacto">
+                        <p>Nº contacto: </p>
+                        <input type="text" name="contacto">
+                    </div>
+                    <div class="correo">
+                        <p>Correo: </p>
+                        <input type="text" name="correo">
+                    </div>
+                </div>
+                
+                <div class="linea-cambio">
+                   <hr> 
+                </div>
+                
+                <div class="contenedor4">
+                    <div class="borde">
+                        <h3>Tu negocio</h3>    
+                    </div>                                    
+                </div>
+                
+                <div class="nombre-negocio">
+                    <p>Nombre del negocio: </p>
+                    <input class="texto-nombre-negocio" type="text" name="negocio">
+                </div>
+                <div class="descripcion-actividad">
+                    <p>Descripción de la actividad a realizar: </p>
+                    <input class="texto-descripción-actividad" type="text" name="descripcion">
+                </div>
+                
+                <div class="contenedor-botones">
+                    <form action = "Formulario enviado.html" method = "GET"> 
+                        <input class="boton" type="submit" value="Enviar" />
+                    </form> 
+                    <form action = "Festival.html" method = "GET"> 
+                        <input class="boton" type="submit" value="Cancelar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

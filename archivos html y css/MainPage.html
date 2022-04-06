@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Main Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/mainPage.css" type="text/css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script><script>
+            $(function(){
+                $("#header").load("header.html");
+                $("#footer").load("footer.html");
+            });
+        </script>
+    </head> 
+
+    <body>
+        
+        <header id="header"></header>
+        
+        <div class="centrar">
+            <div id="contenido">
+                <div class="centrar">
+                    <div class="header">
+                               
+                        <select class="barra1" required>
+                            <option value="1" selected disabled>Tipo</option>
+                            <optgroup>
+                                <option value="Música">Música</option>
+                                <option value="Manga">Manga</option>
+                                <option value="Timple">Timple</option>
+                                <option value="Gastronomia">Gastronomia</option>
+                            </optgroup>
+                        </select>
+                
+                        <select class="barra2" required>
+                            <option value="1" selected disabled>Ubicación</option>
+                            <optgroup label="Pais" placeholder="Ubicación">
+                                <option value="Francia">Francia</option>
+                                <option value="España">España</option>
+                                <option value="ReinoUnido">Reino Unido</option>
+                            </optgroup>
+            
+                            <optgroup label="Ciudad">
+                                <option value="LyonFrancia">Lyon, Francia</option>
+                                <option value="MadridEspaña">Madrid, España</option>
+                                <option value="YorkReinoUnido">York, Reino Unido</option>
+                            </optgroup>
+                        </select>
+                        <input class="barra3" type="date" name="Fecha">
+                        <nav class="barra4">
+                            <a href="Festivales filtrados.html"><img class="image" src="imagenes/buscador.png" /></a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="grid-container"> 
+                    <div class="slider">
+                        <ul>
+                            <li><img src="imagenes/festival1.jpg"/></li>
+                            <li><img src="imagenes/festival2.jpg"/></li>
+                            <li><img src="imagenes/festival3.jpg"/></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="grid-item1"></div> -->
+                    <div class="grid-container-festivales-cercanos">
+                        <a href="Festival.html">
+                            <img class="grid-item2" src="imagenes/despegable_horizontal1.jpg"/>
+                        </a>
+                        <a href="Festival.html">
+                            <img class="grid-item3" src="imagenes/despegable_horizontal2.jpg"/>
+                        </a>
+                        <a href="Festival.html">
+                            <img class="grid-item4" src="imagenes/despegable_horizontal3.jpg"/>
+                        </a>
+                        <a href="Festival.html">
+                            <img class="grid-item5" src="imagenes/despegable_horizontal4.jpg"/>
+                        </a>
+                        <a href="Festival.html">
+                            <img class="grid-item6" src="imagenes/despegable_horizontal5.jpg"/>
+                        </a>
+                        <a href="Festival.html">
+                            <img class="grid-item7" src="imagenes/despegable_horizontal6.jpg"/>
+                        </a>
+                    </div>
+                </div>  
+            </div> 
+        </div>
+        
+        <footer id="footer"></footer>
+        
+    </body>
+</html>
