@@ -1,0 +1,334 @@
+@media (min-width: 0em ) and (max-width: 40em)   {
+    body {
+        font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        font-size: xx-small;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20% 0 20%;
+    }
+    
+    .tamaño-contenedor {
+        width: 75%;
+    }
+    
+    .etiquetas {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+    
+    form {
+        padding: 10px;
+    }
+    
+    .festival123 {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        height: 33%;
+        width: 40%;
+    }
+    
+    img {
+        width: 75%;
+        height: 75%;
+    }
+    
+    .datos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+
+    .busqueda {
+        display: grid;
+        grid-template-rows:20px;
+        grid-template-columns: 50px 50px 50px 85px 50px;
+        grid-template-areas:
+        "area8 area9 area10 . area11";
+    }
+
+    .barra1{
+        text-align: center;
+        grid-area: area8;
+    }
+    
+    .barra2{
+        text-align: center;
+        grid-area: area9;
+    }
+    
+    .barra3{
+        text-align: center;
+        grid-area: area10;
+        width: 130.21px;
+    }
+
+    .barra4{
+        text-align: center;
+        grid-area: area11;
+        
+        width: 20.21px;
+        height: 20px;
+
+        border: 1px solid #4b4a4aa8;
+        border-radius: 2px; 
+        box-sizing: border-box;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .image{
+        text-align: center;
+        grid-area: area6;
+        
+        width: 15.21px;
+        height: 15px;
+        display:flex;
+        justify-content: center;
+        align-items: center;      
+    }
+    .centrar{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .root{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    
+}
+@media (min-width: 40em) and (max-width:75em)  {
+    body {
+        font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20% 0 20%;
+    }
+    
+    .tamaño-contenedor {
+        width: 75%;
+    }
+    
+    .etiquetas {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+    
+    form {
+        padding: 10px;
+    }
+    
+    .festival123 {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        height: 33%;
+        width: 30%;
+    }
+    
+    img {
+        width: 75%;
+        height: 75%;
+    }
+    
+    .datos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+
+    .busqueda {
+        display: grid;
+        grid-template-rows: 0.2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "area8 area9 area10 . area11";
+    }
+
+    .barra1{
+        text-align: center;
+        grid-area: area8;
+    }
+    
+    .barra2{
+        text-align: center;
+        grid-area: area9;
+    }
+    
+    .barra3{
+        text-align: center;
+        grid-area: area10;
+        width: 130.21px;
+    }
+
+    .barra4{
+        text-align: center;
+        grid-area: area11;
+        
+        width: 20.21px;
+        height: 20px;
+
+        border: 1px solid #4b4a4aa8;
+        border-radius: 2px; 
+        box-sizing: border-box;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .image{
+        text-align: center;
+        grid-area: area6;
+        
+        width: 15.21px;
+        height: 15px;
+        display:flex;
+        justify-content: center;
+        align-items: center;      
+    }
+    .centrar{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .root{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 75em)  {
+    body {
+        font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20% 0 20%;
+    }
+    
+    .tamaño-contenedor {
+        width: 75%;
+    }
+    
+    .etiquetas {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+    
+    form {
+        padding: 10px;
+    }
+    
+    .festival123 {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        height: 33%;
+        width: 30%;
+    }
+    
+    img {
+        width: 75%;
+        height: 75%;
+    }
+    
+    .datos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+
+    .busqueda {
+        display: grid;
+        grid-template-rows: 0.2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "area8 area9 area10 . area11";
+    }
+
+    .barra1{
+        text-align: center;
+        grid-area: area8;
+    }
+    
+    .barra2{
+        text-align: center;
+        grid-area: area9;
+    }
+    
+    .barra3{
+        text-align: center;
+        grid-area: area10;
+        width: 130.21px;
+    }
+
+    .barra4{
+        text-align: center;
+        grid-area: area11;
+        
+        width: 20.21px;
+        height: 20px;
+
+        border: 1px solid #4b4a4aa8;
+        border-radius: 2px; 
+        box-sizing: border-box;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .image{
+        text-align: center;
+        grid-area: area6;
+        
+        width: 15.21px;
+        height: 15px;
+        display:flex;
+        justify-content: center;
+        align-items: center;      
+    }
+    .centrar{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .root{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+}

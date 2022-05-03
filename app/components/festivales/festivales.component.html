@@ -1,0 +1,84 @@
+<div class="row">
+  <nav class="nav nav-pills justify-content-center">
+    <!--Buscador-->
+    <div class="col">
+    <select class="form-select form-select-sm form-select-inline" aria-label=".form-select-sm" required>
+      <option value="1" selected disabled>Tipo</option>
+      <optgroup>
+          <option value="Música">Música</option>
+          <option value="Manga">Manga</option>
+          <option value="Timple">Timple</option>
+          <option value="Gastronomia">Gastronomia</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="col">
+    <select class="form-select form-select-sm form-select-inline" aria-label=".form-select-sm" required>
+        <option value="1" selected disabled>Ubicación</option>
+        <optgroup label="Pais" placeholder="Ubicación">
+            <option value="Francia">Francia</option>
+            <option value="España">España</option>
+            <option value="ReinoUnido">Reino Unido</option>
+        </optgroup>
+
+        <optgroup label="Ciudad">
+            <option value="LyonFrancia">Lyon, Francia</option>
+            <option value="MadridEspaña">Madrid, España</option>
+            <option value="YorkReinoUnido">York, Reino Unido</option>
+        </optgroup>
+    </select>
+  </div>
+  <div class="col">
+    <input  class="form-select form-select-sm form-select-inline" type="date" name="Fecha">
+  </div>
+    <nav>
+
+    <div class="col">
+      <a class="buscador border" [routerLink]="['/festivales']" ><img class="buscador" src="assets/img/buscador.png" /></a>
+    </div>
+    </nav>
+  </nav>
+
+  <!--Buscador-->
+
+  <!--Botones de filtro-->
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <div class="col">
+      <button type="button" class="btn justify-content-center"></button>
+    </div>
+  </div>
+  <!--Botones de filtro-->
+
+  <!--Festivales-->
+  <div class="row justify-content-center">
+
+    <!-- <div *ngFor="let festival of items" class="col"> -->
+    <div class="col">
+
+      <div class="card" style="width: 18rem;">
+        <img src="" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p class="card-text"></p>
+
+          <p>
+            <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Más información
+            </a>
+
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <p class="card-text"></p>
+            </div>
+          </div>
+
+          <!-- <a [routerLink]="['/festival', ]" class="btn btn-primary">Comprar</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Festivales-->
+  </div>

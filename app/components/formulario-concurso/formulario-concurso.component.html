@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="h1">FORMULARIO DE INSCRIPCIÓN EN UN CONCURSO
+      <div *ngIf="loading" class="spinner-border float-end" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </h1>
+    <form [formGroup]="concursoForm" (ngSubmit)="guardarConcurso()">
+      <div class="form-group row">
+        <label for="inputNombreConcurso" class="form-label mt-4">Nombre del concurso: </label>
+        <select class="form-select" aria-label="Default select example" formControlName="inputNombreConcurso" required>
+            <option selected disabled value="1"></option>
+            <option value="2">xxxxxx</option>
+            <option value="3">xxxxxx</option>
+        </select>
+      </div>
+      <div class="form-group row">
+        <div class="form-group">
+          <label for="inputNombre" class="form-label mt-4">Nombre: </label>
+          <input type="text" class="form-control" id="inputNombre" aria-describedby="nombreHelp" formControlName="inputNombre" required="">
+        </div>
+        <div class="form-group">
+          <label for="inputApellidos" class="form-label mt-4">Apellidos: </label>
+          <input type="text" class="form-control" id="inputApellidos" aria-describedby="apellidosHelp" formControlName="inputApellidos" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="form-group">
+          <label for="inputDni" class="form-label mt-4">DNI: </label>
+          <input type="text" class="form-control" id="inputDni" aria-describedby="dniHelp" formControlName="inputDni" required>
+        </div>
+        <div class="form-group">
+          <label for="inputsNcontacto" class="form-label mt-4">Nº contacto: </label>
+          <input type="number" class="form-control" id="inputsNcontacto" aria-describedby="nContactoHelp" formControlName="inputsNcontacto" required>
+        </div>
+        <div class="form-group">
+          <label for="inputCorreo" class="form-label mt-4">Correo: </label>
+          <input type="email" class="form-control" id="inputCorreo" aria-describedby="correoHelp" formControlName="inputCorreo" required>
+        </div>
+      </div>
+    <!-- <button [disabled]="concursoForm.invalid" type="submit" class="btn btn-success btn-lg" routerLink="/formularioEnviado">Enviar</button> -->
+    <button  [disabled]="concursoForm.invalid" type="submit" class="btn btn-success btn-lg">Enviar</button>
+    <button type="submit" class="btn btn-success btn-lg" routerLink="/mainPage">Cancelar</button>
+    </form>
+  </div>
+</div>
