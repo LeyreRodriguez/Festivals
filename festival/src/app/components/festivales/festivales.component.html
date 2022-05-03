@@ -1,11 +1,8 @@
-<body>
-
-  <!--Buscador-->
-
-  <!--Averiguar como saber cual es el que esta seleccionado, para el tema de los
-  botones de filtro en festivales-->
-  <nav class=" d-flex justify-content-center " style="max-height: 35px;">
-    <select class="dropdown-toggle" required>
+<div class="row">
+  <nav class="nav nav-pills justify-content-center">
+    <!--Buscador-->
+    <div class="col">
+    <select class="form-select form-select-sm form-select-inline" aria-label=".form-select-sm" required>
       <option value="1" selected disabled>Tipo</option>
       <optgroup>
           <option value="Música">Música</option>
@@ -14,8 +11,9 @@
           <option value="Gastronomia">Gastronomia</option>
       </optgroup>
     </select>
-
-    <select class="dropdown-toggle" required>
+  </div>
+  <div class="col">
+    <select class="form-select form-select-sm form-select-inline" aria-label=".form-select-sm" required>
         <option value="1" selected disabled>Ubicación</option>
         <optgroup label="Pais" placeholder="Ubicación">
             <option value="Francia">Francia</option>
@@ -29,17 +27,24 @@
             <option value="YorkReinoUnido">York, Reino Unido</option>
         </optgroup>
     </select>
-    <input type="date" name="Fecha">
+  </div>
+  <div class="col">
+    <input  class="form-select form-select-sm form-select-inline" type="date" name="Fecha">
+  </div>
     <nav>
-      <a [routerLink]="['/festivales']" ><img class="img-fluid" style="max-height: 35px;" src="assets/img/buscador.png" /></a>
+
+    <div class="col">
+      <a class="buscador border" [routerLink]="['/festivales']" ><img class="buscador" src="assets/img/buscador.png" /></a>
+    </div>
     </nav>
   </nav>
+
   <!--Buscador-->
 
   <!--Botones de filtro-->
   <div class="btn-group" role="group" aria-label="Basic example">
-    <div *ngFor="let festival of festivales" class="col">
-      <button type="button" class="btn justify-content-center">{{ festival.categorias }}</button>
+    <div class="col">
+      <button type="button" class="btn justify-content-center"></button>
     </div>
   </div>
   <!--Botones de filtro-->
@@ -47,19 +52,17 @@
   <!--Festivales-->
   <div class="row justify-content-center">
 
-    <div *ngFor="let festival of festivales" class="col">
-      <div class="card" style="width: 18rem;">
-        <img src="{{ festival.foto }}" class="card-img-top" alt="{{ festival.nombre }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ festival.nombre }}</h5>
-          <p class="card-text">{{ festival.fecha }}</p>
-          <p class="card-text">{{ festival.informacion_corta }}</p>
+    <!-- <div *ngFor="let festival of items" class="col"> -->
+    <div class="col">
 
-          <!--Arreglar, no funciona el link-->
+      <div class="card" style="width: 18rem;">
+        <img src="" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p class="card-text"></p>
+
           <p>
-            <!-- <a data-toggle="collapse" [routerLink]="['#collapseExample']" role="button" aria-expanded="false" aria-controls="collapseExample">
-              Más información
-            </a> -->
             <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
               Más información
             </a>
@@ -67,16 +70,15 @@
           </p>
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
-              <p class="card-text">{{ festival.informacion_larga }}</p>
+              <p class="card-text"></p>
             </div>
           </div>
 
-
-          <a [routerLink]="['/festival', festival.id]" class="btn btn-primary">Comprar</a>
+          <!-- <a [routerLink]="['/festival', ]" class="btn btn-primary">Comprar</a> -->
         </div>
       </div>
     </div>
   </div>
-  <!--Festivales-->
 
-</body>
+  <!--Festivales-->
+  </div>

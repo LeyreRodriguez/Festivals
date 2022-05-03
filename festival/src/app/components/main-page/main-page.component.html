@@ -3,7 +3,7 @@
 
   <!--Averiguar como saber cual es el que esta seleccionado, para el tema de los
   botones de filtro en festivales-->
-  <nav class=" d-flex justify-content-center " style="max-height: 35px;">
+  <nav class="nav nav-pills justify-content-center">
     <select class="dropdown-toggle" required>
       <option value="1" selected disabled>Tipo</option>
       <optgroup>
@@ -30,7 +30,7 @@
     </select>
     <input type="date" name="Fecha">
     <nav>
-      <a [routerLink]="['/festivales']" ><img class="img-fluid" style="max-height: 35px;" src="assets/img/buscador.png" /></a>
+      <a class="buscador border" [routerLink]="['/festivales']" ><img class="buscador" src="assets/img/buscador.png" /></a>
     </nav>
   </nav>
   <!--Buscador-->
