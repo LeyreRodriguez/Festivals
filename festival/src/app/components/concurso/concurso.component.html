@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>  
+    <head>
+        <title>Formulario de inscrpción en un concurso</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+            
+    </head>
+    
+    <body>
+        <h1 class=" d-flex justify-content-center">FORMULARIO DE INSCRIPCIÓN EN UN CONCURSO</h1>
+    <form [formGroup]="concursoForm" class="row g-3">
+        <div class="col-12">
+          <label for="inputContestName"  class="form-label">Nombre del concurso:</label>
+          <select class="form-select" required formControlName = "inputContestName">
+            <option value="1" selected disabled></option>
+            <option value="2">xxxxxx</option>
+            <option value="3">xxxxxx</option>
+        </select>
+        </div>
+        <div class="col-md-6">
+          <label for="inputName"  class="form-label">Nombre:</label>
+          <input type="text" required class="form-control" id="inputName" formControlName = "inputName">
+        </div>
+        <div class="col-md-6">
+          <label for="inputLastName" class="form-label">Apellidos:</label>
+          <input type="text" required class="form-control" id="inputLastName" formControlName = "inputLastName" >
+        </div>
+        <div class="col-md-4">
+          <label for="inputDNI" class="form-label">DNI:</label>
+          <input type="text" required class="form-control" id="inputDNI" formControlName = "inputDNI" >
+        </div>
+        <div class="col-md-4">
+          <label for="inputContactNumber" class="form-label">Nº Contacto: </label>
+          <input type="text"required  class="form-control" id="inputContactNumber" formControlName = "inputContactNumber">
+        </div>
+        <div class="col-md-4">
+          <label for="inputEmail" class="form-label">Correo:</label>
+          <input type="email" required class="form-control" id="inputEmail" formControlName = "inputEmail" >
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6 d-flex justify-content-center">
+                <button [disabled]="concursoForm.invalid" type="submit" class="btn btn-primary" >Enviar</button>
+              </div>
+      
+              <div class="col-md-6 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary" >Cancelar</button>
+              </div>
+        </div>
+        
+
+      </form>
+    </body>
+</html>
