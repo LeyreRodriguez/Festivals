@@ -60,7 +60,7 @@
         <div class="d-block d-sm-none contenedor">
             <div>
                 <h1 class="d-flex justify-content-center ">¡Ingrese a su cuenta!</h1>
-                <form>
+                <form [formGroup]="loginForm" novalidate>
                     <div class="mb-3">
                     
                         <input type="text" class="form-control" id="information" placeholder="Correo*">
@@ -88,7 +88,7 @@
                     
                     </div>
                     <div class="col-6">
-                        <form style="width: 100%;">
+                        <form [formGroup]="loginForm" novalidate style="width: 100%;">
                             <div class="mb-3">
                             
                                 <input type="text" class="form-control" id="information" placeholder="Correo*">
