@@ -20,7 +20,7 @@ import { SingupBussinesComponent } from './components/signup-bussines/singup-bus
 import { SingupUsersComponent } from './components/singup-users/singup-users.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -46,7 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    FormsModule,
     
     ReactiveFormsModule
 
