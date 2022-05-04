@@ -7,36 +7,90 @@
     </head>
     <body>
         <h1 class=" d-flex justify-content-center">COMPRA DE ENTRADAS</h1>
-    <form [formGroup]="entradasForm" class="row g-3">
+    <form [formGroup]="entradasForm" class="row g-3" novalidate>
        
         <div class="col-md-4">
           <label for="inputName" class="form-label">Nombre:</label>
-          <input type="text" class="form-control" id="inputName" formControlName = "inputName">
+          <input type="text" class="form-control" id="inputName" formControlName = "inputName" placeholder="Nombre">
+          <div *ngIf="entradasForm.controls['inputName'].invalid && (entradasForm.controls['inputName'].dirty || entradasForm.controls['inputName'].touched)" class="alert alert-danger" >
+            <div *ngIf="entradasForm.controls['inputName'].errors">
+              El nombre es obligatorio.
+            </div>
+          </div>
+        
         </div>
         <div class="col-md-8">
           <label for="inputLastName" class="form-label">Apellidos:</label>
-          <input type="text" class="form-control" id="inputLastName" formControlName = "inputLastName">
+          <input type="text" class="form-control" id="inputLastName" formControlName = "inputLastName" placeholder="Apellido">
+
+          <div *ngIf="entradasForm.controls['inputLastName'].invalid && (entradasForm.controls['inputLastName'].dirty || entradasForm.controls['inputLastName'].touched)" class="alert alert-danger" >
+            <div *ngIf="entradasForm.controls['inputLastName'].errors">
+              El apellido es obligatorio.
+            </div>
+          </div>
+
         </div>
         <div class="col-md-4">
           <label for="inputDNI" class="form-label">DNI:</label>
-          <input type="text" class="form-control" id="inputDNI" formControlName = "inputDNI">
+          <input type="text" class="form-control" id="inputDNI" formControlName = "inputDNI" placeholder="12345678A">
+
+          <div *ngIf="entradasForm.controls['inputLastName'].invalid && (entradasForm.controls['inputLastName'].dirty || entradasForm.controls['inputLastName'].touched)" class="alert alert-danger" >
+            <div *ngIf="entradasForm.controls['inputLastName'].errors">
+              El DNI es obligatorio. <br>
+              Por favor, introduce un DNI válido.
+            </div>
+          </div>
+
         </div>
         <div class="col-md-4">
           <label for="inputContactNumber" class="form-label">Nº Contacto: </label>
-          <input type="text" class="form-control" id="inputContactNumber" formControlName = "inputContactNumber">
+          <input type="text" class="form-control" id="inputContactNumber" formControlName = "inputContactNumber" placeholder="+34 666666666">
+
+          <div *ngIf="entradasForm.controls['inputContactNumber'].invalid && (entradasForm.controls['inputContactNumber'].dirty || entradasForm.controls['inputContactNumber'].touched)" class="alert alert-danger" >
+            <div *ngIf="entradasForm.controls['inputContactNumber'].errors">
+              El Nº de teléfono es obligatorio. <br>
+              Por favor, introduce un número de teléfono válido.
+            </div>
+          </div>
+
+
         </div>
         <div class="col-md-4">
           <label for="inputEmail" class="form-label">Correo:</label>
-          <input type="email" class="form-control" id="inputEmail" formControlName = "inputEmail">
+          <input type="email" class="form-control" id="inputEmail" formControlName = "inputEmail" placeholder="usuario@example.com">
+
+          <div *ngIf="entradasForm.controls['inputEmail'].invalid && (entradasForm.controls['inputEmail'].dirty || entradasForm.controls['inputEmail'].touched)" class="alert alert-danger" >
+            <div *ngIf="entradasForm.controls['inputEmail'].errors">
+              El email es obligatorio. <br>
+              Por favor, cumple con el formato usuario@example.com
+            </div>
+          </div>
+
         </div>
 
         <div class="col-md-6">
             <label for="inputAddress" class="form-label">Domicilio: </label>
-            <input type="text" class="form-control" id="inputAddress" formControlName = "inputAddress">
+            <input type="text" class="form-control" id="inputAddress" formControlName = "inputAddress" placeholder="Dirección">
+
+            <div *ngIf="entradasForm.controls['inputAddress'].invalid && (entradasForm.controls['inputAddress'].dirty || entradasForm.controls['inputAddress'].touched)" class="alert alert-danger" >
+              <div *ngIf="entradasForm.controls['inputAddress'].errors">
+                El domicilio es obligatorio.
+              </div>
+            </div>
+
+
           </div>
           <div class="col-md-6">
             <label for="inputCreditCard" class="form-label">Nº de tarjeta:</label>
-            <input type="email" class="form-control" id="inputCreditCard" formControlName = "inputCreditCard">
+            <input type="email" class="form-control" id="inputCreditCard" formControlName = "inputCreditCard" placeholder="5540500001000004">
+
+            <div *ngIf="entradasForm.controls['inputAddress'].invalid && (entradasForm.controls['inputAddress'].dirty || entradasForm.controls['inputAddress'].touched)" class="alert alert-danger" >
+              <div *ngIf="entradasForm.controls['inputAddress'].errors">
+                El número de la tarjeta es obligatorio. <br>
+                Por favor, introduce un número válido.
+              </div>
+            </div>
+
           </div>
 
 
