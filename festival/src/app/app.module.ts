@@ -20,10 +20,12 @@ import { FestivalComponent } from './components/festival/festival.component';
 import { ErrorComponent } from './components/error/error.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { FormularioCompraEntradasComponent } from './components/formulario-compra-entradas/formulario-compra-entradas.component';
-import { FormularioEnviadoComponent } from './components/formulario-enviado/formulario-enviado.component';
-import { PagoRealizadoComponent } from './components/pago-realizado/pago-realizado.component';
 import { FormularioConcursoComponent } from './components/formulario-concurso/formulario-concurso.component';
 import { InscripcionPuestoVentaComponent } from './components/inscripcion-puesto-venta/inscripcion-puesto-venta.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SignupUsersComponent } from './components/signup-users/signup-users.component';
+import { SignupBusinessComponent } from './components/signup-business/signup-business.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { InscripcionPuestoVentaComponent } from './components/inscripcion-puesto
     ErrorComponent,
     MainPageComponent,
     FormularioCompraEntradasComponent,
-    FormularioEnviadoComponent,
-    PagoRealizadoComponent,
     FormularioConcursoComponent,
     InscripcionPuestoVentaComponent,
+    LoginComponent,
+    SignupComponent,
+    SignupUsersComponent,
+    SignupBusinessComponent,
   ],
   imports: [
     BrowserModule,
