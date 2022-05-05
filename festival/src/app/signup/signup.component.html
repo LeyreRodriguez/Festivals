@@ -1,0 +1,20 @@
+<body>
+  <form>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="login-info-container">
+        <legend>¿Cuál es el perfil de usuario que quiere obtener?*</legend>
+        <div class="d-flex justify-content-around align-items-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <input type="radio" (ngModel)="myfood" name="rol" #r1 value="usuario" required ngModel><label for="r1">Usuario</label>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <input type="radio" (ngModel)="myfood" name="rol" #r2 value="empresa" required ngModel><label for="r2">Empresa</label>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <button type="button" (click)="changeRoute()" class="btn btn-primary">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
