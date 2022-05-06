@@ -8,20 +8,18 @@
     <!--Símbolo de carga-->
   </h1>
   <form [formGroup]="ventaForm" (ngSubmit)="guardarVenta()" class="row g-3" novalidate>
-    <!--Nombre empresa-->
+    <!--Nombre festival-->
     <div class="col-12">
       <label for="inputContestName" class="form-label">Nombre del festival:</label>
-      <select class="form-select" formControlName = "inputContestName" required>
-        <option value="1" selected disabled>Nombre del festival</option>
-        <option value="2">xxxxxx</option>
-        <option value="3">xxxxxx</option>
-    </select>
+      <select class="form-select" required formControlName = "inputContestName">
+        <option *ngFor="let item of listFestivales">{{item.nombre}}</option>
+      </select>
     <div *ngIf="ventaForm.controls['inputContestName'].invalid && (ventaForm.controls['inputContestName'].dirty || ventaForm.controls['inputContestName'].touched)" class="alert alert-danger" >
       <div *ngIf="ventaForm.controls['inputContestName'].errors">
         Debes seleccionar un festival.
       </div>
     </div>
-    <!--Nombre empresa-->
+    <!--Nombre festival-->
     <!--Nombre usuario-->
     </div>
     <div class="col-md-6">
@@ -85,10 +83,10 @@
     <h1 class="d-flex justify-content-center">Tu negocio</h1>
     <!--Nombre del negocio-->
     <div class="col-12">
-      <label for="inputBussinesName" class="form-label">Nombre del negocio: </label>
-      <input type="text" class="form-control" id="inputBussinesName" formControlName = "inputBussinesName" placeholder="Nombre del negocio">
-      <div *ngIf="ventaForm.controls['inputBussinesName'].invalid && (ventaForm.controls['inputBussinesName'].dirty || ventaForm.controls['inputBussinesName'].touched)" class="alert alert-danger" >
-        <div *ngIf="ventaForm.controls['inputBussinesName'].errors">
+      <label for="inputBusinessName" class="form-label">Nombre del negocio: </label>
+      <input type="text" class="form-control" id="inputBusinessName" formControlName = "inputBusinessName" placeholder="Nombre del negocio">
+      <div *ngIf="ventaForm.controls['inputBusinessName'].invalid && (ventaForm.controls['inputBusinessName'].dirty || ventaForm.controls['inputBusinessName'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputBusinessName'].errors">
           El nombre del negocio es obligatorio.
         </div>
       </div>
@@ -98,8 +96,8 @@
     <div class="mb-3">
       <label for="inputDescription" class="form-label">Descripcion de la tarea a realizar:</label>
       <textarea class="form-control" id="inputDescription" rows="3" formControlName = "inputDescription" placeholder="Descripción"></textarea>
-      <div *ngIf="ventaForm.controls['inputBussinesName'].invalid && (ventaForm.controls['inputBussinesName'].dirty || ventaForm.controls['inputBussinesName'].touched)" class="alert alert-danger" >
-        <div *ngIf="ventaForm.controls['inputBussinesName'].errors">
+      <div *ngIf="ventaForm.controls['inputDescription'].invalid && (ventaForm.controls['inputDescription'].dirty || ventaForm.controls['inputDescription'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputDescription'].errors">
           Por favor, introduce una breve descripción de la tarea a realizar.
         </div>
       </div>
