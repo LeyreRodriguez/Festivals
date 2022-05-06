@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { concurso } from 'src/app/models/concurso/concurso.module';
 import { ConcursoService } from './../../services/concurso.service';
 
 @Component({
@@ -14,6 +16,7 @@ export class FormularioConcursoComponent implements OnInit {
   overlay = false;
   id: string | undefined;
   titulo = 'Agregar Tarjeta';
+  listConcuros: concurso[] = [];
 
   constructor(
         private fb: FormBuilder,
@@ -31,17 +34,18 @@ export class FormularioConcursoComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.obtenerConcursos();
   }
 
   agregarConcurso() {
 
     const concurso: any = {
-      inputNombreConcurso: this.concursoForm.value.inputNombreConcurso,
-      inputNombre: this.concursoForm.value.inputNombre,
-      inputApellidos: this.concursoForm.value.inputApellidos,
-      inputDni: this.concursoForm.value.inputDni,
-      inputsNcontacto: this.concursoForm.value.inputsNcontacto,
-      inputCorreo: this.concursoForm.value.inputCorreo,
+      inputContestName: this.concursoForm.value.inputContestName,
+      inputName: this.concursoForm.value.inputName,
+      inputLastName: this.concursoForm.value.inputLastName,
+      inputDNI: this.concursoForm.value.inputDNI,
+      inputContactNumber: this.concursoForm.value.inputContactNumber,
+      inputEmail: this.concursoForm.value.inputEmail,
     }
 
     this.loading = true;
@@ -62,5 +66,18 @@ export class FormularioConcursoComponent implements OnInit {
     if(this.id === undefined) {
       this.agregarConcurso();
     }
+  }
+
+  obtenerConcursos(){
+    this.concursoService.obtenerConcursos().subscribe(doc => {
+      this.listConcuros = [];
+      doc.forEach((element: any) => {
+        this.listConcuros.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        })
+      });
+      console.log(this.listConcuros);
+    })
   }
 }
