@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { EntradasService } from 'src/app/services/entradas.service';
 
 @Component({
-  selector: 'app-entradas',
-  templateUrl: './entradas.component.html',
-  styleUrls: ['./entradas.component.css']
+  selector: 'app-formulario-compra-entradas',
+  templateUrl: './formulario-compra-entradas.component.html',
+  styleUrls: ['./formulario-compra-entradas.component.css']
 })
-export class EntradasComponent implements OnInit {
-
+export class FormularioCompraEntradasComponent implements OnInit {
   entradasForm: FormGroup;
-
+  loading = false;
+  overlay = false;
+  submitted = false;
+  id: string | undefined;
+  titulo = 'Compra entrada';;
 
   constructor(
-    private fb: FormBuilder,
-  ) { 
-
+        private fb: FormBuilder,
+        private entradasService: EntradasService,
+        private toastr: ToastrService,) {
     this.entradasForm = this.fb.group({
-
       inputName: ['', Validators.required],
       inputLastName: ['', Validators.required],
       inputDNI: ['', Validators.required, Validators.pattern(/[0-9]{7,8}[A-Z]/)],
@@ -30,4 +34,34 @@ export class EntradasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  agregarEntrada() {
+    const entrada: any = {
+      inputName: this.entradasForm.value.inputName,
+      inputLastName: this.entradasForm.value.inputLastName,
+      inputDNI: this.entradasForm.value.inputDNI,
+      inputContactNumber: this.entradasForm.value.inputContactNumber,
+      inputEmail: this.entradasForm.value.inputEmail,
+      inputAddress: this.entradasForm.value.inputAddress,
+      inputCreditCard: this.entradasForm.value.inputCreditCard,
+    }
+
+    this.loading = true;
+    this.entradasService.guardarEntrada(entrada).then(() => {
+      this.loading = false;
+      console.log('tarjeta registrado');
+      this.toastr.success('Compra con exito!', 'Compra registrada')
+      this.entradasForm.reset();
+    }, error => {
+      this.loading = false;
+      this.overlay = true;
+      this.toastr.error('Opps.. ocurrio un error', 'Error');
+      console.log(error);
+    })
+  }
+
+  guardarEntrada() {
+    if(this.id === undefined) {
+      this.agregarEntrada();
+    }
+  }
 }
