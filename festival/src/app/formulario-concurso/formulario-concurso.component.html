@@ -9,11 +9,9 @@
   <form [formGroup]="concursoForm" (ngSubmit)="guardarConcurso()" class="row g-3" novalidate>
     <!--Nombre concurso-->
     <div class="col-12">
-      <label for="inputContestName"  class="form-label">Nombre del concurso:</label>
+      <label for="inputContestName" class="form-label">Nombre del concurso:</label>
       <select class="form-select" required formControlName = "inputContestName">
-        <option value="1" selected disabled >Nombre del concurso</option>
-        <option value="2">xxxxxx</option>
-        <option value="3">xxxxxx</option>
+        <option *ngFor="let item of listConcuros">{{item.nombreConcurso}}</option>
       </select>
       <div *ngIf="concursoForm.controls['inputContestName'].invalid && (concursoForm.controls['inputContestName'].dirty || concursoForm.controls['inputContestName'].touched)" class="alert alert-danger" >
         <div *ngIf="concursoForm.controls['inputContestName'].errors">
@@ -92,7 +90,7 @@
     <!--Sección botones-->
   </form>
   <!--Overlay-->
-  <div *ngIf="overlay" class="contenedor" style="width: 18rem;" >
+  <div *ngIf="overlay" class="contenedor2" style="width: 18rem;" >
     <h5>El formulario se ha enviado de forma correcta</h5>
     <input routerLink="/festival" class="btn btn-primary" type="submit" value="Inicio"/>
   </div>
