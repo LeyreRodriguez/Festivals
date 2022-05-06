@@ -1,3 +1,4 @@
+import { festivales } from './../../models/festival/festivales';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -13,6 +14,7 @@ export class InscripcionPuestoVentaComponent implements OnInit {
   loading = false;
   overlay = false;
   id: string | undefined;
+  listFestivales: festivales[] = [];
 
   constructor(
         private fb: FormBuilder,
@@ -26,12 +28,13 @@ export class InscripcionPuestoVentaComponent implements OnInit {
       inputDNI: ['', Validators.required, Validators.pattern(/[0-9]{7,8}[A-Z]/)],
       inputContactNumber: ['', [Validators.required, Validators.pattern(/(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}/)]],
       inputEmail: ['', [Validators.required, Validators.pattern(/[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/)]],
-      inputBussinesName: ['', Validators.required],
+      inputBusinessName: ['', Validators.required],
       inputDescription: ['', Validators.required]
     })
   }
 
   ngOnInit(): void {
+    this.obtenerFestivales();
   }
 
   agregarVenta() {
@@ -43,7 +46,7 @@ export class InscripcionPuestoVentaComponent implements OnInit {
       inputDNI: this.ventaForm.value.inputDNI,
       inputContactNumber: this.ventaForm.value.inputContactNumber,
       inputEmail: this.ventaForm.value.inputEmail,
-      inputBussinesName: this.ventaForm.value.inputBussinesName,
+      inputBusinessName: this.ventaForm.value.inputBusinessName,
       inputDescription: this.ventaForm.value.inputDescription,
     }
 
@@ -67,4 +70,16 @@ export class InscripcionPuestoVentaComponent implements OnInit {
     }
   }
 
+  obtenerFestivales(){
+    this.inscripcionPuestoVentaService.obtenerFestivales().subscribe(doc => {
+      this.listFestivales = [];
+      doc.forEach((element: any) => {
+        this.listFestivales.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        })
+      });
+      console.log(this.listFestivales);
+    })
+  }
 }
