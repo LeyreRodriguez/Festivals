@@ -137,37 +137,30 @@
             <!-- COMENTARIOS -->
           <div class="col-12 " id="comentarioscol"  style=" margin-top: 5%">
             <h4> Comentarios</h4>
-            <div class="list-group infinite-scroll lista-scroll">
-              <a href="#!" class="list-group-item ">
-                <h6 class="list-group-item-heading">@user1</h6>
-                ¡me ha gustado muxo! Increible display de puestos, Muy bonito;
-              </a>
-              <a href="#!" class="list-group-item ">
-                <h6 class="list-group-item-heading">@user3</h6>
-                Volveré el año que viene!
-              </a>
+            <div *ngFor="let item of listComentarios" class="list-group infinite-scroll lista-scroll">
+              <div class="list-group-item ">
+                <h6 class="list-group-item-heading">@{{item.userName}}</h6>
+                {{item.comentario}}
+              </div>
             </div>
           </div>
             <!-- ENVIAR COMENTARIO -->
-          <div class="col-12 d-flex justify-content-center flex-column" id="enviarComentario" style="height:100%; width: 100%; ">
+            <form [formGroup]="comentariosForm" (ngSubmit)="agregarComentarios()" class="col-12 d-flex justify-content-center flex-column" id="enviarComentario" style="height:100%; width: 100%; ">
 
               <h5>Envía tu comentario</h5>
               <a id="duda"></a>
               <div class="input-group" style="margin-bottom: 1.5%;">
-                  <span class="input-group-text" id="basic-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                  <span for="userName" class="input-group-text" id="basic-addon1">@</span>
+                <input formControlName = "userName" type="text" class="form-control" placeholder="Username" aria-label="Username"
                   aria-describedby="basic-addon1">
               </div>
               <div class="input-group" style="margin-bottom: 2%;">
-                  <span class="input-group-text text-area.comment" >Comment</span>
-                <textarea class="form-control" aria-label="Comment"></textarea>
+                  <span for="comentario" class="input-group-text text-area.comment" >Comment</span>
+                <textarea formControlName = "comentario" class="form-control" aria-label="Comment"></textarea>
               </div>
 
-              <button type="button " class="btn btn-secondary">Enviar</button>
-
-
-          </div>
-
+              <button [disabled]="comentariosForm.invalid" type="submit" class="btn btn-secondary">Enviar</button>
+            </form>
       </div>
     </div>
     <!-- solo desktop -->
@@ -175,9 +168,9 @@
     <div class="d-none d-lg-block">
       <div class="row" id="fotoYempresas">
         <div class="col-8" id="fotoFestival" >
-          <div class=" d-flex justify-content-center foto" style="height: 50vw; background-color: aliceblue;" >
+          <div *ngFor="let item of objFestival" class=" d-flex justify-content-center foto" style="height: 50vw; background-color: aliceblue;" >
             <!-- <img class="img-responsive img-fluid" src="https://images.rove.me/w_1920,q_85/rxfutegj378a4177vtbp/vancouver-ubc-apple-festival.jpg"  > -->
-            <img class=" img-rounded img-responsive img-fluid " src="https://i1.wp.com/actualidadtenerife.es/wp-content/uploads/2021/09/Timpleando-La-Palma.jpg?fit=1500%2C2121&ssl=1" >
+            <img class=" img-rounded img-responsive img-fluid " src="{{ item.foto }}">
           </div>
         </div>
         <div class="col-4" id="empresasyboton" >
@@ -243,15 +236,11 @@
           <div class="row" id="comentarios" >
             <div class="col" id="comentarioscol" style="margin: 2%;">
               <h4> Comentarios</h4>
-              <div class="list-group infinite-scroll lista-scroll">
-                <a href="#" class="list-group-item ">
-                  <h6 class="list-group-item-heading">@user1</h6>
-                  ¡me ha gustado muxo! Increible display de puestos, Muy bonito;
-                </a>
-                <a href="#" class="list-group-item ">
-                  <h6 class="list-group-item-heading">@user3</h6>
-                  Volveré el año que viene!
-                </a>
+              <div *ngFor="let item of listComentarios" class="list-group infinite-scroll lista-scroll">
+                <div href="#" class="list-group-item ">
+                  <h6 class="list-group-item-heading">@{{item.userName}}</h6>
+                  {{item.comentario}}
+                </div>
               </div>
             </div>
           </div>
@@ -271,29 +260,29 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <form [formGroup]="comentariosForm" (ngSubmit)="agregarComentarios()" class="row">
             <div class="column" id="botonComprar" style="height:100%; width: 100%;">
               <div class="d-flex justify-content-center flex-column" style="margin: 2%; ">
                 <h5>Envía tu comentario</h5>
                 <a id="duda"></a>
                 <div class="input-group" style="margin-bottom: 1.5%;">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <span for="userName" class="input-group-text" id="basic-addon1">@</span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                  <input type="text" class="form-control" formControlName = "userName" placeholder="Username" aria-label="Username"
                     aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group " style="margin-bottom: 2%;">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" style="height: 100%;">Comment</span>
+                    <span for="comentario" class="input-group-text" style="height: 100%;">Comment</span>
                   </div>
-                  <textarea class="form-control"  aria-label="Comment"></textarea>
+                  <textarea class="form-control" formControlName = "comentario" aria-label="Comment"></textarea>
                 </div>
-                <button type="button " class="btn btn-secondary">Enviar</button>
+                <button [disabled]="comentariosForm.invalid" type="submit " class="btn btn-secondary">Enviar</button>
               </div>
               <!-- div que tiene los dos inputfields y el boton -->
             </div>
-          </div>
+          </form>
         </div>
       </div> <!-- FIN DIV DE COMENTAIO CONCURSO INFO  id="concursosYcomentarios"-->
     </div>
