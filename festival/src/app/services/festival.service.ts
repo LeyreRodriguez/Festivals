@@ -12,4 +12,12 @@ export class FestivalService {
   obtenerFestival(): Observable<any> {
     return this.firestore.collection('festivales').snapshotChanges();
   }
+
+  obtenerComentarios(): Observable<any> {
+    return this.firestore.collection('comentarios').snapshotChanges();
+  }
+
+  agregarComentarios(comentario: any): Promise<any> {
+    return this.firestore.collection('comentarios').add(comentario);
+  }
 }
