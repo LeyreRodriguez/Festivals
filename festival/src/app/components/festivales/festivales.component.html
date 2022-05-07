@@ -1,0 +1,69 @@
+<!--Buscador-->
+<body>
+  <nav class=" d-flex justify-content-center " style="max-height: 35px;">
+    <select class="dropdown-toggle" required>
+      <option value="1" selected disabled>Tipo</option>
+      <optgroup>
+          <option value="Música">Música</option>
+          <option value="Manga">Manga</option>
+          <option value="Timple">Timple</option>
+          <option value="Gastronomia">Gastronomia</option>
+      </optgroup>
+    </select>
+    <select class="dropdown-toggle" required>
+        <option value="1" selected disabled>Ubicación</option>
+        <optgroup label="Pais" placeholder="Ubicación">
+            <option value="Francia">Francia</option>
+            <option value="España">España</option>
+            <option value="ReinoUnido">Reino Unido</option>
+        </optgroup>
+        <optgroup label="Ciudad">
+            <option value="LyonFrancia">Lyon, Francia</option>
+            <option value="MadridEspaña">Madrid, España</option>
+            <option value="YorkReinoUnido">York, Reino Unido</option>
+        </optgroup>
+    </select>
+    <input type="date" name="Fecha">
+    <nav>
+      <a [routerLink]="['/festivales']" ><img class="img-fluid" style="max-height: 35px;" src="assets/img/buscador.png" /></a>
+    </nav>
+  </nav>
+  <!--Buscador-->
+  <!--Botones de filtro-->
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <div *ngFor="let item of categorias" class="col">
+      <button type="button" class="btn justify-content-center">{{ item }}</button>
+    </div>
+  </div>
+  <!--Botones de filtro-->
+  <!--Festivales-->
+  <div class="row justify-content-center">
+
+    <div *ngFor="let item of listFestivales" class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="{{ item.foto }}" class="card-img-top" alt="{{ item.nombre }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.nombre }}</h5>
+          <p class="card-text">{{ item.fecha }}</p>
+          <p class="card-text">{{ item.informacion_corta }}</p>
+          <!--Arreglar, no funciona el link-->
+          <p>
+            <!-- <a data-toggle="collapse" [routerLink]="['#collapseExample']" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Más información
+            </a> -->
+            <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Más información
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <p class="card-text">{{ item.informacion_larga }}</p>
+            </div>
+          </div>
+          <a [routerLink]="['/festival', item.id]" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Festivales-->
+</body>

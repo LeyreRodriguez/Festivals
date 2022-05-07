@@ -1,0 +1,48 @@
+<body>
+  <div class="d-flex justify-content-center align-items-center">
+  <div>
+      <h1 class="d-flex justify-content-center">Registrarse</h1>
+      <form [formGroup]="signupUsersForm" novalidate>
+        <div class="mb-3 ">
+          <input type="text" class="form-control" formControlName = "inputName" id="inputName" placeholder="Nombre*" required>
+          <div *ngIf="signupUsersForm.controls['inputName'].invalid && (signupUsersForm.controls['inputName'].dirty || signupUsersForm.controls['inputName'].touched)" class="alert alert-danger" >
+            <div *ngIf="signupUsersForm.controls['inputName'].errors">
+              El nombre es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName = "inputLastName" id="inputLastName" placeholder="Apellidos*" required>
+          <div *ngIf="signupUsersForm.controls['inputLastName'].invalid && (signupUsersForm.controls['inputLastName'].dirty || signupUsersForm.controls['inputLastName'].touched)" class="alert alert-danger" >
+            <div *ngIf="signupUsersForm.controls['inputLastName'].errors">
+              El apellido es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" formControlName = "inputEmail" id="inputEmail" placeholder="Correo*" required>
+          <div *ngIf="signupUsersForm.controls['inputEmail'].invalid && (signupUsersForm.controls['inputEmail'].dirty || signupUsersForm.controls['inputEmail'].touched)" class="alert alert-danger" >
+            <div *ngIf="signupUsersForm.controls['inputEmail'].errors">
+              El email es obligatorio.<br>
+              Por favor, cumpla con el formato usuario@example.com
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" formControlName = "inputPassword" id="inputPassword" placeholder="Contraseña*" required>
+          <div *ngIf="signupUsersForm.controls['inputPassword'].invalid && (signupUsersForm.controls['inputPassword'].dirty || signupUsersForm.controls['inputPassword'].touched)" class="alert alert-danger" >
+            <div *ngIf="signupUsersForm.controls['inputPassword'].errors">
+              La contraseña es obligatoria.<br>
+              La contraseña debe tener una mayúscula, <br>
+              una minúscula y ser de extension minima 8 caracteres <br>
+              y máxima 15 caracteres.
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="d-flex justify-content-center flex-direction: row align-items-center">
+        <button type="button" [routerLink]="['/mainPage']" id="Registrarse" class="btn btn-primary d-flex justify-content-center " [disabled]="signupUsersForm.invalid">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</body>
