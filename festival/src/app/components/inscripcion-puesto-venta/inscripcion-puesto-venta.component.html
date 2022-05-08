@@ -1,0 +1,121 @@
+
+<body >
+  <h1 class=" d-flex justify-content-center">FORMULARIO DE INSCRIPCIÓN DE UN PUESTO DE VENTA
+    <!--Símbolo de carga-->
+    <div *ngIf="loading" class="spinner-border float-end" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+    <!--Símbolo de carga-->
+  </h1>
+  <form [formGroup]="ventaForm" (ngSubmit)="guardarVenta()" class="row g-3" novalidate>
+    <!--Nombre festival-->
+    <div class="col-12">
+      <label for="inputContestName" class="form-label">Nombre del festival:</label>
+      <select class="form-select" required formControlName = "inputContestName">
+        <option *ngFor="let item of listFestivales">{{item.nombre}}</option>
+      </select>
+    <div *ngIf="ventaForm.controls['inputContestName'].invalid && (ventaForm.controls['inputContestName'].dirty || ventaForm.controls['inputContestName'].touched)" class="alert alert-danger" >
+      <div *ngIf="ventaForm.controls['inputContestName'].errors">
+        Debes seleccionar un festival.
+      </div>
+    </div>
+    <!--Nombre festival-->
+    <!--Nombre usuario-->
+    </div>
+    <div class="col-md-6">
+      <label for="inputName" class="form-label">Nombre:</label>
+      <input type="text" class="form-control" id="inputName" formControlName = "inputName" placeholder="Nombre">
+      <div *ngIf="ventaForm.controls['inputName'].invalid && (ventaForm.controls['inputName'].dirty || ventaForm.controls['inputName'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputName'].errors">
+          El nombre es obligatorio.
+        </div>
+      </div>
+    </div>
+    <!--Nombre usuario-->
+    <!--Apellidos usuario-->
+    <div class="col-md-6">
+      <label for="inputLastName" class="form-label">Apellidos:</label>
+      <input type="text" class="form-control" id="inputLastName" formControlName = "inputLastName" placeholder="Apellido">
+      <div *ngIf="ventaForm.controls['inputLastName'].invalid && (ventaForm.controls['inputLastName'].dirty || ventaForm.controls['inputLastName'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputLastName'].errors">
+          El apellido es obligatorio.
+        </div>
+      </div>
+    </div>
+    <!--Apellidos usuario-->
+    <!--DNI usuario-->
+    <div class="col-md-4">
+      <label for="inputDNI" class="form-label">DNI:</label>
+      <input type="text" class="form-control" id="inputDNI" formControlName = "inputDNI" placeholder="12345678A">
+      <div *ngIf="ventaForm.controls['inputDNI'].invalid && (ventaForm.controls['inputDNI'].dirty || ventaForm.controls['inputDNI'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputDNI'].errors">
+          El DNI es obligatorio. <br>
+          Por favor, introduce un DNI válido.
+        </div>
+      </div>
+    </div>
+    <!--DNI usuario-->
+    <!--Nº Contacto usuario-->
+    <div class="col-md-4">
+      <label for="inputContactNumber" class="form-label">Nº Contacto: </label>
+      <input type="text" class="form-control" id="inputContactNumber" formControlName = "inputContactNumber" placeholder="+34 666666666">
+      <div *ngIf="ventaForm.controls['inputContactNumber'].invalid && (ventaForm.controls['inputContactNumber'].dirty || ventaForm.controls['inputContactNumber'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputContactNumber'].errors">
+          El Nº de teléfono es obligatorio. <br>
+          Por favor, introduce un número de teléfono válido.
+        </div>
+      </div>
+    </div>
+    <!--Nº Contacto usuario-->
+    <!--Correo usuario-->
+    <div class="col-md-4">
+      <label for="inputEmail" class="form-label">Correo:</label>
+      <input type="email" class="form-control" id="inputEmail" formControlName = "inputEmail" placeholder="usuario@example.com">
+      <div *ngIf="ventaForm.controls['inputEmail'].invalid && (ventaForm.controls['inputEmail'].dirty || ventaForm.controls['inputEmail'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputEmail'].errors">
+          El email es obligatorio. <br>
+          Por favor, cumple con el formato usuario@example.com
+        </div>
+      </div>
+    </div>
+    <!--Correo usuario-->
+    <hr>
+    <h1 class="d-flex justify-content-center">Tu negocio</h1>
+    <!--Nombre del negocio-->
+    <div class="col-12">
+      <label for="inputBusinessName" class="form-label">Nombre del negocio: </label>
+      <input type="text" class="form-control" id="inputBusinessName" formControlName = "inputBusinessName" placeholder="Nombre del negocio">
+      <div *ngIf="ventaForm.controls['inputBusinessName'].invalid && (ventaForm.controls['inputBusinessName'].dirty || ventaForm.controls['inputBusinessName'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputBusinessName'].errors">
+          El nombre del negocio es obligatorio.
+        </div>
+      </div>
+    </div>
+    <!--Nombre del negocio-->
+    <!--Descripcion de la tarea a realizar-->
+    <div class="mb-3">
+      <label for="inputDescription" class="form-label">Descripcion de la tarea a realizar:</label>
+      <textarea class="form-control" id="inputDescription" rows="3" formControlName = "inputDescription" placeholder="Descripción"></textarea>
+      <div *ngIf="ventaForm.controls['inputDescription'].invalid && (ventaForm.controls['inputDescription'].dirty || ventaForm.controls['inputDescription'].touched)" class="alert alert-danger" >
+        <div *ngIf="ventaForm.controls['inputDescription'].errors">
+          Por favor, introduce una breve descripción de la tarea a realizar.
+        </div>
+      </div>
+    </div>
+    <!--Descripcion de la tarea a realizar-->
+    <!--Sección botones-->
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center">
+            <button [disabled]="ventaForm.invalid"  type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+          <div class="col-md-6 d-flex justify-content-center">
+              <button routerLink="/festivales" type="submit" class="btn btn-primary">Cancelar</button>
+          </div>
+    </div>
+    <!--Sección botones-->
+  </form>
+  <div *ngIf="overlay" class="contenedor2" style="width: 100%">
+    <h5>El formulario se ha enviado de forma correcta</h5>
+    <input routerLink="/festivales" class="btn btn-primary" type="submit" value="Inicio"/>
+  </div>
+</body>
