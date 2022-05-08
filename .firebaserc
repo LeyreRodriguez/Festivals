@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "festival-ff759"
+  },
+  "targets": {
+    "festival-ff759": {
+      "hosting": {
+        "festival": [
+          "festival-ff759"
+        ]
+      }
+    }
+  }
+}

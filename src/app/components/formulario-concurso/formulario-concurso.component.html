@@ -1,0 +1,98 @@
+<body>
+  <h1 class=" d-flex justify-content-center">FORMULARIO DE INSCRIPCIÓN EN UN CONCURSO
+    <!--Símbolo de carga-->
+    <div *ngIf="loading" class="spinner-border float-end" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+    <!--Símbolo de carga-->
+  </h1>
+  <form [formGroup]="concursoForm" (ngSubmit)="guardarConcurso()" class="row g-3" novalidate>
+    <!--Nombre concurso-->
+    <div class="col-12">
+      <label for="inputContestName" class="form-label">Nombre del concurso:</label>
+      <select class="form-select" required formControlName = "inputContestName">
+        <option *ngFor="let item of listConcuros">{{item.nombreConcurso}}</option>
+      </select>
+      <div *ngIf="concursoForm.controls['inputContestName'].invalid && (concursoForm.controls['inputContestName'].dirty || concursoForm.controls['inputContestName'].touched)" class="alert alert-danger" >
+        <div *ngIf="concursoForm.controls['inputContestName'].errors">
+          Por favor, seleccione un concurso.
+        </div>
+      </div>
+    </div>
+    <!--Nombre concurso-->
+    <!--Nombre usuario-->
+    <div class="col-md-6">
+      <label for="inputName"  class="form-label">Nombre:</label>
+      <input type="text" required class="form-control" id="inputName" formControlName = "inputName" placeholder="Nombre">
+      <div *ngIf="concursoForm.controls['inputName'].invalid && (concursoForm.controls['inputName'].dirty || concursoForm.controls['inputName'].touched)" class="alert alert-danger" >
+        <div *ngIf="concursoForm.controls['inputName'].errors">
+          El nombre es obligatorio.
+        </div>
+      </div>
+    </div>
+    <!--Nombre usuario-->
+    <!--Apellidos usuario-->
+    <div class="col-md-6">
+      <label for="inputLastName" class="form-label">Apellidos:</label>
+      <input type="text" required class="form-control" id="inputLastName" formControlName = "inputLastName" placeholder="Apellidos" >
+      <div *ngIf="concursoForm.controls['inputLastName'].invalid && (concursoForm.controls['inputLastName'].dirty || concursoForm.controls['inputLastName'].touched)" class="alert alert-danger" >
+        <div *ngIf="concursoForm.controls['inputLastName'].errors">
+          El apellido es obligatorio.
+        </div>
+      </div>
+    </div>
+    <!--Apellidos usuario-->
+    <!--DNI usuario-->
+    <div class="col-md-4">
+      <label for="inputDNI" class="form-label">DNI:</label>
+      <input type="text" required class="form-control" id="inputDNI" formControlName = "inputDNI" placeholder="12345678A">
+      <div *ngIf="concursoForm.controls['inputDNI'].invalid && (concursoForm.controls['inputDNI'].dirty || concursoForm.controls['inputDNI'].touched)" class="alert alert-danger" >
+        <div *ngIf="concursoForm.controls['inputDNI'].errors">
+          El DNI es obligatorio. <br>
+          Por favor, introduzca un DNI válido.
+        </div>
+      </div>
+    </div>
+    <!--DNI usuario-->
+    <!--Nº Contacto usuario-->
+    <div class="col-md-4">
+      <label for="inputContactNumber" class="form-label">Nº Contacto: </label>
+      <input type="text"required  class="form-control" id="inputContactNumber" formControlName = "inputContactNumber" placeholder="+34 666666666">
+      <div *ngIf="concursoForm.controls['inputContactNumber'].invalid && (concursoForm.controls['inputContactNumber'].dirty || concursoForm.controls['inputContactNumber'].touched)" class="alert alert-danger" >
+        <div *ngIf="concursoForm.controls['inputContactNumber'].errors">
+          El Nº de teléfono es obligatorio.<br>
+          Por favor, introduzca un número de teléfono valido.
+        </div>
+      </div>
+    </div>
+    <!--Nº Contacto usuario-->
+    <!--Correo usuario-->
+    <div class="col-md-4">
+      <label for="inputEmail" class="form-label">Correo:</label>
+      <input type="email" required class="form-control" id="inputEmail" formControlName = "inputEmail" placeholder="usuario@example.com">
+      <div *ngIf="concursoForm.controls['inputEmail'].invalid && (concursoForm.controls['inputEmail'].dirty || concursoForm.controls['inputEmail'].touched)" class="alert alert-danger" >
+        <div *ngIf="concursoForm.controls['inputEmail'].errors">
+          El email es obligatorio.<br>
+          Por favor, cumpla con el formato usuario@example.com
+        </div>
+      </div>
+    </div>
+    <!--Correo usuario-->
+    <!--Sección botones-->
+    <div class="d-flex justify-content-center">
+      <div class="col-md-6 d-flex justify-content-center">
+        <button [disabled]="concursoForm.invalid" type="submit" class="btn btn-primary" >Enviar</button>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center">
+        <button routerLink="/festivales" type="submit" class="btn btn-primary">Cancelar</button>
+      </div>
+    </div>
+    <!--Sección botones-->
+  </form>
+  <!--Overlay-->
+  <div *ngIf="overlay" class="contenedor2" style="width: 100%" >
+    <h5>El formulario se ha enviado de forma correcta</h5>
+    <input routerLink="/festivales" class="btn btn-primary" type="submit" value="Inicio"/>
+  </div>
+  <!--Overlay-->
+</body>
