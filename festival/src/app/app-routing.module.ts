@@ -16,7 +16,6 @@ const rutas: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'festivales', component: FestivalesComponent },
     { path: 'mainPage', component: MainPageComponent },
-    { path: 'festival', component: FestivalComponent },
     { path: 'festival/:id', component: FestivalComponent },
     { path: 'concurso', component: FormularioConcursoComponent },
     { path: 'entradas', component: FormularioCompraEntradasComponent },
