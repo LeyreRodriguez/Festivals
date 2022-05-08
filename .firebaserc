@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "festivals-61d7b": {
+      "hosting": {
+        "Festivals_angular": [
+          "festivals-61d7b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "festivals-61d7b"
+  }
+}

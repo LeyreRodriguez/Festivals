@@ -1,0 +1,14 @@
+<form>
+    <div class="center">
+        <div class="inputs-container">
+            <div class="login-info-container">
+                <legend>¿Cuál es el perfil de usuario que quiere obtener?*</legend>
+                <div class="contenedor_input">
+                    <input type="radio" [(ngModel)]="myfood" name="rol" #r1 value="usuario" required ngModel><label for="r1">Usuario</label>
+                    <input type="radio" [(ngModel)]="myfood" name="rol" #r2 value="empresa" required ngModel><label for="r2">Empresa</label>
+                </div>
+                <button type="button" (click)="changeRoute()" class="btn">Registrarse</button>
+            </div>
+        </div>
+    </div>
+</form>

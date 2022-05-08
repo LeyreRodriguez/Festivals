@@ -1,0 +1,81 @@
+body{
+    height: 100vh;
+    font-family:  Arial, Helvetica, sans-serif;
+    /* background-image: url("imagenes/COACHELLA-2022.jpeg"); */
+    background-size: cover;
+    background-position: center;
+} 
+
+.center{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-content: center;
+    flex-direction: column;
+
+}
+
+.login-info-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    
+}
+
+.login-info-container > p {
+    font-size: 1.25em;
+    margin-top: 1.5em;
+}
+
+.contenedor_input{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.inputs-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    width: 30%;
+    height: 1.125rem;
+    font-size: 0.6em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: none;
+    background-color: #CBEFFF;
+}
+
+@media screen and (min-width: 0em) and (max-width:40em) {
+    .login-info-container {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 40em) and (max-width:75em) {
+    .login-container {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 75em) {
+    .login-info-container > p {
+        margin: 0;
+    }
+}

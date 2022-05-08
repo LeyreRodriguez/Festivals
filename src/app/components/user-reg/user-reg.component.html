@@ -1,0 +1,26 @@
+<div class="centrar">
+    <div class="login-container">
+        <div class="login-info-container">
+            <h1 class="title">Registrarse</h1>
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()"> <!--  -->
+                <div class="input_contenedor">
+                    <i class="fas fa-user icon"></i>
+                    <input formControlName="firstName" id="nombre" type="text" placeholder="Nombre*" pattern="[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+" type="String" minlength="2" maxlength="20" required>
+                </div>
+                <div class="input_contenedor">
+                    <i class="fas fa-user icon"></i>
+                    <input formControlName="lastName" id="apellidos" type="text" placeholder="Apellidos*" pattern="([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)|([A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]+\s+[A-ZÁÉÍÓÚÑ]{1}[a-zñáéíóú]*)" minlength="2" maxlength="50" required>
+                </div>
+                <div class="input_contenedor">
+                    <i class="fas fa-envelope icon"></i>
+                    <input formControlName="email" id="correo" type="email" placeholder="Correo*" pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}" required>
+                </div>
+                <div class="input_contenedor">
+                    <i class="fas fa-key icon"></i>
+                    <input formControlName="password" id="contraseña" type="password" placeholder="Contraseña*" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,15}$" minlength="8" maxlength="15" required>
+                </div>
+                <button type="submit" id="RegistroUsuario" class="btn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</div>

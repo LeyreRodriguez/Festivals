@@ -1,0 +1,20 @@
+<div class="center">
+    <div class="login-container">
+        <!-- <img class="image-container" src="../../../assets/images/festival4.jpg" alt="login"> -->
+        <div class="login-info-container">
+            <h1 class="title">¡Ingrese a su cuenta!</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">                
+                <div class="input_contenedor">
+                    <i class="fas fa-envelope icon"></i>
+                    <input formControlName="email" id="correo" type="email" placeholder="Correo*" pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}" required>
+                </div>
+                <div class="input_contenedor">
+                    <i class="fas fa-key icon"></i>
+                    <input formControlName="password" id="contraseña" type="password" placeholder="Contraseña*" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,15}$" minlength="8" maxlength="15" required>
+                </div>
+                <button type="submit" id="InciarSesion" class="btn">Iniciar sesión</button>
+                <p>¿No tienes una cuenta?<a routerLink="/register" class="span">Registrarse</a></p>
+            </form>
+        </div>
+    </div>
+</div>
