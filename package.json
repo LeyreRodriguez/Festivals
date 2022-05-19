@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/animations": "^13.3.8",
+    "@ionic/cli": "^6.19.1"
+  }
+}
