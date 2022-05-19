@@ -5,6 +5,7 @@ export interface User {
     photoUrl: string,
     company: boolean,
     admin: boolean,    
-    festivalesFavoritos: [];
-    userName: string;
+    festivalesFavoritos: [],
+    userName: string,
+    login: boolean,
 }
