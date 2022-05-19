@@ -17,7 +17,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 
 const routes: Routes = [
   {
-    path: 'mainPage',
+    path: '',
     component: MainPageComponent,
     pathMatch: 'full'
   },
