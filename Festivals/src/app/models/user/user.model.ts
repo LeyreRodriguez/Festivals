@@ -7,5 +7,4 @@ export class User {
     admin?: boolean;
     festivalesFavoritos?: [];
     userName?: string;
-    login?: boolean;
 }
