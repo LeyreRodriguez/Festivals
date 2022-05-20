@@ -34,4 +34,8 @@ export class ConcursoService {
   obtenerConcursos(): Observable<any> {
     return this.firestore.collection('concursosExistentes').snapshotChanges();
   }
+
+  obtenerConcursosActivos(): Observable<any> {
+    return this.firestore.collection('concursosActivos').snapshotChanges();
+  }
 }
