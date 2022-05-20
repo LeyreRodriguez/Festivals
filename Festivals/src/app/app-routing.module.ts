@@ -14,6 +14,7 @@ import { FormularioCompraEntradasComponent } from './component/formulario-compra
 import { FormularioConcursoComponent } from './component/formulario-concurso/formulario-concurso.component';
 import { ErrorComponent } from './component/error/error.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import {FavouritesComponent} from  './component/favourites/favourites.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'mainPage',
@@ -72,6 +77,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'favourites',
+    component: FavouritesComponent
   }
 
 
