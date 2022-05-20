@@ -5,7 +5,10 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { comentario } from '../../models/comentario/comentario.module';
 import { concurso } from '../../models/concurso/concurso.module';
 import { empresa } from '../../models/empresa/empresa.module';
+import { User } from 'firebase/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { ConcursoService } from 'src/app/services/concurso.service';
 
 @Component({
   selector: 'app-festival',
@@ -14,18 +17,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FestivalComponent implements OnInit {
   comentariosForm: FormGroup;
-  objFestival: festival[] = [];
+  objFestival: Array<festival> = new Array();
   listComentarios: comentario[] = [];
   listConcursos: concurso[] = [];
   listEmpresas: empresa[] = [];
   id: number | undefined;
   toastr: any;
-
+  userLogged = this.authService.checkIfCurrentUser();
+  user: User;
+  
   constructor(
     private festivalService: FestivalService,
+    private concursoService: ConcursoService,
     private router: Router,
     private rutaActiva: ActivatedRoute,
-    private fb: FormBuilder,) {
+    private fb: FormBuilder,
+    private authService: AuthService,) {
       this.comentariosForm = this.fb.group({
         userName: ['', Validators.required],
         comentario: ['', Validators.required],
@@ -41,7 +48,6 @@ export class FestivalComponent implements OnInit {
   }
 
   obtenerId(){
-    console.log("Entra en obtener Id");
     this.rutaActiva.params.subscribe(
       (params: Params) => {
         this.id = params['id'];
@@ -51,7 +57,6 @@ export class FestivalComponent implements OnInit {
 
   obtenerFestival(){
     this.festivalService.obtenerFestival().subscribe(doc => {
-      this.objFestival = [];
       doc.forEach((element: any) => {
         if(this.id == element.payload.doc.data().id){
           this.objFestival.push({
@@ -90,7 +95,7 @@ export class FestivalComponent implements OnInit {
   }
 
   obtenerConcursos(){
-    this.festivalService.obtenerConcursos().subscribe(doc => {
+    /*this.festivalService.obtenerConcursos().subscribe(doc => {
       this.listConcursos = [];
       doc.forEach((element: any) => {
         this.listConcursos.push({
@@ -98,7 +103,18 @@ export class FestivalComponent implements OnInit {
           ...element.payload.doc.data()
         })
       });
+    })*/
+    this.concursoService.obtenerConcursosActivos().subscribe(doc => {
+      doc.forEach((element: any) => {
+        if(this.id == element.payload.doc.data().idFestival){
+          this.listConcursos.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+        }
+      });
     })
+    console.log(this.listConcursos);
   }
 
   obtenerEmpresas(){
@@ -113,6 +129,14 @@ export class FestivalComponent implements OnInit {
       console.log(this.listEmpresas);
     })
   }
+
+  comprobarEmpresa(){
+    if(this.userLogged){
+      if(this.authService.getUser()){
+        console.log("Es una empresa logeada");
+        return true;
+      }
+    }
+    return false;
+  }
 }
-
-
