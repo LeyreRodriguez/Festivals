@@ -95,15 +95,6 @@ export class FestivalComponent implements OnInit {
   }
 
   obtenerConcursos(){
-    /*this.festivalService.obtenerConcursos().subscribe(doc => {
-      this.listConcursos = [];
-      doc.forEach((element: any) => {
-        this.listConcursos.push({
-          id: element.payload.doc.id,
-          ...element.payload.doc.data()
-        })
-      });
-    })*/
     this.concursoService.obtenerConcursosActivos().subscribe(doc => {
       doc.forEach((element: any) => {
         if(this.id == element.payload.doc.data().idFestival){
@@ -121,13 +112,15 @@ export class FestivalComponent implements OnInit {
     this.festivalService.obtenerEmpresas().subscribe(doc => {
       this.listEmpresas = [];
       doc.forEach((element: any) => {
-        this.listEmpresas.push({
-          id: element.payload.doc.id,
-          ...element.payload.doc.data()
-        })
+        if(this.id == element.payload.doc.data().idFestival){
+          this.listEmpresas.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+        }
       });
-      console.log(this.listEmpresas);
     })
+    console.log(this.listEmpresas);
   }
 
   comprobarEmpresa(){
@@ -140,3 +133,5 @@ export class FestivalComponent implements OnInit {
     return false;
   }
 }
+
+
