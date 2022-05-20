@@ -24,7 +24,6 @@ export class FestivalComponent implements OnInit {
   id: number | undefined;
   toastr: any;
   userLogged = this.authService.checkIfCurrentUser();
-  user: User;
   
   constructor(
     private festivalService: FestivalService,
@@ -84,12 +83,13 @@ export class FestivalComponent implements OnInit {
   }
 
   agregarComentarios() {
-    const entrada: any = {
+    const comentario: any = {
       userName: this.comentariosForm.value.userName,
       comentario: this.comentariosForm.value.comentario,
     }
+    comentario.idFestival = this.id;
 
-    this.festivalService.agregarComentarios(entrada).then(() => {
+    this.festivalService.agregarComentarios(comentario).then(() => {
       this.comentariosForm.reset();
     }, error => {
       this.toastr.error('Opps.. ocurrio un error', 'Error');
