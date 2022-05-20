@@ -10,7 +10,7 @@ import { Inject } from '@angular/core';
   ]
 })
 export class concurso {
-  id?: string;
+  idFestival: number;
   nombreConcurso: string;
   descripcionConcurso: string;
   nombre: string;
@@ -21,6 +21,7 @@ export class concurso {
   fecha?: Date;
 
   constructor(
+    @Inject(String) idFestival: number,
     @Inject(String) nombreConcurso: string,
     @Inject(String) descripcionConcurso: string,
     @Inject(String) nombre: string,
@@ -29,6 +30,7 @@ export class concurso {
     @Inject(String) nContacto: string,
     @Inject(String) correo: string,
     ){
+      this.idFestival = idFestival;
       this.nombreConcurso = nombreConcurso;
       this.descripcionConcurso = descripcionConcurso;
       this.nombre = nombre;
