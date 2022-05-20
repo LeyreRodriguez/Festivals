@@ -72,12 +72,15 @@ export class FestivalComponent implements OnInit {
     this.festivalService.obtenerComentarios().subscribe(doc => {
       this.listComentarios = [];
       doc.forEach((element: any) => {
-        this.listComentarios.push({
-          id: element.payload.doc.id,
-          ...element.payload.doc.data()
-        })
+        if(this.id == element.payload.doc.data().idFestival){
+          this.listComentarios.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+        }
       });
     })
+    console.log(this.listComentarios);
   }
 
   agregarComentarios() {
