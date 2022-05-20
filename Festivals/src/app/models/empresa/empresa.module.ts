@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Inject } from '@angular/core';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -12,6 +11,7 @@ import { Inject } from '@angular/core';
 
 
 export class  empresa {
+  idFestival: number;
   inputContestName: string;
   inputName: string;
   inputLastName: string;
@@ -21,6 +21,7 @@ export class  empresa {
   inputBusinessName: string;
   inputDescription: string;
   constructor(
+    @Inject(String) idFestival: number,
     @Inject(String) inputContestName: string,
     @Inject(String) inputName: string,
     @Inject(String) inputLastName: string,
@@ -30,6 +31,7 @@ export class  empresa {
     @Inject(String) inputBusinessName: string,
     @Inject(String) inputDescription: string,
     ){
+      this.idFestival = idFestival;
       this.inputContestName = inputContestName;
       this.inputName = inputName;
       this.inputLastName = inputLastName;
