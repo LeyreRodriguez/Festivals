@@ -13,11 +13,13 @@ import { Inject } from '@angular/core';
 export class  comentario {
   userName: string;
   comentario: string;
+  idFestival: number;
   constructor(
-    @Inject(String) userName: string,  @Inject(String) comentario: string,
+    @Inject(String) userName: string,  @Inject(String) comentario: string, @Inject(String) idFestival: number,
     ){
       this.userName = userName;
       this.comentario = comentario;
+      this.idFestival = idFestival;
   }
 }
 
