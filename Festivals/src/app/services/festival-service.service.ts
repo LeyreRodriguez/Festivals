@@ -1,5 +1,3 @@
-
-
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -29,5 +27,9 @@ export class FestivalService {
 
   obtenerEmpresas(): Observable<any> {
     return this.firestore.collection('puestoVenta').snapshotChanges();
+  }
+
+  obtenerUsers(): Observable<any> {
+    return this.firestore.collection('user').snapshotChanges();
   }
 }
