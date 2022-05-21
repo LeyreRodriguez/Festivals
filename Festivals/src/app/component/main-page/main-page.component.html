@@ -1,15 +1,12 @@
 <app-header></app-header>
 
 <ion-content>
-  <nav>
-    <a [routerLink]="['/profile']" ><img class="img-fluid" style="max-height: 35px;" src="assets/img/buscador.png" /></a>
-  </nav>
   <!--Buscador-->
   <nav class=" d-flex justify-content-center " style="max-height: 35px;">
     <select class="dropdown-toggle" required>
       <option value="1" selected disabled>Tipo</option>
       <optgroup>
-          <option *ngFor="let item of categorias" value="Música">{{item}}</option>
+          <option *ngFor="let item of listTiposFestivales" value="Música">{{item.nameType}}</option>
       </optgroup>
     </select>
     <select class="dropdown-toggle" required>
