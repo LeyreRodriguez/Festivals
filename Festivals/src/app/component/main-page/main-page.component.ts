@@ -1,8 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { buscador } from 'src/app/models/buscador/buscador.module';
-import { festival } from 'src/app/models/festival/festival';
-import { FestivalesService } from 'src/app/services/festivales.service';
 import { MainPageService } from 'src/app/services/main-page.service';
 
 @Component({
@@ -12,37 +10,22 @@ import { MainPageService } from 'src/app/services/main-page.service';
 export class MainPageComponent implements OnInit {
 
   listTiposFestivales: buscador[] = [];
-  listFestivales: festival[] = [];
-  categorias: string[] = [];
-
-  constructor(private festivalesService: FestivalesService) { }
+  constructor(private mainPageService: MainPageService) { }
 
   ngOnInit(): void {
-    this.obtenerFestivales();
+    this.obtenerCFestivales();
   }
 
-  obtenerFestivales(){
-    this.festivalesService.obtenerFestivales().subscribe(doc => {
-      console.log("Holaaaaaa");
-      this.listFestivales = [];
+  obtenerCFestivales(){
+    this.mainPageService.obtenerFestivales().subscribe(doc => {
+      this.listTiposFestivales = [];
       doc.forEach((element: any) => {
-        this.listFestivales.push({
+        this.listTiposFestivales.push({
           id: element.payload.doc.id,
           ...element.payload.doc.data()
         })
       });
-      this.obtenerCategorias();
+      console.log(this.listTiposFestivales);
     })
-  }
-
-  obtenerCategorias(){
-    this.categorias = [];
-    for (var val of this.listFestivales) {
-      for(var cat of val.categorias){
-        if(this.categorias.indexOf(cat) == -1){
-          this.categorias.push(cat);
-        }
-      }
-    }
   }
 }
