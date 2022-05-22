@@ -5,7 +5,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { comentario } from '../../models/comentario/comentario.module';
 import { concurso } from '../../models/concurso/concurso.module';
 import { empresa } from '../../models/empresa/empresa.module';
-import { User } from 'firebase/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ConcursoService } from 'src/app/services/concurso.service';
@@ -23,8 +22,9 @@ export class FestivalComponent implements OnInit {
   listEmpresas: empresa[] = [];
   id: number | undefined;
   toastr: any;
-  userLogged = this.authService.checkIfCurrentUser();
-  
+  userLogged: boolean = false;
+  isCompany: boolean = false;
+
   constructor(
     private festivalService: FestivalService,
     private concursoService: ConcursoService,
@@ -39,6 +39,7 @@ export class FestivalComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.checkLoggedUser();
     this.obtenerFestival();
     this.obtenerId();
     this.obtenerComentarios();
@@ -79,7 +80,6 @@ export class FestivalComponent implements OnInit {
         }
       });
     })
-    console.log(this.listComentarios);
   }
 
   agregarComentarios() {
@@ -108,7 +108,6 @@ export class FestivalComponent implements OnInit {
         }
       });
     })
-    console.log(this.listConcursos);
   }
 
   obtenerEmpresas(){
@@ -123,18 +122,40 @@ export class FestivalComponent implements OnInit {
         }
       });
     })
-    console.log(this.listEmpresas);
   }
 
-  comprobarEmpresa(){
-    if(this.userLogged){
-      if(this.authService.getUser()){
-        console.log("Es una empresa logeada");
-        return true;
+  checkLoggedUser() {
+    this.authService.afAuth.onAuthStateChanged((user) => {
+      if (user) {
+        this.authService.readUser().then((data) => {
+          this.isCompany = data.get!("company")
+        })
+        this.userLogged = true;
+      } else {
+        this.userLogged = false;
       }
+    });
+  }
+
+  changeRoute() {
+    if (this.userLogged){
+      this.router.navigate(['/', 'favourites']);
     }
-    return false;
+  } 
+
+  compraRoute(){
+    if (this.userLogged){
+      this.router.navigate(['/', 'entradas']);
+    }else{
+      this.router.navigate(['/', 'signupUsers']);
+    }
+  }
+
+  ventaRoute(){
+    if (this.userLogged){
+      this.router.navigate(['/', 'puestoVenta']);
+    }else{
+      this.router.navigate(['/', 'signupCompany']);
+    }
   }
 }
-
-
