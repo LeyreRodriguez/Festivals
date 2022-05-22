@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { comentario } from 'src/app/models/comentario/comentario.module';
 import { festival } from 'src/app/models/festival/festival';
 import { FestivalesService } from '../../services/festivales.service';
@@ -12,7 +13,9 @@ export class FestivalesComponent implements OnInit {
   listFestivales: festival[] = [];
   categorias: string[] = [];
 
-  constructor( private festivalesService: FestivalesService) { }
+  constructor( 
+    private festivalesService: FestivalesService,
+    private router: Router,) { }
 
   ngOnInit(): void {
     this.obtenerFestivales();
@@ -39,7 +42,10 @@ export class FestivalesComponent implements OnInit {
         })
       });
       this.obtenerCategorias();
-      console.log(this.listFestivales);
     })
   }
+
+  changeRoute(id: number) {
+    this.router.navigate(['/', 'festival', id]);
+  } 
 }
