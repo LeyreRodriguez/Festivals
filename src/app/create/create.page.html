@@ -1,0 +1,37 @@
+
+<ion-content>
+  <!-- <ion-item>
+    <ion-label position="floating">uuid usuario</ion-label>
+    <ion-input [(ngModel)]="uuidUser"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">nombre del festival</ion-label>
+    <ion-input [(ngModel)]="fesnameVal"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">id del festival</ion-label>
+    <ion-input [(ngModel)]="fesidVal"></ion-input>
+  </ion-item> -->
+
+ 
+  <!-- <ion-button color="success"
+  expand="block" (click)="createUser()">Add Festival</ion-button> -->
+    <h1> TUS FAVORITOS</h1>
+  <ion-item *ngFor="let festival of crud.FESTIVALS">
+    <ion-label>
+      <h2><strong>{{festival.festival_name}}</strong></h2>
+      <p>{{festival.festival_desc}}</p>
+    </ion-label>
+  
+
+  <div class="item-note" item-end>
+    <ion-icon color="primary" name="eye-outline" style="zoom:1.3"
+    [routerLink]="['/festival', festival.festival_id]"></ion-icon>
+
+    <ion-icon color="danger" name="trash" style="zoom:1.3" (click)="remove(festival.user_uuid, festival.festival_id)"></ion-icon>
+ 
+  </div>
+</ion-item>
+
+
+</ion-content>
