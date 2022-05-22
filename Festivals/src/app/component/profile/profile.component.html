@@ -1,0 +1,52 @@
+<ion-content>
+  <div
+    class="profile-container d-flex flex-column justify-content-center mx-auto col-3 mt-3 p-2"
+    style="width: 50%;">
+
+    <img class="userPhoto" src="{{userPhoto}}" class="rounded-circle mx-auto my-4" style="width: 15%;">
+
+    <form [formGroup]="editDataForm" class="userData d-flex flex-column mx-auto justify-content-center">
+
+      <div class="data row col-6 mx-auto" *ngIf="isCompany; else isUser">
+        <label class="w-100 mt-3">Nombre de empresa:</label>
+        <input type="text mt-1" class="userName" required formControlName="userName">
+      </div>
+
+      <div class="data row col-6 mx-auto">
+        <label class="w-100 mt-3">Email:</label>
+        <input class="email mt-1 noEditable" formControlName="email" readonly>
+      </div>
+
+
+      <ng-template #isUser>
+        <div class="data row col-6 mx-auto">
+          <label class="w-100">Nombre:</label>
+          <input class="firstName mt-1 noEditable" formControlName="firstName" readonly>
+        </div>
+
+        <div class="data row col-6 mx-auto">
+          <label class="w-100 mt-3">Apellido(s):</label>
+          <input class="lastName mt-1 noEditable" formControlName="lastName" readonly>
+        </div>
+
+        <div class="data row col-6 mx-auto">
+          <label class="w-100 mt-3">Nombre de usuario:</label>
+          <input type="text mt-1" class="userName" required formControlName="userName">
+        </div>
+      </ng-template>
+
+      <form [formGroup]="fileForm" class="row col-6 mx-auto">
+        <label class="w-100 mt-4">Actualizar foto:</label>
+        <input type="file" class="mt-1 changeFile" (change)="changeFile($event)" formControlName="file" accept=".jpeg, .webp, .png, .jpg">
+        <button class="btn btn-secondary loadFile mt-1" (click)="loadFile()">Cargar archivo</button>
+      </form>
+    </form>
+
+    <div class="row col-6 mx-auto">
+      <button class="btn saveChanges my-4" (click)="updateUserData()">Guardar cambios</button>
+    </div>
+
+  </div>
+</ion-content>
+
+<app-footer></app-footer>

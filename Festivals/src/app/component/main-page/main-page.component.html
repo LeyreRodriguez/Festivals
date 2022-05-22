@@ -1,0 +1,50 @@
+<ion-content>
+  <div class="wrapper">
+    <!--Buscador-->
+    <nav class=" d-flex justify-content-center " style="max-height: 35px;">
+      <select class="dropdown-toggle" required>
+        <option value="1" selected disabled>Tipo</option>
+        <optgroup>
+          <option *ngFor="let item of listTiposFestivales" value="Música">{{item.nameType}}</option>
+        </optgroup>
+      </select>
+      <select class="dropdown-toggle" required>
+        <option value="1" selected disabled>Ubicación</option>
+        <optgroup label="Pais" placeholder="Ubicación">
+          <option value="Francia">Francia</option>
+          <option value="España">España</option>
+          <option value="ReinoUnido">Reino Unido</option>
+        </optgroup>
+        <optgroup label="Ciudad">
+          <option value="LyonFrancia">Lyon, Francia</option>
+          <option value="MadridEspaña">Madrid, España</option>
+          <option value="YorkReinoUnido">York, Reino Unido</option>
+        </optgroup>
+      </select>
+      <input type="date" name="Fecha">
+      <nav>
+        <a [routerLink]="['/festivales']"><img class="img-fluid" style="max-height: 35px;"
+            src="assets/img/buscador.png" /></a>
+      </nav>
+    </nav>
+    <!--Buscador-->
+    <!--Imagenes pasantes-->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/img/festival2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/festival1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/festival3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <!--Imagenes pasantes-->
+  </div>
+
+  <div class="push"></div>
+  <app-footer></app-footer>
+</ion-content>

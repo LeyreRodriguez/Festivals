@@ -1,0 +1,31 @@
+.loadFile, .saveChanges, .changeFile {
+    border: none!important;
+}
+
+input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+    border-bottom: 1px solid #d1e3eb;
+}
+
+label {
+    font-weight: bold;
+}
+
+.loadFile {
+    background-color: #d1e3eb!important;
+    color: black;
+    font-weight: bold;
+}
+
+.saveChanges {
+    background-color: #7cffc5!important;
+    color: black;
+    font-weight: bold;
+}
+
+.noEditable {
+    cursor: default;
+}

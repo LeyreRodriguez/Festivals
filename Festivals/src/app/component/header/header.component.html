@@ -1,0 +1,45 @@
+<ion-header class="container-fluid static-top">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-1" style="padding: 1%;">
+      <nav>
+        <a [routerLink]="['/mainPage']">
+          <img class="img-fluid"
+            src="https://firebasestorage.googleapis.com/v0/b/festivals-61d7b.appspot.com/o/logo.png?alt=media&token=ca47e5bc-59ee-4b05-b811-de7d505fb7db" />
+        </a>
+      </nav>
+    </div>
+
+    <div class="col-6 d-flex justify-content-center align-items-center">
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <!-- <h1 class="text-center" style="font-size: xxx-large;">FESTIVALS</h1> -->
+        <img class="festivals-logo" src="https://firebasestorage.googleapis.com/v0/b/festival-ff759.appspot.com/o/Logo-festivals.png?alt=media&token=3f1d998c-3015-4315-9259-cdb65b6c3c3d">
+      </div>
+    </div>
+
+    <div class="col-2 d-flex justify-content-around align-items-center" style="width: 10%"
+      *ngIf="userLogged; else notLogged">
+      <div class="dropdownHover">
+        <img src="{{userPhoto}}" class="rounded-circle" style="width: 50%;">
+        <div class="dpContent">
+          <a class="dpct profile" (click)="toProfile()"><img class="dp-img profile-img" src="https://firebasestorage.googleapis.com/v0/b/festival-ff759.appspot.com/o/user.png?alt=media&token=05cffb64-c80e-4477-846a-d1378a7a9a6e"></a>
+          <a class="dpct logout" (click)="logout()"><img class="dp-img logout-img" src="https://firebasestorage.googleapis.com/v0/b/festival-ff759.appspot.com/o/exit.png?alt=media&token=bd865a4d-8112-4423-afc3-b33a360edcde"></a>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #notLogged>
+      <div class="col-2 d-flex justify-content-around align-items-center" style="width: 10%">
+        <div class="dropdownHover">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/festival-ff759.appspot.com/o/BurgerIcon.png?alt=media&token=9965cbf9-546a-4a5f-99bd-56f9174d21ff"
+            style="width: 30%;">
+          <div class="dpContent">
+            <a class="dpct profile" (click)="logIn()"><img class="dp-img login-img" src="https://firebasestorage.googleapis.com/v0/b/festival-ff759.appspot.com/o/log-in.png?alt=media&token=ef4f3364-ad41-4aeb-ba56-6250a04b8387"></a>
+            <a class="dpct logout" (click)="signUp()"><img class="dp-img signup-img" src="https://firebasestorage.googleapis.com/v0/b/festival-ff759.appspot.com/o/add-user.png?alt=media&token=c266ae88-d97d-4210-9f53-e6803890a29d"></a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</ion-header>
