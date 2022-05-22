@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
     if (this.myfood == "usuario"){
       this.router.navigate(['/', 'signupUsers']);
     } else if (this.myfood == "empresa") {
-      this.router.navigate(['/', 'signupBussines']);
+      this.router.navigate(['/', 'signupCompany']);
     } else {
       alert("Selecciona una opción");
     }
